@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+  color: #4C3D2A;
+}
+/* .offset:before {
+  display: block;
+  content: "";
+  height: 4rem;
+  margin-top: -4rem;
+} */
+
+/*----navigation----*/
+div#fix{
+ margin-right: 120px;
+}
+.navbar {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background:black;
+  
+}
+.navbar-brand a {
+    color: #25376F;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 50px;
+    padding-top: .5rem;
+}
+.navbar-nav li {
+    padding-right: .7rem;
+}
+.navbar-dark .navbar-nav .navbar-link {
+    color: #25376F;
+    padding-top: .8rem;
+}
+.navbar-dark .navbar-nav .navbar-link.active,
+.navbar-dark .navbar-nav .navbar-link:hover {
+    color: #6EC8ED;
+}
+/*-- Modal Popup--*/
+
+
+  /*-- Slider --*/
+.carousel-item {
+    height: 100vn;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.carousel-caption {
+    position: absolute;
+    top: 38%;
+    text-transform: uppercase;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+.carousel-caption h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    text-shadow: .1rem .1rem .8rem black;
+    padding-bottom: 1rem;
+}
+.carousel-caption h3 {
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    text-shadow: .1rem .1rem .5rem black;
+    padding-bottom: 1.6rem;
+}
+.btn-lg {
+    border-width: medium;
+    border-radius: 0;
+    font-size: 1.1rem;
+}
+
+  /*--Form Box--*/
+  /* .button-box {
+      width: 220px;
+      margin: 35px auto;
+      position: relative;
+      box-shadow: 0 0 20px 9px #6EC8ED;
+      border-radius: 30px;
+  } */
+.toggle-btn1 {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn1 {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 50px;
+    background-image: linear-gradient(to right, #6495ED, #6CE8ED, #6495ED);
+    border-radius: 30px;
+    transition: .5s;
+}
+/* #JobSeekers {
+    left: 50px;
+}
+#Companies {
+    left: 500px;
+} */
+
+
+/*---Clients Section--*/
+.clients img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  blockquote .svg-inline--fa {
+    color: #25376F;
+    margin: 1rem;
+  }
+  .clients-hr {
+    border-top: .05rem solid #25376F;
+  }
+  
+  /*---Contact Section--*/
+  footer {
+    background-color: #40474E;
+    color: white;
+    padding: 2rem 0 2rem;
+    margin-top: 1rem;
+  }
+  footer img {
+    height: 3rem;
+    margin: 1.5rem 0;
+  }
+  footer a {
+    color: white;
+  }
+  footer svg.svg-inline--fa {
+    font-size: 1.6rem;
+    margin: 1.2rem .5rem 0 0;
+  }
+  footer svg.svg-inline--fa:hover {
+    color: #6EC8ED!important;
+  }
+  hr.socket {
+    width: 100%;
+    border-top: .2rem solid #666B71;
+    margin-top: 3rem;
+  }
+  /* .btn2{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #6C63FF, #6CE8ED, #6C63FF);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: .5s;
+  }
+  .btn2:hover{
+    background-position: right;
+  } */
+
+  a#butindex{
+    background-image: linear-gradient(to right, #6495ED, #6CE8ED, #6495ED);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    margin-left: 390px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    background-size: 200%;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+  }
+  a#butindex:hover{
+    background-position: right;
+  } 
+  button#butjob{
+    background-image: linear-gradient(to right, #6495ED, #6CE8ED, #6495ED);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background-size: 200%;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+  }
+  button#butjob:hover{
+    background-position: right;
+  } 
+
+  button#butcom{
+    background-image: linear-gradient(to right, #6495ED, #6CE8ED, #6495ED);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background-size: 200%;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+  }
+  button#butcom:hover{
+    background-position: right;
+  } 
+  a#butfind{
+    background-image: linear-gradient(to right,green, #7CFC00, #ADFF2F);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background-size: 200%;
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+  }
+  a#butfind:hover{
+    background-position: right;
+  } 
+  a#butreset{
+    background-image: linear-gradient(to right,#B22222, #DC143C, #CD5C5C);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background-size: 200%;
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+  }
+  a#butreset:hover{
+    background-position: right;
+  } 
+
+
+  
+  /*--- Media Quries ---*/
+  @media (max-width: 767px) {
+    .carousel-caption h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: .3rem;
+      text-shadow: .1rem .1rem .8rem black;
+      padding-bottom: 1rem;
+    }
+    .carousel-caption h3 {
+      font-size: 1.2rem;
+      padding-bottom: 1.6rem;
+      text-shadow: .1rem .1rem .5rem black;
+    }
+    .btn-lg {
+      border-radius: 0;
+      border-width: medium;
+      font-size: 1.2rem;
+    }
+  }

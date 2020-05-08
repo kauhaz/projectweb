@@ -1,0 +1,210 @@
+<%- include("partials/headerafter") %>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SmileJob.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          
+        <link rel="stylesheet" href="/profileJob.css">
+       
+       
+    </head>
+
+    <form action="/" method="GET">
+        <div style="display:flex;margin-top: 50px;margin-left: 50px;" >
+            <div style="flex:20%;"  >
+                <div class="sj-border-grey sj-none overflow-hidden margin-bottom">
+                    <div style="background-color:ghostwhite" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div  class="panel panel-default margin-bottom" >
+                             <figure class="col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                        <div class="pic-company pic-company-cc" style="margin: auto;">
+                                            <h1>Huak Company</h1>
+                                             <section class="profileSeeker">
+                                                <ul>
+                                                    <div class="rwz_memPic" id="memPic_img">
+                                                <li>
+                                                    <figure class="resume-pic">
+                                                     <img src="img/avatar.png">
+                                                   </figure>
+                                            </li>
+                                                    <li>
+                                                        <a  href="/company/profile"class="upImage" for="test">
+                                                         
+                                                      See  Profile										</a> 
+                                                    </li>
+                                                     </div>
+                                                </ul>
+                                             </section>
+                    
+                                         </div>
+                                    <div>
+                            </figure>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div style="flex:100%;margin-right: 50px;"  class="col-md-8 col-sm-8 col-xs-12 ">
+                <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
+                    <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                       
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <!-- step 1 -->
+                                    
+                                    <div style="background-color:ghostwhite" class="panel panel-default margin-bottom" id="step1">
+                                        <h1 style="text-align: center;margin-top: 20px;">Post Job</h1>
+                            <div class = "row" style="display:flex;">
+        
+                                <div style="flex: 50%;padding-left: 30px;padding-right: 60px;padding-top: 20px;padding-bottom: 20px;"> 
+                                    
+                                    <h6 class="margin-bottom-1 header-form font-size-16" for="occupation"><b>Job Categories</b><span class="text-red"> *</span></h6>
+                                    <select class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                        <option value="">Job Categories</option>
+                                        <option value="27" >E-commerce</option>
+                                        <option value="45" >Part-time</option>
+                                        <option value="29" >law</option>
+                                        <option value="1" >Construction</option>
+                                        <option value="3" >Marketing / PR</option>
+                                        <option value="4" >Production / QA&QC</option>
+                                        <option value="15" >Medical</option>
+                                        <option value="5" >Education / Academic</option>
+                                        <option value="6" >Transportation / warehouse</option>
+                                        <option value="7" >Seller</option>
+                                        <option value="40" >Driver</option>
+                                        <option value="8" >Advertising / Media</option>
+                                        <option value="9" >Purchase</option>
+                                        <option value="31" >Safety officer  / Environment</option>
+                                        <option value="55" >Debt Collection Officer</option>
+                                        <option value="32" >Technician / Technician / Electronic</option>
+                                        <option value="10" >Travel / Hotel</option>
+                                        <option value="11" >Telecommunications</option>
+                                        <option value="12" >Banking / Finance</option>
+                                        <option value="48" >Geology and forestry</option>
+                                                            </select>
+                        <h6  class="margin-bottom-1"><b>Job Position</b><span class="text-red"> *</span></h6>
+                        <input  type="text" class="form-control sj-form-control" name="firstname" id="firstname" value="">
+                           
+                        
+                        <h6 class="margin-bottom-1 header-form font-size-16" for="occupation"><b>Salary</b><span class="text-red"> *</span></h6>
+
+<div style="display: flex;">
+    <div style="flex: 50%">
+                        <select  class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                            <option  >MinimumSalary</option>
+                            <option  >5,000</option>
+                            <option  >10,000</option>
+                            <option  >15,000</option>
+                            <option  >20,000</option>
+                            <option >25,000 </option>
+                            <option  >30,000</option>
+                            <option  >35,000</option>
+                            <option >40,000</option>
+                            <option  >45,000</option>
+                            <option  >50,000</option>
+                            <option  >55,000</option>
+                            <option  >60,000</option>
+                          
+                                                </select>
+                                            </div>
+                                            <div style="flex: 50%">
+
+                                                <select class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                                    <option>MaximumSalary</option>
+                                                    <option  >5,000</option>
+                                                    <option  >10,000</option>
+                                                    <option  >15,000</option>
+                                                    <option  >20,000</option>
+                                                    <option >25,000 </option>
+                                                    <option  >30,000</option>
+                                                    <option  >35,000</option>
+                                                    <option >40,000</option>
+                                                    <option  >45,000</option>
+                                                    <option  >50,000</option>
+                                                    <option  >55,000</option>
+                                                    <option  >60,000</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                            <h6 class="margin-bottom-1 header-form font-size-16" for="occupation"><b>Degree</b><span class="text-red"> *</span></h6>
+                            <select class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                <option >None</option>
+                                <option  >Bachelor's degree or higher</option>
+                                <option  >Master's Degree or higher</option>
+                                <option  >Vocational Certificate</option>
+                                <option  >Diploma/High Vocational Certificate</option>
+                                <option >Lower Than Vocational Certificate</option>
+                                
+                                                    </select>
+                           
+                            <h6 class="margin-bottom-1"><b>Job Description</b><span class="text-red"> *</span><span style="font-size: 12px;color: grey;">Ex. Job duties or Working day</span></h6>
+                            <textarea class="form-control" rows="4" id="address" name="address"></textarea>
+                            <h6 class="margin-bottom-1"><b>Welfare</b><span class="text-red"> *</span></h6>
+                            <textarea class="form-control" rows="4" id="address" name="address"></textarea>
+                            
+                        </div>
+                            <div style="flex: 50%;padding-top: 20px;padding-right:40px;padding-left: 50px;padding-bottom: 20px;">
+                                <h6  class="margin-bottom-1"><b>Contact</b><span class="text-red"> *</span></h6>
+                                <textarea class="form-control" rows="2" id="address" name="address"></textarea>
+                            <h6  class="margin-bottom-1"><b>How to go company</b><span class="text-red"> *</span></h6>
+                            <textarea class="form-control" rows="2" id="address" name="address"></textarea>
+                             <h6 class="margin-bottom-1"><b>Address</b><span class="text-red"> *</span></h6>
+                               <textarea class="form-control" rows="3" id="address" name="address"></textarea>
+                        
+                               <h6 class="margin-bottom-1"><b>Province</b></h6>
+                                                                                                                                                                                                <select  class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                                                                                                                                                                                    <option >Province</option>
+                                                                                                                                                                                                    <option  >Bangkok</option>
+                                                                                                                                                                                                    <option  >Nakhon Pathom </option>
+                                                                                                                                                                                                    <option  >Nakhon Sawan</option>
+                                                                                                                                                                                                    <option  >Nonthaburi </option>
+                                                                                                                                                                                                    <option >Chonburi </option>
+                                                                                                                                                                                                    <option  >Rayong </option>
+                                                                                                                                                                                                    <option  >Phetchaburi </option>
+                                                                                                                                                                                                    <option >Ratchaburi</option>
+                                                                                                                                                                                                    <option  >Krabi</option>
+                                                                                                                                                                                                    <option  >Phuket </option>
+                                                                                                                                                                                                    <option  >Ranong</option>
+                                                                                                                                                                                                    <option  >Songkhla</option>
+                                                                                                                                                                                                                        </select>                                       
+                               <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1494.9552590138494!2d100.6004820889737!3d13.631329862369775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x133e221e4499d09c!2zNy1FbGV2ZW4g4LiB4Lil4Liy4LiH4LiL4Lit4Lii4Lio4Lij4Li14Lia4Li44LiN4LmA4Lij4Li34Lit4LiH4oCLIDExNTM0!5e0!3m2!1sth!2sth!4v1587109329390!5m2!1sth!2sth" style="margin-top: 20px;" width="315px" height="200px" frameborder="0" style="border:0;" aria-hidden="false" tabindex="0"></iframe></p>
+                            
+
+                                                                                                                                                                                                
+                                                                                                                                                                                    
+                                                                                                                                                                                               
+        
+                          
+                           
+                        </div>
+                            
+                            
+                        
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 mem-cancel ">
+            <ul>
+                
+               
+                <li><button style="background-color:#00BFFF;padding-left: 10px;text-align: center;padding-right: 80px;margin-bottom: 20px;text-indent: 70px;" class="btn2 btn-primary" id="butcom" type="submit" name="save_btn" value="save">Save</button></li>
+            </ul>
+        </div>
+        </div>
+                          
+                  
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </form>
+<%- include("partials/footer") %>

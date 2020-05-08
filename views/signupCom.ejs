@@ -1,0 +1,140 @@
+<%- include("partials/headerafter") %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SmileJob.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          
+        <link rel="stylesheet" href="/jobseeker/signup.css">
+       
+       
+    </head>
+<div class="container1">
+    <div class="img">
+        <img src="/picture/co-working.png">
+    </div>
+    <div class="login-content">
+        <form id="edit"" method="POST" action="/company/signup" >
+            <img src="/picture/avatar2.png">
+            <div class="form-group row">
+                <div class="form-group col-md-12">
+                    <label for="validCustomUsername">Username</label>
+                    <div class="input-group">
+                        
+                        <input name="username" type="text" class="form-control" id="validCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Username" required>
+                        <div class="invalid-feedback">
+                            Please choose a username.
+                        </div>
+                    </div> 
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputUsername">Email</label>
+                    <input name="email" type="email" class="form-control" id="inputUsername" value="" placeholder="email@mail.com" required>
+                    <div class="invalid-feedback">
+                        Please enter an email.
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputPassword">Password</label>
+                    <input name="password" type="password" class="form-control" id="inputPassword" value="" placeholder="password" required>
+                    <div class="invalid-feedback">
+                        Must be 8-20 characters long.
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="inputConfirmPassword" value="" placeholder="password" required>
+                    <div class="invalid-feedback">
+                        Must be 8-20 characters long.
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputComname">Company Name</label>
+                    <input name="company" type="text" class="form-control" id="inputComname" value="" placeholder="Company" required>
+                    <div class="invalid-feedback">
+                        Please enter a company name.
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputIndustry">Industry</label>
+                    <select name="industry" type="text" class="custom-select" class="form-control" id="inputIndustry" value="" required>
+                        <option >...</option>
+                        <option >Accounting and Law Service</option>
+                        <option >Advertising</option>
+                        <option >Agricultural</option>
+                        <option >Automobile</option>
+                        <option >Banking</option>
+                        <option >Chemical/Plastic</option>
+                        <option >Computer/IT</option>
+                        <option >Construction</option>
+                        <option >Consulting</option>
+                        <option >Design/Interior Design</option>
+                        <option >Education</option>
+                        <option >Electrical</option>
+                        <option >Electronic</option>
+                        <option >Energy</option>
+                        <option >Entertaining</option>
+                        <option >Finance</option>
+                        <option >Food, Drink &amp; Tobacco</option>
+                        <option >Furniture/Appliance</option>
+                        <option >Garment</option>
+                        <option >Government/Non-profit</option>
+                        <option >Hospital/Clinic</option>
+                        <option >Hotel/Resort/Spa/Golf Club</option>
+                        <option >Import/Export</option>
+                        <option >Insurance</option>
+                        <option >Jewelry</option>
+                        <option >Loan/Credit Card</option>
+                        <option >Mass Communication</option>
+                        <option >Medicine/Cosmetic/Medical Equipment</option>
+                        <option >Packaging</option>
+                        <option >Paper</option>
+                        <option >Publishing/Printing</option>
+                        <option >Real Estate</option>
+                        <option >Recruitment</option>
+                        <option >Retail</option>
+                        <option >Services</option>
+                        <option >Steel/Metal</option>
+                        <option >Telecommunication</option>
+                        <option >Trading/Commerce</option>
+                        <option >Transportation</option>
+                        <option >Travel</option>
+                        <option >Others</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a industry.
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputContact">Contact Person</label>
+                    <input type="text" name="contact" class="form-control" id="inputContact" value="" placeholder="Contact Person" required>
+                    <div class="invalid-feedback">
+                        Please enter a contact.
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputTel">Telephone No.</label>
+                    <input type="text" name="telephone" class="form-control" id="inputComname" value="" placeholder="Tel." required>
+                    <div class="invalid-feedback">
+                        Please enter a telephone no.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="custom-control-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                    </div>
+            </div>
+            <button class="btn2 btn-primary" type="submit">SIGN UP</button>
+            
+        </form>
+    </div>
+</div>
+<%- include("partials/footer") %>

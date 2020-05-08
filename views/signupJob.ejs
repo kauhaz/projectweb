@@ -1,0 +1,92 @@
+<%- include("partials/headerafter") %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SmileJob.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          
+        <link rel="stylesheet" href="/jobseeker/signup.css">
+       
+       
+    </head>
+    <body>
+
+        <div class="container1">
+            <div class="img">
+                <img src="../picture/mobile.png">
+            </div>
+            <div class="login-content">
+             <form  id="edit"  action="/jobseeker/signup" method="POST">
+                 <img src="../picture/avatar.png">
+                 <div class="form-group row">
+                     <div class="form-group col-md-12">
+                         <label for="validCustomUsername">Username</label>
+                         <div class="input-group">
+                             <input  name="username" type="text" class="form-control" id="validCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Username" required>
+                             <div class="invalid-feedback">
+                                 Please choose a username.
+                             </div>
+                         </div> 
+                     </div>
+                     <div class="form-group col-md-12">
+                         <label for="inputUsername">Email</label>
+                         <input type="email" name="email" class="form-control" id="inputUsername" value="" placeholder="email@mail.com" required>
+                         <div class="invalid-feedback">
+                             Please enter an email.
+                         </div>
+                     </div>
+                     <div class="form-group col-md-12">
+                         <label for="inputPassword">Password</label>
+                         <input type="password" name="password" class="form-control" id="inputPassword" value="" placeholder="password" required>
+                         <div class="invalid-feedback">
+                             Must be 8-20 characters long.
+                         </div>
+                     </div>
+                     <div class="form-group col-md-12">
+                         <label for="inputConfirmPassword">Confirm Password</label>
+                         <input type="password" class="form-control" id="inputConfirmPassword" value="" placeholder="password" required>
+                         <div class="invalid-feedback">
+                             Must be 8-20 characters long.
+                         </div>
+                     </div>
+                 </div>
+                     <div class="form-group">
+                         <div class="custom-control custom-checkbox">
+                             <inputs class="custom-control-input" type="checkbox" value="" id="invalidCheck" required>
+                             <label class="custom-control-label" for="invalidCheck">
+                               Agree to terms and conditions
+                             </label>
+                             <div class="invalid-feedback">
+                               You must agree before submitting.
+                             </div>
+                           </div>
+                     </div>
+                     <button class="btn2 btn-primary" type="submit">SIGN UP</button>
+                     
+             </form>
+            </div>
+        </div>
+        <script>
+            const inputs = document.querySelectorAll(".input");
+
+            function addcl(){
+                let parent = this.parentNode.parentNode;
+                parent.classList.add("focus");
+            }
+
+            function remcl(){
+                let parent = this.parentNode.parentNode;
+                if(this.value == ""){
+                    parent.classList.remove("focus");
+                }
+            }
+
+            inputs.forEach(input => {
+                input.addEventListener("focus", addcl);
+                input.addEventListener("blur", remcl);
+            });
+       </script>
+    </body>
+</html>
+<%- include("partials/footer") %>

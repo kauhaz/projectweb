@@ -1,0 +1,158 @@
+<%- include("partials/headerafter") %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SmileJob.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/profileJob.css">
+       
+    </head>
+    <body>
+
+        <div  style="margin-top: 50px;margin-left: 50px;margin-right: 50px;">
+            <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
+            
+                <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div style="background-color:gainsboro;" class="panel panel-default margin-bottom" >
+                       
+                        <div style="display: flex; margin-left: 20px;"class="col-sm-6 col-lg-12"  >
+                        <div style="flex:10%;margin-top: 20px;margin-bottom: 20px;margin-right: 20px;"  >
+                      
+                        <input style="margin-bottom: 20px;" type="text" class="form-control sj-form-control" placeholder="Job Tiles Or Companyname" name="firstname" id="firstname" value="">
+
+                        
+                        <select class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                            <option >Degree</option>
+                            <option >None</option>
+                            <option  >Bachelor's degree or higher</option>
+                            <option  >Master's Degree or higher</option>
+                            <option  >Vocational Certificate</option>
+                            <option  >Diploma/High Vocational Certificate</option>
+                            <option >Lower Than Vocational Certificate</option>
+                            
+                                                </select>
+                   
+                    </div>
+                    <div style="flex:10%;margin-top: 20px;margin-right: 20px;"  >
+                        
+                                    <select style="margin-bottom: 20px;" class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                        <option value="">Job Categories</option>
+                                        <option value="27" >E-commerce</option>
+                                        <option value="45" >Part-time</option>
+                                        <option value="29" >law</option>
+                                        <option value="1" >Construction</option>
+                                        <option value="3" >Marketing / PR</option>
+                                        <option value="4" >Production / QA&QC</option>
+                                        <option value="15" >Medical</option>
+                                        <option value="5" >Education / Academic</option>
+                                        <option value="6" >Transportation / warehouse</option>
+                                        <option value="7" >Seller</option>
+                                        <option value="40" >Driver</option>
+                                        <option value="8" >Advertising / Media</option>
+                                        <option value="9" >Purchase</option>
+                                        <option value="31" >Safety officer / Environment</option>
+                                        <option value="55" >Debt Collection Officer</option>
+                                        <option value="32" >Technician / Technician / Electronic</option>
+                                        <option value="10" >Travel / Hotel</option>
+                                        <option value="11" >Telecommunications</option>
+                                        <option value="12" >Banking / Finance</option>
+                                        <option value="48" >Geology and forestry</option>
+                                                            </select>
+                                                            
+                                                                                                                                                                                                <select  class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                                                                                                                                                                                    <option >Province</option>
+                                                                                                                                                                                                    <option  >Bangkok</option>
+                                                                                                                                                                                                    <option  >Nakhon Pathom </option>
+                                                                                                                                                                                                    <option  >Nakhon Sawan</option>
+                                                                                                                                                                                                    <option  >Nonthaburi </option>
+                                                                                                                                                                                                    <option >Chonburi </option>
+                                                                                                                                                                                                    <option  >Rayong </option>
+                                                                                                                                                                                                    <option  >Phetchaburi </option>
+                                                                                                                                                                                                    <option >Ratchaburi</option>
+                                                                                                                                                                                                    <option  >Krabi</option>
+                                                                                                                                                                                                    <option  >Phuket </option>
+                                                                                                                                                                                                    <option  >Ranong</option>
+                                                                                                                                                                                                    <option  >Songkhla</option>
+                                                                                                                                                                                                                        </select>
+                    </div>
+                  
+                       
+
+
+    <div style="flex: 10%;margin-top: 20px;margin-left: 10px;">
+                        <select class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                            <option >MinimumSalary</option>
+                            <option  >5,000</option>
+                            <option  >10,000</option>
+                            <option  >15,000</option>
+                            <option  >20,000</option>
+                            <option >25,000 </option>
+                            <option  >30,000</option>
+                            <option  >35,000</option>
+                            <option >40,000</option>
+                            <option  >45,000</option>
+                            <option  >50,000</option>
+                            <option  >55,000</option>
+                            <option  >60,000</option>
+                          
+                                                </select>
+                                      
+                                            
+
+                                                <select style="margin-top: 20px;" class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                                    <option >MaximumSalary</option>
+                                                    <option  >5,000</option>
+                                                    <option  >10,000</option>
+                                                    <option  >15,000</option>
+                                                    <option  >20,000</option>
+                                                    <option >25,000 </option>
+                                                    <option  >30,000</option>
+                                                    <option  >35,000</option>
+                                                    <option >40,000</option>
+                                                    <option  >45,000</option>
+                                                    <option  >50,000</option>
+                                                    <option  >55,000</option>
+                                                    <option  >60,000</option>
+                                                                        </select>
+                                                                    </div>
+                                                       
+                                                  
+                          
+                             <div style="margin-right:50px;margin-left:40px;margin-top: 10px;">
+                                <a href="/"  style="text-transform: uppercase;font-family: 'Lato', sans-serif;color: black;font-size: 40px;"   type="submit"><i class="fas fa-search"></i></a><br>
+                                <a href="/"  style="text-transform: uppercase;font-family: 'Lato', sans-serif;color: black;font-size: 40px;"  type="submit"><i class="fas fa-eraser"></i></a>
+                            </div>
+                        
+                   
+
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  style="margin-top: 50px;margin-left:200px;margin-right: 200px;">
+        
+        
+            <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                <div style="background-color:white;" class="panel panel-default margin-bottom" >
+
+
+                    <div style="background-color:	#2F4F4F;padding-bottom: 10px;color: white;" class="panel panel-default margin-bottom">
+                        <div class="container" style="margin-top: 10px;">
+                        <p  style="display: inline;margin-right: 630px;">Recommended for you </p>
+                        <p style="display: inline;text-indent: 10px;"> Total 
+                            
+                            
+                            Jobs</p>
+                    </div>
+                    </div>
+                asdasd
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+
+<%- include("partials/footer") %>

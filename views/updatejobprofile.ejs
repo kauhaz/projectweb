@@ -1,0 +1,481 @@
+<%- include("partials/headerafter") %>
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SmileJob.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          
+        <link rel="stylesheet" href="/profileJob.css">
+       
+       
+    </head>
+  
+
+   
+   
+      
+     
+    
+              
+
+
+
+<form action="/jobseeker/profile/new" method="POST" enctype="multipart/form-data">
+<div style="display:flex;margin-top: 50px;" class="container" >
+    <div style="flex:20%;"  >
+        <div class="sj-border-grey sj-none overflow-hidden margin-bottom">
+            <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                <div style="background-color: #C0AB8E;" class="panel panel-default margin-bottom" >
+                     <figure class="col-md-12 col-sm-12 col-xs-12">
+                         <div class="row">
+                                <div class="pic-company pic-company-cc" style="margin: auto;">
+                                    
+                                     <section class="profileSeeker">
+                                       
+                                        <ul>
+                                            <div class="rwz_memPic" id="memPic_img">
+                                        <li>
+                                            <figure class="resume-pic">
+                                                <img src='/images/img-profile/<%= jobload.image %>' alt="your image" class="target" />
+                                           </figure>
+                                    </li>
+                                            <li>
+                                                <a  for="file"class="upImage" type="button" >
+                                                 <i   class="fa fa-camera" aria-hidden="true"></i>
+                                                 Choose image									</a> 
+                                                 <input name="image" type="file" id="file"  /> 
+                                            </li>
+                                             </div>
+                                        </ul>
+                                    
+                                     </section>
+                                 </form>
+                                 </div>
+                            <div>
+                    </figure>
+                </div>
+             </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+"use strict";
+
+function url(input) {
+    if (input.files && input.files[0]) {
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(".target").attr("src", e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+    }
+}
+$("#file").change(function () {
+    url(this);
+});
+});
+    </script>
+    <div style="flex:100%;"  class="col-md-8 col-sm-8 col-xs-12 ">
+        <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
+            <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+               
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                            <!-- step 1 -->
+                            
+                            <div class="panel panel-default margin-bottom" id="step1">
+                                <h1 style="text-align: center;margin-top: 20px;font-family: sans-serif;">JobSeeker Profile</h1>
+                    <div class = "row" style="display:flex;">
+
+                        <div style="flex: 50%;padding-left: 30px;padding-right: 60px;padding-top: 20px;padding-bottom: 20px;"> 
+                            
+                <h6 class="margin-bottom-1"><b>Name</b><span class="text-red"> *</span></h6>
+                <input required name="Name" type="text" class="form-control sj-form-control"  name="firstname" id="firstname" value="<%= jobload.Name %>">
+                <h6  class="margin-bottom-1"><b>Surname</b><span class="text-red"> *</span></h6>
+                <input required name="Surname" type="text" class="form-control sj-form-control" name="firstname" id="firstname" value="<%= jobload.Surname %>">
+                    <h6  class="margin-bottom-1"><b>ID Card</b><span class="text-red"> *</span></h6>
+                    <input required name="IDCard" type="text" class="form-control sj-form-control"  name="firstname" id="firstname" value="<%= jobload.IDCard %>">
+                  
+                    <h6  class="margin-bottom-1"><b>Telephone No.</b><span class="text-red"> *</span></h6>
+                    <input required  name="tel" type="text" class="form-control sj-form-control"  name="firstname" id="firstname" value="<%= jobload.TelephoneNo %>">
+                     
+                    <h6 class="margin-bottom-1"><b>Date of Birth</b><span class="text-red">* </span></h6>
+                    <input  required name="DateofBirth" type="text" class="form-control sj-form-control"  id="firstname" placeholder="dd/mm/yyyy" value="<%= jobload.DateofBirth %>">
+                     <h6 class="margin-bottom-1"><b>Province</b><span class="text-red"> *</span></h6>
+                           <input required name="Province" type="text" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.Province %>">
+                           <h6 class="margin-bottom-1"><b>District</b><span class="text-red"> *</span></h6>
+                <input required type="text" name="District" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.District %>">
+                <h6 class="margin-bottom-1"><b>Sub District</b><span class="text-red"> *</span></h6>
+                <input  required type="text" name="SubDistrict" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.SubDistrict %>">
+                <h6 class="margin-bottom-1"><b>Resume</b><span class="text-red"> *</span><span style="font-size: 13px;color: gray;"> Please combine into one file.</span></h6>
+               
+                <input  required name="resume" type="file" id="real-file" hidden="hidden" />
+                <button  style="margin-bottom: 2px;" type="button" id="custom-button">CHOOSE A FILE</button><br>
+                <span  id="custom-text"><%= jobload.resume %></span>
+
+               
+
+                <script>
+                    const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
+
+customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerHTML = "No file chosen, yet.";
+  }
+});
+
+
+                </script>
+                </div>
+                
+
+                    <div style="flex: 50%;padding-top: 20px;padding-right:40px;padding-left: 50px;padding-bottom: 20px;">
+
+                   
+                   
+                     
+                        <h6 class="margin-bottom-1"><b>Height</b><span class="text-red"> *</span></h6>
+                        <div class="input-group">
+                            <input required name="Height" type="text" class="form-control sj-form-control" id="height" name="height" value="<%= jobload.Height %>">
+                            <div style="margin-top:5px;margin-left: 10px;" class="input-group-addon">cm.</div>
+                        </div>
+
+                        <h6 class="margin-bottom-1"><b>Weight</b><span class="text-red"> *</span></h6>
+                        <div class="input-group">
+                            <input required name="Weight" type="text" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.Weight %>">
+                            <div style="margin-top:5px;margin-left: 15px;" class="input-group-addon">kg.</div>
+                        </div>
+
+                        <h6 class="margin-bottom-1"><b>Gender</b><span class="text-red">*  </span></h6>
+                        <select value="<%= jobload.Gender %>" required name="Gender" class="form-control" id="gender" name="gender">
+                                                                                    <option >Male</option>
+                                                                                    <option >Female</option>
+                            
+                        </select>
+
+                        <h6 class="margin-bottom-1"><b>Nationality</b><span class="text-red"> * </span></h6>
+                        <select value="<%= jobload.Nationality %>" required name="Nationality" class="form-control" id="nationality" name="nationality">
+                                                                                                <option >Afghan</option>
+                                                                                                <option >Albanian</option>
+                                                                                                <option >Algerian</option>
+                                                                                                <option >American</option>
+                                                                                                <option >Andorran</option>
+                                                                                                <option >Argentine</option>
+                                                                                                <option >Armenian</option>
+                                                                                                <option >Australian</option>
+                                                                                                <option >Austrian</option>
+                                                                                                <option >Azerbaijani</option>
+                                                                                             
+                                                                                             
+                                                                                              
+                                                                                                <option >Cambodian</option>
+                                                                                                <option >Cameroonian</option>
+                                                                                                <option >Canadian</option>
+                                                                                                <option >Cape Verdean</option>
+                                                                                                <option >Central African</option>
+                                                                                                <option >Chadian</option>
+                                                                                                <option >Chilean</option>
+                                                                                                <option >Chinese</option>
+                                                                                                <option >Chinese Taipei</option>
+                                                                                                <option >Colombian</option>
+                                                                                               
+                                                                                                <option >Czech</option>
+                                                                                                <option >Danish/Dane</option>
+                                                                                                <option >Djiboutian</option>
+                                                                                                <option >Domincian</option>
+                                                                                                <option >Dutch/Dutchman</option>
+                                                                                              
+                                                                                                <option >Ethiopian</option>
+                                                                                                <option >Fijian</option>
+                                                                                                <option >Filipino</option>
+                                                                                                <option >Finnish/Finn</option>
+                                                                                                <option >French</option>
+                                                                                                <option >Frenchman</option>
+                                                                                             
+                                                                                                
+                                                                                                <option >Indian</option>
+                                                                                                <option >Indonesian</option>
+                                                                                                <option >Iranian</option>
+                                                                                                <option >Iraqi</option>
+                                                                                                <option >Irish/Irishman</option>
+                                                                                                <option >Israeli</option>
+                                                                                               
+                                                                                                <option >Kenyan</option>
+                                                                                                <option >Korean</option>
+                                                                                                <option >Kuwaiti</option>
+                                                                                                <option >Kyrgyz</option>
+                                                                                                <option >Lao, Laotian</option>
+                                                                                                
+                                                                                                <option >Lithuanian</option>
+                                                                                                <option >Luxmbourg</option>
+                                                                                                <option >Macedonian</option>
+                                                                                                <option >Malagasy</option>
+                                                                                                <option >Malawian</option>
+                                                                                                <option >Malaysian</option>
+                                                                                               
+                                                                                                <option >Mexican</option>
+                                                                                                <option >Micronesia</option>
+                                                                                                <option >Moldovan</option>
+                                                                                                
+                                                                                                <option >Namibian</option>
+                                                                                                <option >Nauruan</option>
+                                                                                                <option >Nepalese</option>
+                                                                                        
+                                                                                                <option >Pakistani</option>
+                                                                                                <option >Panamanian</option>
+                                                                                                <option >Papua New Guinean</option>
+                                                                                                <option >Paraguayan</option>
+                                                                                             
+                                                                                                <option >Salvadoran</option>
+                                                                                                <option >Sammarinese</option>
+                                                                                                <option >Samoan</option>
+                                                                                               
+                                                                                                <option >Somali</option>
+                                                                                                <option >South African</option>
+                                                                                                <option >Spanish/Spaniard</option>
+                                                                                                <option >Sri Lankan</option>
+                                                                                                <option >Sudanese</option>
+                                                                                                <option >Surinamer</option>
+                                                                                             
+                                                                                                <option >Tajik</option>
+                                                                                                <option >Tanzanian</option>
+                                                                                                <option  selected="selected">Thai</option>
+                                                                                                <option >Togolese</option>
+                                                                                                <option >Tongan</option>
+                                                                                               
+                                                                                                <option >Venezuelan</option>
+                                                                                                <option >Vietnamese</option>
+                                                                                                <option >Yemeni</option>
+                                                                                                <option >Zambian</option>
+                                                                                                <option >Zimbabwean</option>
+                                                                                </select>
+
+                    
+                                                                                <h6 class="margin-bottom-1"><b>Religion</b><span class="text-red"> * </span></h6>
+                                                                                <select required name="Religion" class="form-control" id="religion" value="<%= jobload.Religion %>" name="religion">
+                                                                                     <option >None</option>
+                                                                                                                                                <option>Brahmanis - Hindu</option>
+                                                                                                                                                <option >Buddhism</option>
+                                                                                                                                                <option >Christianity</option>
+                                                                                                                                                <option>Ha Ba religion</option>
+                                                                                                                                                <option >Islam/Mohammedanism</option>
+                                                                                                                                                <option >Jainism</option>
+                                                                                                                                                <option >Religion Iiy</option>
+                                                                                                                                                <option >Sikhism</option>
+                                                                                                                                                <option >So rekigin ASUS Robert Peter</option>
+                                                                                                                                    </select>
+
+                                                                                                                                    <h6 class="margin-bottom-1"><b>Address</b><span class="text-red"> *</span></h6>
+                                                                                                                                    <textarea   required name="Address" class="form-control" rows="3" id="address" name="address"><%= jobload.Address %></textarea>
+
+                                                                                                                                    <h6 class="margin-bottom-1"><b>Country</b><span class="text-red"> * </span></h6>
+                                                                                                                                    <select value="<%= jobload.Country %>" required name="Country" class="form-control" id="country" name="country">
+                                                                                                                                                                                                    <option >Afghanistan</option>
+                                                                                                                                                                                                    <option >Albania</option>
+                                                                                                                                                                                                    <option >Algeria</option>
+                                                                                                                                                                                                    <option >American Samoa</option>
+                                                                                                                                                                                                    <option >Andorra</option>
+                                                                                                                                                                                                    <option >Angola</option>
+                                                                                                                                                                                                    <option >Anguilla</option>
+                                                                                                                                                                                                    <option >Antarctica</option>
+                                                                                                                                                                                                    <option >Antigua &amp; Barbuda</option>
+                                                                                                                                                                                                    <option >Argentina</option>
+                                                                                                                                                                                                    <option >Armenia</option>
+                                                                                                                                                                                                    <option >Aruba</option>
+                                                                                                                                                                                                    <option >Australia</option>
+                                                                                                                                                                                                    <option >Austria</option>
+                                                                                                                                                                                                    <option >Azerbaijan</option>
+                                                                                                                                                                                                    <option >Bahama</option>
+                                                                                                                                                                                                    <option>Bahrain</option>
+                                                                                                                                                                                                    <option >Bangladesh</option>
+                                                                                                                                                                                                    <option >Barbados</option>
+                                                                                                                                                                                                    <option >Belarus</option>
+                                                                                                                                                                                                    <option >Belgium</option>
+                                                                                                                                                                                                    <option >Belize</option>
+                                                                                                                                                                                                    <option >Benin</option>
+                                                                                                                                                                                                    <option >Bermuda</option>
+                                                                                                                                                                                                    <option >Bhutan</option>
+                                                                                                                                                                                                    <option >Bolivia</option>
+                                                                                                                                                                                                    <option >Bosnia and Herzegovina</option>
+                                                                                                                                                                                                    <option >Botswana</option>
+                                                                                                                                                                                                    <option >Bouvet Island</option>
+                                                                                                                                                                                                    <option >Brazil</option>
+                                                                                                                                                                                                    <option >British Indian Ocean Territory</option>
+                                                                                                                                                                                                    <option >British Virgin Islands</option>
+                                                                                                                                                                                                    <option >Brunei Darussalam</option>
+                                                                                                                                                                                                    <option >Bulgaria</option>
+                                                                                                                                                                                                    <option >Burkina Faso</option>
+                                                                                                                                                                                                    <option >Burma (no longer exists)</option>
+                                                                                                                                                                                                    <option >Burundi</option>
+                                                                                                                                                                                                    <option >Côte D'ivoire (Ivory Coast)</option>
+                                                                                                                                                                                                    <option >Cambodia</option>
+                                                                                                                                                                                                    <option >Cameroon</option>
+                                                                                                                                                                                                    <option >Canada</option>
+                                                                                                                                                                                                    <option >Cape Verde</option>
+                                                                                                                                                                                                    <option >Cayman Islands</option>
+                                                                                                                                                                                                    <option >Central African Republic</option>
+                                                                                                                                                                                                    <option >Chad</option>
+                                                                                                                                                                                                    <option >Chile</option>
+                                                                                                                                                                                                    <option >China</option>
+                                                                                                                                                                                                    <option >Christmas Island</option>
+                                                                                                                                                                                                    <option >Cocos (Keeling) Islands</option>
+                                                                                                                                                                         
+                                                                                                                                                                                                    <option >Democratic Yemen (no longer exists)</option>
+                                                                                                                                                                                                    <option >Denmark</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                    <option >East Timor</option>
+                                                                                                                                                                                                    <option>Ecuador</option>
+                                                                                                                                                                                                    <option >Egypt</option>
+                                                                                                                                                                                              
+                                                                                                                                                                                             
+                                                                                                                                                                                                    <option >Falkland Islands (Malvinas)</option>
+                                                                                                                                                                                                    <option >Faroe Islands</option>
+                                                                                                                                                                                                    <option >Fiji</option>
+                                                                                                                                                                                                    <option >Finland</option>
+                                                                                                                                                                                                    <option >France</option>
+                                                                                                                                                                                                  
+                                                                                                                                                                                                    <option >Gabon</option>
+                                                                                                                                                                                                    <option >Gambia</option>
+                                                                                                                                                                                                    <option >Georgia</option>
+                                                                                                                                                                                            
+                                                                                                                                                                                                    <option >Guam</option>
+                                                                                                                                                                                                    <option >Guatemala</option>
+                                                                                                                                                                                               
+                                                                                                                                                                                                    <option >Haiti</option>
+                                                                                                                                                                                                    <option >Heard &amp; McDonald Islands</option>
+                                                                                                                                                                                                    <option >Honduras</option>
+                                                                                                                                                                                                    <option >Hong Kong</option>
+                                                                                                                                                                                                    <option >Hungary</option>
+                                                                                                                                                                                                    <option >Iceland</option>
+                                                                                                                                                                                           
+                                                                                                                                                                                                    <option >Ireland</option>
+                                                                                                                                                                                                    <option >Islamic Republic of Iran</option>
+                                                                                                                                                                                                    <option >Israel</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                   
+                                                                                                                                                                                                    <option >Kiribati</option>
+                                                                                                                                                                                              
+                                                                                                                                                                                                    <option >Kyrgyzstan</option>
+                                                                                                                                                                                                    <option >Lao People's Democratic Republic</option>
+                                                                                                                                                                                                    <option >Latvia</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                    <option >Liberia</option>
+                                                                                                                                                                                                    <option >Libyan Arab Jamahiriya</option>
+                                                                                                                                                                                                    <option >Liechtenstein</option>
+                                                                                                                                                                                                  
+                                                                                                                                                                                                    <option >Macau</option>
+                                                                                                                                                                                                    <option >Madagascar</option>
+                                                                                                                                                                                                   
+                                                                                                                                                                                                    <option >Malta</option>
+                                                                                                                                                                                                    <option >Marshall Islands</option>
+                                                                                                                                                                                                    <option >Martinique</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                    <option >Mexico</option>
+                                                                                                                                                                                                    <option >Micronesia</option>
+                                                                                                                                                                                                    <option >Moldova, Republic of</option>
+                                                                                                                                                                                       
+                                                                                                                                                                                                    <option >Mozambique</option>
+                                                                                                                                                                                                    <option >Myanmar</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                    <option >Netherlands</option>
+                                                                                                                                                                                                    <option >Netherlands Antilles</option>
+                                                                                                                                                                                                    <option >Neutral Zone (no longer exists)</option>
+                                                                                                                                                                                                    <option >New Caledonia</option>
+                                                                                                                                                                                                    <option >New Zealand</option>
+                                                                                                                                                                                                 
+                                                                                                                                                                                                    <option >Norfolk Island</option>
+                                                                                                                                                                                                    <option >Northern Mariana Islands</option>
+                                                                                                                                                                                                    <option >Norway</option>
+                                                                                                                                                                                                    <option >Oman</option>
+                                                                                                                                                                                              
+                                                                                                                                                                                                    <option >Papua New Guinea</option>
+                                                                                                                                                                                                    <option >Paraguay</option>
+                                                                                                                                                                                                    <option >Peru</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                    <option >Portugal</option>
+                                                                                                                                                                                                    <option >Puerto Rico</option>
+                                                                                                                                                                                                    <option >Qatar</option>
+                                                                                                                                                                                                  
+                                                                                                                                                                                                    <option >Rwanda</option>
+                                                                                                                                                                                                    <option >Saint Lucia</option>
+                                                                                                                                                                                                    <option >Samoa</option>
+                                                                                                                                                                                                    <option >San Marino</option>
+                                                                                                                                                                                                   
+                                                                                                                                                                                                    <option >Slovenia</option>
+                                                                                                                                                                                                    <option >Solomon Islands</option>
+                                                                                                                                                                                                    <option >Somalia</option>
+                                                                                                                                                                                                    <option >South Africa</option>
+                                                                                                                                                                                                   
+                                                                                                                                                                                                    <option >Sudan</option>
+                                                                                                                                                                                                    <option >Suriname</option>
+                                                                                                                                                                                                    <option >Svalbard &amp; Jan Mayen Islands</option>
+                                                                                                                                                                                                   
+                                                                                                                                                                                                    <option >Tajikistan</option>
+                                                                                                                                                                                                    <option >Tanzania, United Republic of</option>
+                                                                                                                                                                                                    <option  selected="selected">Thailand</option>
+                                                                                                                                                                                                    <option >Togo</option>
+                                                                                                                                                                                                   
+                                                                                                                                                                                                    <option >Turks &amp; Caicos Islands</option>
+                                                                                                                                                                                                    <option >Tuvalu</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                    <option >United States Minor Outlying Islands</option>
+                                                                                                                                                                                                    <option >United States of America</option>
+                                                                                                                                                                                                    <option >United States Virgin Islands</option>
+                                                                                                                                                                                                    <option >Uruguay</option>
+                                                                                                                                                                                                  
+                                                                                                                                                                                                    <option >Viet Nam</option>
+                                                                                                                                                                                                    <option >Wallis &amp; Futuna Islands</option>
+                                                                                                                                                                                                    <option >Western Sahara</option>
+                                                                                                                                                                                                    <option >Yemen</option>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                   
+                                                                                                                                                                                        </select>
+
+                                                                                                                                                                                        <h6 class="margin-bottom-1"><b>Zip Code</b><span class="text-red"> *</span></h6>
+                                                                                                                                                                                        <input required name="ZipCode" type="text" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.ZipCode %>">
+
+                  
+                   
+                </div>
+                    
+                    
+                
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 mem-cancel ">
+    <ul>
+        
+       
+        <li><button  class="btn2 btn-primary" id="butjob" type="submit" name="save_btn" value="save">Save</button></li>
+    </ul>
+</div>
+</div>
+                  
+          
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+<%- include("partials/footer") %>

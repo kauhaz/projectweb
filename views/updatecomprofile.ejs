@@ -1,0 +1,140 @@
+<%- include("partials/headerafter") %>
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SmileJob.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          
+        <link rel="stylesheet" href="/profileJob.css">
+       
+       
+    </head>
+
+    <form action="/company/profile/new" method="Post">
+        <div style="display:flex;margin:50px"  >
+            <div style="flex:20%;"  >
+                <div class="sj-border-grey sj-none overflow-hidden margin-bottom">
+                    <div style="background-color:ghostwhite" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default margin-bottom" >
+                             <figure class="col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                        <div class="pic-company pic-company-cc" style="margin: auto;">
+                                             <section class="profileSeeker">
+                                                <ul>
+                                                    <div class="rwz_memPic" id="memPic_img">
+                                                <li>
+                                                    <figure class="resume-pic">
+                                                     <img src="img/avatar.png">
+                                                   </figure>
+                                            </li>
+                                                    <li>
+                                                        <a  href="/"class="upImage" for="test">
+                                                         <i  class="fa fa-camera" aria-hidden="true"></i>
+                                                         Choose image										</a> 
+                                                    </li>
+                                                     </div>
+                                                </ul>
+                                             </section>
+                    
+                                         </div>
+                                    <div>
+                            </figure>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div style="flex:100%;"  class="col-md-8 col-sm-8 col-xs-12 col-lg-12s ">
+                <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
+                    <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                       
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <!-- step 1 -->
+                                    
+                                    <div style="background-color:ghostwhite" class="panel panel-default margin-bottom" id="step1">
+                                        <h1 style="text-align: center;margin-top: 20px;">Company Profile</h1>
+                            <div class = "row" style="display:flex;">
+        
+                                <div style="flex: 50%;padding-left: 30px;padding-right: 60px;padding-top: 20px;padding-bottom: 20px;"> 
+                                    
+                        <h6 class="margin-bottom-1"><b>Contact name</b><span class="text-red"> *</span></h6>
+                        <input  type="text" class="form-control sj-form-control"  name="Contactname" id="firstname" value="">
+                        <h6  class="margin-bottom-1"><b>Contact Surname</b><span class="text-red"> *</span></h6>
+                        <input  type="text" class="form-control sj-form-control" name="ContactSurname" id="firstname" value="">
+                           
+                        
+                           
+                            <h6  class="margin-bottom-1"><b>Contact Telephone No.</b><span class="text-red"> *</span></h6>
+                            <input  type="text" class="form-control sj-form-control"  name="ContactTelephoneNo" id="firstname" value="">
+                            <h6 class="margin-bottom-1"><b>Company Telephone No.</b><span class="text-red"> *</span></h6>
+                            <input  type="text" class="form-control sj-form-control" name="CompanyTelephoneNo" id="firstname" value="">
+                            <h6 class="margin-bottom-1"><b>District</b><span class="text-red"> *</span></h6>
+                             <input type="text" class="form-control sj-form-control"  id="weight" name="District" value="">
+                              <h6 class="margin-bottom-1"><b>Sub District</b><span class="text-red"> *</span></h6>
+                               <input type="text" class="form-control sj-form-control"  id="weight" name="SubDistrict" value="">
+                        </div>
+                            <div style="flex: 50%;padding-top: 20px;padding-right:40px;padding-left: 50px;padding-bottom: 20px;">
+                                <h6  class="margin-bottom-1"><b>Company Name</b><span class="text-red"> *</span></h6>
+                            <input  type="text" class="form-control sj-form-control"  name="CompanyName" id="firstname" value="">
+                            <h6  class="margin-bottom-1"><b>Business Types</b><span class="text-red"> *</span></h6>
+                            <input  type="text" class="form-control sj-form-control"  name="BusinessTypes" id="firstname" value="">
+                             <h6 class="margin-bottom-1"><b>Address</b><span class="text-red"> *</span></h6>
+                               <textarea class="form-control" rows="3" id="address" name="Address"></textarea>
+                              <h6 class="margin-bottom-1"><b>Country</b></h6>
+                                <select class="form-control" id="country" name="Country">
+                                                                                                                                                                                                            <option value="210" selected="selected">Thailand</option>
+                                                                                                                                                                                                           
+                                                                                                                                                                                                </select>
+                                                                                                                                                                                                <h6 class="margin-bottom-1"><b>Province</b></h6>
+                                                                                                                                                                                                <select name="Province"  class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                                                                                                                                                                                    <option >Province</option>
+                                                                                                                                                                                                    <option  >Bangkok</option>
+                                                                                                                                                                                                    <option  >Nakhon Pathom </option>
+                                                                                                                                                                                                    <option  >Nakhon Sawan</option>
+                                                                                                                                                                                                    <option  >Nonthaburi </option>
+                                                                                                                                                                                                    <option >Chonburi </option>
+                                                                                                                                                                                                    <option  >Rayong </option>
+                                                                                                                                                                                                    <option  >Phetchaburi </option>
+                                                                                                                                                                                                    <option >Ratchaburi</option>
+                                                                                                                                                                                                    <option  >Krabi</option>
+                                                                                                                                                                                                    <option  >Phuket </option>
+                                                                                                                                                                                                    <option  >Ranong</option>
+                                                                                                                                                                                                    <option  >Songkhla</option>
+                                                                                                                                                                                                                        </select>
+                                                                                                                                                                                                <h6 class="margin-bottom-1"><b>Zip Code</b><span class="text-red"> *</span></h6>
+                            <input type="text" class="form-control sj-form-control"  id="weight" name="ZipCode" value="">
+                                                                                                                                                                                                
+                                                                                                                                                                                    
+                                                                                                                                                                                               
+        
+                          
+                           
+                        </div>
+                            
+                            
+                        
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 mem-cancel ">
+            <ul>
+                
+               
+                <li><button style="background-color:#00BFFF;;padding-left: 10px;text-align: center;padding-right: 80px;margin-bottom: 20px;text-indent: 70px;" class="btn2 btn-primary" id="butcom" type="submit" name="save_btn" value="save">Save</button></li>
+            </ul>
+        </div>
+        </div>
+                          
+                  
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </form>
+<%- include("partials/footer") %>
