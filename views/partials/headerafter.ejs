@@ -43,23 +43,14 @@
                 
      
              
-                <li class="nav-item dropdown active">
-                  <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Sign Up
-                  </a>
-              
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item active" href="/jobseeker/signup">For JobSeekers</a>
-                    <a class="dropdown-item" href="/company/signup">For Companies</a>
-                  </div>
-                </li>
+                
            
                 
                 <div class="btn-group">
                   <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" data-toggle="modal" data-target="#ModalJob">For JobSeekers</a>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#ModalCom" >For Companies</a>
+                    <a class="dropdown-item" href="/jobseeker/login">For JobSeekers</a>
+                    <a class="dropdown-item" href="/company/login" >For Companies</a>
                   </div>
                 </div>
               </div>
@@ -131,93 +122,7 @@
             </ul>
             </nav>
 
-            <div class="modal  fade" id="ModalCom" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-              <div class="modal-dialog" >
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          
-                      </div>
-                      <div class="modal-body">
-                        <form  action="/company/login" method="POST">
-                          <div style="margin-left: 30px;margin-right: 30px;" class="form-group row">
-                            <div class="form-group col-md-12">
-                              <h1 style="margin-left:105px;">Company</h1>
-                              <label for="validCustomUsername">Username</label>
-                              <div class="input-group">
-                               
-                                <input name="username" type="text" class="form-control" id="validCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Username" required>
-                                <div class="invalid-feedback">
-                                  Please choose a username.
-                                </div>
-                              </div> 
-                            </div>
-                            
-                            <div class="form-group col-md-12">
-                              <label  for="inputPassword">Password</label>
-                              <input name="password" style="margin-bottom:10px;"type="password" class="form-control" id="inputPassword" value="" placeholder="password" required>
-                              <div class="invalid-feedback">
-                                  Must be 8-20 characters long.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                              <div style="margin-top:10px;" class="custom-control custom-checkbox">
-                                  <input  type="checkbox" class="custom-control-input" id="customCheck1">
-                                  <label  class="custom-control-label" for="customCheck1">Remember Password</label>
-                                  <a  href="#">Forgot Password?</a>
-                                  
-                              </div>
-                          </div>
-                          <button style="margin-top:30px;margin-left: 180px;" type="submit" class="btn btn-primary">Login</button>
-                      </div>
-                    </form>
-                
-                      
-                  
-                  </div>
-              </div>
-          </div>
-         
             
-          <div class="modal  fade" id="ModalJob" tabindex="-1" role="dialog" >
-            <div class="modal-dialog" >
-                <div class="modal-content">
-                    <div class="modal-header">
-                        
-                    </div>
-                    <div class="modal-body">
-                      <form  action="/jobseeker/login" method="POST">
-                        <div style="margin-left: 30px;margin-right: 30px;" class="form-group row">
-                          <div class="form-group col-md-12">
-                            <h1 style="margin-left:100px;">Jobseeker</h1>
-                            <label for="validCustomUsername">Username</label>
-                            <div class="input-group">
-                             
-                              <input name="username" type="text" class="form-control" id="validCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Username" required>
-                              <div class="invalid-feedback">
-                                Please choose a username.
-                              </div>
-                            </div> 
-                          </div>
-                        
-                          <div class="form-group col-md-12">
-                            <label for="inputPassword">Password</label>
-                            <input type="password" name="password" class="form-control" id="inputPassword" value="" placeholder="password" required>
-                            <div class="invalid-feedback">
-                                Must be 8-20 characters long.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                            <div style="margin-top:10px;" class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Remember Password</label>
-                                <span><a href="#">Forgot Password?</a></span>
-                                
-                            </div>
-                        </div>
-                        <button style="margin-top:30px;margin-left: 180px;" class="btn btn-primary" type="submit">LOG IN</button>
-                    </div>
                   </form>
               
                   
@@ -226,4 +131,15 @@
             </div>
         </div>
  
-            
+        <div class='container'>
+          <% if (error && error.length > 0) { %>
+            <div class="alert alert-danger" role="alert">
+              <%= error %>
+            </div>
+          <% } %>
+          <% if (success && success.length > 0) { %>
+            <div class="alert alert-success" role="alert">
+              <%= success %>
+            </div>
+          <% } %>
+        </div>

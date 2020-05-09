@@ -17,12 +17,20 @@ const express = require('express'),
       });
       var upload_profile = multer({storage : StorageOfimageprofile});
     
-
-    router.post('/login',passport.authenticate('joblocal',{
-        successRedirect: '/',
-        failureRedirect: '/jobseeker/signup'
-    }),function(req, res){
+      router.get('/login', function(req,res){
+       
+        res.render('joblogin');
     });
+    router.post('/login', passport.authenticate("joblocal", 
+    {
+        successRedirect: "/",
+        failureRedirect: "/jobseeker/login",
+        successFlash: true,            
+        failureFlash: true,
+        successFlash: 'You log in successfully',
+        failureFlash: 'Invalid username or password.'
+    })
+);
     
     
     router.get('/resume', function(req,res){
@@ -62,13 +70,15 @@ const express = require('express'),
         })
     });
     router.post('/signup', function(req,res){
-        jobseekersignup.register(new jobseekersignup({username:req.body.username,email:req.body.email}), req.body.password, function(err, user){
+        jobseekersignup.register(new jobseekersignup({username:req.body.username,email:req.body.email,image:'no-profile-picture.jpg'}), req.body.password, function(err, user){
             if(err){
                 console.log(err);
-                return res.render('signupJob');
+                req.flash('error','Username had already used');
+                return res.redirect('/jobseeker/signup')
             }
             passport.authenticate('joblocal')(req,res,function(){
-                res.redirect('/');
+                req.flash('success','You Signup in successfully');
+               res.redirect('/')
             });
         });
     });

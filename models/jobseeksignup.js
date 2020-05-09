@@ -4,8 +4,12 @@ const   mongoose = require('mongoose'),
         
 let JobseekerSignup = new mongoose.Schema({
  
-    username:String,
-    email:String,
+    username:{
+        type : String , unique : true
+    },
+    email:{
+        type : String , unique : true
+    },
     password:String,
     Name:String,
     Surname:String,

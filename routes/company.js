@@ -18,13 +18,19 @@ const express = require('express'),
       });
       var upload_profile = multer({storage : StorageOfimageprofile});
 
-    router.post('/login', passport.authenticate('companylocal',{
-        successRedirect: '/company/profile/new',
-        failureRedirect: '/company/signup'
+    router.post('/login', passport.authenticate('companylocal',{  
+        successRedirect: "/company/profile/new",
+        failureRedirect: "/company/login",
+        successFlash: true,            
+        failureFlash: true,
+        successFlash: 'You log in successfully',
+        failureFlash: 'Invalid username or password.'
     }),function(req, res){
     });
     
-    
+    router.get('/login', function(req,res){
+        res.render('comlogin');
+    });
     
     router.get('/signup', function(req,res){
         res.render('signupCom');

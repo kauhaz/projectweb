@@ -2,6 +2,7 @@ const   express = require("express"),
         bodyParser = require("body-parser"),
         mongoose = require("mongoose"),
         passport = require('passport'),
+        flash = require('connect-flash'),
         passportLocal = require('passport-local'),
         passportLocalMongoose = require('passport-local-mongoose'),
         jobseekersignup = require('./models/jobseeksignup'),
@@ -25,7 +26,7 @@ mongoose.connect('mongodb+srv://promix:promix01@cluster0-hirrk.mongodb.net/test?
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
+app.use(flash());
 app.use(require('express-session')({
     secret: 'job',
     resave: false,
@@ -34,8 +35,10 @@ app.use(require('express-session')({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.get('*',(req,res,next)=>{
+app.use((req,res,next)=>{
     res.locals.currentUser = req.user || null
+    res.locals.error = req.flash('error');
+    res.locals.success = req.flash('success');
     next();
 })
 

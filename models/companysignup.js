@@ -3,7 +3,9 @@ const   mongoose = require('mongoose'),
 
         let CompanySignupSchema = new mongoose.Schema({
             username:String,
-            email:String,
+            email:{
+                type : String , unique : true
+            },
             password:String,
             Contactname:String,
             CompanyName:String,
