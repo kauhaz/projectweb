@@ -6,30 +6,79 @@
         <meta charset="utf-8">
         <title>SmileJob.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-          
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/profileJob.css">
        
        
     </head>
   <body>
 
-    <div style="display: flex;margin-top: 40px;margin-left: 200px;margin-right: 200px;">
+    <div style="margin-top: 150px;margin-left: 100px;margin-right: 100px;font-family: 'Bitter', serif;">
         <div class=" col-lg-12 col-md-12 col-sm-12" >
             <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                 <div style="background-color:white ;" class="panel panel-default margin-bottom" >
-                   <div class="container">
-<div>
-<p style="display:inline">Name: <%= jobseek.Name %> </p>
-</div>
-<p style="display:inline">Surname:</p>
-<p >Address:</p>
+                   
+                   <div style="display: flex;"  >
+                   
+<div style="flex:20%;background-color:#C0AB8E;">
+    <p style="margin-left:140px;font-size: 30px;">profile</p>
 
+    <div style="margin-top: 30px;margin-bottom: 20px;">
+        
+               <div id="pic" class="pic-company pic-company-cc" style="margin-left: 120px;margin-bottom: 30px;">    
+                 
+                   
+                           
+                    
+                           <span class="resume-pic">
+                            <img  src="/images/img-profile/<%= jobseek.image %>">
+                           </span>
+                  
+                          
                       
                       
-                        <p>District: <img src=<%= jobseek.image %>></p>
-                        <p>Gender:</p>
-                        <p>Height:</p>
+          
+
+                </div>
+         
+  
+<div style="margin-bottom: 20px;">
+<p style="display: inline;margin-right: 20px;margin-left: 110px;text-transform: uppercase;"><%= jobseek.Name %></p>
+<p style="display: inline;text-transform: uppercase;"> <%= jobseek.Surname %></p>
+</div>
+<p style="margin-left: 80px;text-transform: uppercase;">Tel : <%= jobseek.TelephoneNo %></p>
+<p style="display: inline;margin-left: 80px;"><span style="text-transform: uppercase;">Email :</span> <%= jobseek.email %></p>
+</div>
+</div>
+
+    <div style="flex:50%;background-color:#F0EDE5;">
+  
+            <h1 style="margin-bottom: 30px;margin-left: 260px;">About me</h1>
+            <div style="display: flex;" >
+            <div style="flex:70%;">
+                <div style="margin-right: 50px;border-right:solid;margin-left: 40px;">
+        <p style="">ID Card : <span style="margin-left: 1px;"><%= jobseek.IDCard %></span></p>
+        <p style="">Date of Birth : <span style="margin-left: 1px;"><%= jobseek.DateofBirth %></span></p>
+        <p style="">Gender : <span style="margin-left: 1px;"><%= jobseek.Gender %></span></p>
+        <p style="">Weight : <span style="margin-left: 1px;"><%= jobseek.Weight %></span></p>
+        <p style="">Height : <span style="margin-left: 1px;"><%= jobseek.Height %></span></p>
+        <p style="">Nationality : <span style="margin-left: 1px;"><%= jobseek.Nationality %></span></p>
+        <p style="">Religion : <span style="margin-left: 1px;"><%= jobseek.Religion %></span></p>
+    </div>
+    </div>
+    <div style="flex: 50%;">
+        <div style="margin-right: 10px;">
+        <p style="">Country : <span style="margin-left: 1px;"><%= jobseek.Country %></span></p>
+        <p style="">Address : <span style="margin-left: 1px;"><%= jobseek.Address %></span></p>
+        <p style="">Province : <span style="margin-left: 1px;"><%= jobseek.Province %></span></p>
+        <p style="">District : <span style="margin-left: 1px;"><%= jobseek.District %></span></p>
+        <p style="">Sub District : <span style="margin-left: 1px;"><%= jobseek.SubDistrict %></span></p>
+        <p style="">Zip Code : <span style="margin-left: 1px;"><%= jobseek.ZipCode %></span></p>
+    </div>
+    </div>
+    </div>
                      
+        </div>
                             </div>           
                                                                       
                    

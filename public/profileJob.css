@@ -8,7 +8,52 @@ label{ font-weight: normal; margin-bottom: 0;}
 .modal-header .close-modal{ font-size: 40px; margin-top: 0;}
 .close-modal{ line-height: 0.5; opacity: 0.5;}
 .disable-chat{ background: var(--bg-gray) !important; color:var(--bg-white) !important;} */
+.day {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	color: #616A6B;
+	
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	color: #616A6B ;
+	border-radius: 4px;
+	box-sizing: border-box;
+  }
+  
+  .day:before {
+	position: absolute;
+	top: 3px; left: 3px;
+	content: attr(data-date);
+	display: inline-block;
+	color: #616A6B;
+	font-family: Oswald;
+	font-size: 17px;
+	margin-top: 10px;
+	margin-left: 20px;
+  }
+  
+  
+a#but{
+	
 
+	padding: 10px 40px 10px 40px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, DarkGreen ,#228B22, DarkGreen);
+text-align: center;
+	font-size: 1.2rem;
+	color: #fff;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+a#but:hover{
+	background-position: right;
+}
 /*ปุ่มสร้างเรซูเม่*/
 /* .creater-resume{ text-align: center;}
 .creater-resume ul{ margin: 0; padding: 15px 0; list-style: none; display: flex; justify-content: center; align-items: center;}
@@ -184,12 +229,12 @@ ul.sj.applicant li.dropdown-flag.profile-owner-flag{ margin-top: 7px;}
 
 .alert-note h6{ font-size: 1rem; font-size: 10px;} */
 
-@media (max-width:576px){
+/* @media (max-width:576px){
 	.text-data-company ul li{ font-size: 1.2rem; font-size: 12px;}
-}
+} */
 
-.pic-company{ text-align: center;}
-.pic-company img{ position: relative; max-width: 150px; object-fit: scale-down;}
+/* .pic-company{ text-align: center;}
+.pic-company img{ position: relative; max-width: 150px; object-fit: scale-down;} */
 
 .change-pic a{ color: #555;}
 .change-pic a:hover{ color: #4267B2;}
@@ -711,7 +756,8 @@ a.status-user{ text-decoration: none;}
 	.head-hidden{ display: none;}
 }
 
-.panel-resume{ background: #ffffff;}
+
+
 
 /*popup social share*/
 .sj-register-social{ text-align: right; margin-top: 5px;}
@@ -1080,7 +1126,7 @@ label.choose-choose-3 { padding: 17px 16px;}
 .panel-heading{ transition: 0.5s ease-in-out;}
 .panel-heading:hover{ background: var(--bg-white);}
 
-.resume-pic img{ max-width: 100%; height: 150px; object-fit: scale-down; border: 1px solid #bfbfbf; padding: 3px;}
+.resume-pic img{ max-width: 100%; height: 150px; object-fit: scale-down; border: 1px solid #bfbfbf; padding: 5px;}
 
 @media (max-width:991px){
 	.resume-pic{ text-align: center;}
@@ -1550,7 +1596,7 @@ a.flexRightContent button{ background: var(--bg-red); color: var(--color-white);
 .ownerNoLogin p a{ font-size: var(--font20); background: var(--bg-red); padding: 5px 10px; border-radius: 4px; color: var(--color-white); text-decoration: none; font-weight: 100;}
 .ownerNoLogin p a:hover{ background: var(--bg-dark-red);}
 
-.pic-profile{ height: 70px;}
+/* .pic-profile{ height: 70px;} */
 .name .center{ margin-top:0 !important;}
 .headResumeUser{ font-size: var(--font18); margin-bottom: var(--margin-bottom10); padding: 5px !important; border-bottom: 1px solid var(--bg-gray); 
 	padding-bottom: 10px !important; color: var(--color-red); font-weight: 900;}
@@ -1564,7 +1610,7 @@ a.flexRightContent button{ background: var(--bg-red); color: var(--color-white);
 	text-decoration: none;}
 .expireResume a:hover{ background: var(--bg-black-gray); color: var(--color-white);}
 
-.pic-company-cc{ padding: 10px; background: var(--bg-white);}
+/* .pic-company-cc{ padding: 10px; background: var(--bg-white);} */
 .pic-company-cc img{ max-width: 100%; height: 150px; width: 150px; object-position: 50% 0; object-fit: cover; border-radius: 50%; background: var(--bg-gray-young); 
 	box-shadow: 3px 4px 5px var(--bg-gray);}
 
@@ -2010,3 +2056,4 @@ a.flexRightContent button{ background: var(--bg-red); color: var(--color-white);
 .noteOnly li{ margin-bottom: 10px;}
 .noteOnly span{ color: var(--color-green); font-weight: 500;}
 .noteOnly span.opGreen{ background: var(--color-green); font-weight: normal; color: var(--bg-white); border-radius: 4px; padding: 2px 5px;} */
+

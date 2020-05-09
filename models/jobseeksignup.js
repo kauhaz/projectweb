@@ -11,7 +11,7 @@ let JobseekerSignup = new mongoose.Schema({
     Surname:String,
     IDCard:String,
     TelephoneNo:String,
-    DateofBirth:String,
+    DateofBirth:Date,
     Province:String,
     District:String,
     SubDistrict:String,

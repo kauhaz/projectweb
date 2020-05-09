@@ -15,11 +15,11 @@
        
     </head>
 
-    <form action="/company/profile/new" method="Post">
+    <form action="/company/profile/new" method="Post" enctype="multipart/form-data">
         <div style="display:flex;margin:50px"  >
             <div style="flex:20%;"  >
                 <div class="sj-border-grey sj-none overflow-hidden margin-bottom">
-                    <div style="background-color:ghostwhite" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div style="background-color: #C0AB8E;" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default margin-bottom" >
                              <figure class="col-md-12 col-sm-12 col-xs-12">
                                  <div class="row">
@@ -29,13 +29,14 @@
                                                     <div class="rwz_memPic" id="memPic_img">
                                                 <li>
                                                     <figure class="resume-pic">
-                                                     <img src="img/avatar.png">
+                                                     <img src="/images/img-Comprofile/<%= Comload.image %>" alt="your image" class="target">
                                                    </figure>
                                             </li>
                                                     <li>
-                                                        <a  href="/"class="upImage" for="test">
+                                                        <a style="background-color: beige;" class="upImage" for="file">
                                                          <i  class="fa fa-camera" aria-hidden="true"></i>
                                                          Choose image										</a> 
+                                                         <input name="image" type="file" id="file" /> 
                                                     </li>
                                                      </div>
                                                 </ul>
@@ -48,13 +49,36 @@
                      </div>
                 </div>
             </div>
+
+            <script>
+                $(function () {
+        
+        "use strict";
+        
+        function url(input) {
+            if (input.files && input.files[0]) {
+        
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $(".target").attr("src", e.target.result);
+                };
+        
+                reader.readAsDataURL(input.files[0]);
+        
+            }
+        }
+        $("#file").change(function () {
+            url(this);
+        });
+        });
+            </script>
             <div style="flex:100%;"  class="col-md-8 col-sm-8 col-xs-12 col-lg-12s ">
                 <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
                     <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                        
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-                                    <!-- step 1 -->
+                                
                                     
                                     <div style="background-color:ghostwhite" class="panel panel-default margin-bottom" id="step1">
                                         <h1 style="text-align: center;margin-top: 20px;">Company Profile</h1>
@@ -63,35 +87,35 @@
                                 <div style="flex: 50%;padding-left: 30px;padding-right: 60px;padding-top: 20px;padding-bottom: 20px;"> 
                                     
                         <h6 class="margin-bottom-1"><b>Contact name</b><span class="text-red"> *</span></h6>
-                        <input  type="text" class="form-control sj-form-control"  name="Contactname" id="firstname" value="">
+                        <input  type="text" class="form-control sj-form-control"  name="Contactname" id="firstname" value="<%= Comload.Contactname %>">
                         <h6  class="margin-bottom-1"><b>Contact Surname</b><span class="text-red"> *</span></h6>
-                        <input  type="text" class="form-control sj-form-control" name="ContactSurname" id="firstname" value="">
+                        <input  type="text" class="form-control sj-form-control" name="ContactSurname" id="firstname" value="<%= Comload.ContactSurname %>">
                            
                         
                            
                             <h6  class="margin-bottom-1"><b>Contact Telephone No.</b><span class="text-red"> *</span></h6>
-                            <input  type="text" class="form-control sj-form-control"  name="ContactTelephoneNo" id="firstname" value="">
+                            <input  type="text" class="form-control sj-form-control"  name="ContactTelephoneNo" id="firstname" value="<%= Comload.ContactTelephoneNo %>">
                             <h6 class="margin-bottom-1"><b>Company Telephone No.</b><span class="text-red"> *</span></h6>
-                            <input  type="text" class="form-control sj-form-control" name="CompanyTelephoneNo" id="firstname" value="">
+                            <input  type="text" class="form-control sj-form-control" name="CompanyTelephoneNo" id="firstname" value="<%= Comload.ZipCode %>">
                             <h6 class="margin-bottom-1"><b>District</b><span class="text-red"> *</span></h6>
-                             <input type="text" class="form-control sj-form-control"  id="weight" name="District" value="">
+                             <input type="text" class="form-control sj-form-control"  id="weight" name="District" value="<%= Comload.District %>">
                               <h6 class="margin-bottom-1"><b>Sub District</b><span class="text-red"> *</span></h6>
-                               <input type="text" class="form-control sj-form-control"  id="weight" name="SubDistrict" value="">
+                               <input type="text" class="form-control sj-form-control"  id="weight" name="SubDistrict" value="<%= Comload.SubDistrict %>">
                         </div>
                             <div style="flex: 50%;padding-top: 20px;padding-right:40px;padding-left: 50px;padding-bottom: 20px;">
                                 <h6  class="margin-bottom-1"><b>Company Name</b><span class="text-red"> *</span></h6>
-                            <input  type="text" class="form-control sj-form-control"  name="CompanyName" id="firstname" value="">
+                            <input  type="text" class="form-control sj-form-control"  name="CompanyName" id="firstname" value="<%= Comload.CompanyName %>">
                             <h6  class="margin-bottom-1"><b>Business Types</b><span class="text-red"> *</span></h6>
-                            <input  type="text" class="form-control sj-form-control"  name="BusinessTypes" id="firstname" value="">
+                            <input  type="text" class="form-control sj-form-control"  name="BusinessTypes" id="firstname" value="<%= Comload.BusinessTypes %>">
                              <h6 class="margin-bottom-1"><b>Address</b><span class="text-red"> *</span></h6>
-                               <textarea class="form-control" rows="3" id="address" name="Address"></textarea>
+                               <textarea class="form-control" rows="3" id="address" name="Address"><%= Comload.Address %></textarea>
                               <h6 class="margin-bottom-1"><b>Country</b></h6>
-                                <select class="form-control" id="country" name="Country">
-                                                                                                                                                                                                            <option value="210" selected="selected">Thailand</option>
+                                <select value="" class="form-control" id="country" name="Country">
+                                                                                                                                                                                                            <option  selected="selected">Thailand</option>
                                                                                                                                                                                                            
                                                                                                                                                                                                 </select>
                                                                                                                                                                                                 <h6 class="margin-bottom-1"><b>Province</b></h6>
-                                                                                                                                                                                                <select name="Province"  class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                                                                                                                                                                                                <select value="<%= Comload.Province %>" name="Province"  class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub()">
                                                                                                                                                                                                     <option >Province</option>
                                                                                                                                                                                                     <option  >Bangkok</option>
                                                                                                                                                                                                     <option  >Nakhon Pathom </option>
@@ -107,7 +131,7 @@
                                                                                                                                                                                                     <option  >Songkhla</option>
                                                                                                                                                                                                                         </select>
                                                                                                                                                                                                 <h6 class="margin-bottom-1"><b>Zip Code</b><span class="text-red"> *</span></h6>
-                            <input type="text" class="form-control sj-form-control"  id="weight" name="ZipCode" value="">
+                            <input  type="text" class="form-control sj-form-control"  id="weight" name="ZipCode" value="<%= Comload.ZipCode %>">
                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                                                                                                                                

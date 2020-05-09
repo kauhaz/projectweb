@@ -3,22 +3,19 @@ const express = require('express'),
       passport = require('passport'),
       jobseekersignup = require('../models/jobseeksignup'),
       multer = require('multer');
-    
-      const storage = multer.diskStorage(
+      var StorageOfimageprofile = multer.diskStorage(
         {
-            destination:function(req,file,cb){
-                cb(null,"./public/images/img-profile/")
-                
-            },
-            filename:function(req,file,cb){
-                cb(null,file.originalname)
-            }
+        destination:function(req,file,cb){
+          cb(null,"./public/images/img-profile/");
+        },
+        filename:function(req,file,cb){
+          //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
+
+          cb(null,file.originalname);
         }
-    )
-    
-    const upload = multer({
-        storage:storage
-    })
+
+      });
+      var upload_profile = multer({storage : StorageOfimageprofile});
     
 
     router.post('/login',passport.authenticate('joblocal',{
@@ -29,7 +26,14 @@ const express = require('express'),
     
     
     router.get('/resume', function(req,res){
-        res.render('resume');
+        jobseekersignup.findById({_id:req.user._id},function(error, jobseek){
+            if(error){
+                console.log("Error!");
+            } else {
+               
+                res.render('resume',{jobseek:jobseek});
+            }
+        })
     });
     router.get('/signup', function(req,res){
         res.render('signupJob');
@@ -69,8 +73,9 @@ const express = require('express'),
         });
     });
    
-    router.post('/profile/new',upload.single('image'), function(req,res){
-      
+    router.post('/profile/new',upload_profile.single('image'),function(req,res){
+        if(!req.file){
+            console.log(req.file)
         let Name = req.body.Name;
         let Surname = req.body.Surname ;
         let IDCard = req.body.IDCard;
@@ -87,21 +92,47 @@ const express = require('express'),
         let Address = req.body.Address;
         let Country = req.body.Country;
         let ZipCode = req.body.ZipCode;
-        let resume =  req.body.resume;
-        let image = req.body.image;
-
-        jobseekersignup.updateMany({_id:req.user._id},{$set : {Name:Name,Surname:Surname,image:image,IDCard:IDCard,TelephoneNo:TelephoneNo
+       
+        jobseekersignup.updateMany({_id:req.user._id},{$set : {Name:Name,Surname:Surname,IDCard:IDCard,TelephoneNo:TelephoneNo
         ,DateofBirth:DateofBirth,Province:Province,District:District,SubDistrict:SubDistrict,Height:Height
-    ,Weight:Weight,Gender:Gender,Nationality:Nationality,Religion:Religion,Address:Address,Country:Country,ZipCode:ZipCode,resume:resume}} ,function(error, idCard){
+    ,Weight:Weight,Gender:Gender,Nationality:Nationality,Religion:Religion,Address:Address,Country:Country,ZipCode:ZipCode}} ,function(error, idCard){
             if(error){
                 console.log(error);
             } else {
-               
                 res.redirect('/jobseeker/profile')
                 }
             }
         );
-    
+    }
+    if(req.file){
+        let Name = req.body.Name;
+        let Surname = req.body.Surname ;
+        let IDCard = req.body.IDCard;
+        let TelephoneNo = req.body.tel;
+        let DateofBirth = req.body.DateofBirth;
+        let Province  = req.body.Province;
+        let District = req.body.District;
+        let SubDistrict = req.body.SubDistrict;
+        let Height = req.body.Height;
+        let Weight = req.body.Weight;
+        let Gender = req.body.Gender;
+        let Nationality = req.body.Nationality;
+        let Religion = req.body.Religion;
+        let Address = req.body.Address;
+        let Country = req.body.Country;
+        let ZipCode = req.body.ZipCode;
+        let image = req.file.filename;
+        jobseekersignup.updateMany({_id:req.user._id},{$set : {Name:Name,Surname:Surname,image:image,IDCard:IDCard,TelephoneNo:TelephoneNo
+        ,DateofBirth:DateofBirth,Province:Province,District:District,SubDistrict:SubDistrict,Height:Height
+    ,Weight:Weight,Gender:Gender,Nationality:Nationality,Religion:Religion,Address:Address,Country:Country,ZipCode:ZipCode}} ,function(error, idCard){
+            if(error){
+                console.log(error);
+            } else {
+                res.redirect('/jobseeker/profile')
+                }
+            }
+        );
+    }
     });
 
       module.exports = router;

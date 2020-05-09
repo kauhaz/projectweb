@@ -8,19 +8,18 @@ const   express = require("express"),
         companysignup = require('./models/companysignup'),
         JobseekerRoutes = require('./routes/jobseeker'),
         indexRoutes = require('./routes/index'),
-        CompanyRoutes = require('./routes/company');
-        
+        CompanyRoutes = require('./routes/company'),
+        JobRoutes = require('./routes/job'),
+        multer = require('multer')
 
 
 const  app = express();
 
 
-
-
 const config = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: false
+    useCreateIndex: true
 }
 mongoose.connect('mongodb+srv://promix:promix01@cluster0-hirrk.mongodb.net/test?retryWrites=true&w=majority', config);
 app.use(express.static("public"));
@@ -54,6 +53,7 @@ passport.deserializeUser(function(user, done) {
 app.use('/',indexRoutes);
 app.use('/jobseeker',JobseekerRoutes);
 app.use('/company',CompanyRoutes);
+app.use('/job',JobRoutes);
 
 app.listen(3000,function(req,res){
     console.log('Server has started');

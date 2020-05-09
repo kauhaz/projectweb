@@ -18,6 +18,13 @@ const   mongoose = require('mongoose'),
             Address:String,
             Country:String,
             ZipCode:String,
+            image:String,
+            postjobs : [
+                {
+                    type:mongoose.Schema.Types.ObjectId,
+                    ref:"Postjob"
+                }
+            ]
         });
 
         CompanySignupSchema.plugin(passportLocalMongoose);

@@ -16,11 +16,42 @@
 <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
     <!-- step 1 -->
     
-    <div style="margin-left: 20px; margin-right: 20px;" class="panel panel-default margin-bottom" id="step1">
+    <div style="background-color: #000000;margin-left: 300px; margin-right:300px;margin-top: 100px;color: antiquewhite  ;" class="panel panel-default margin-bottom" id="step1">
 <h1 style="text-align: center;">My Resume</h1>
+<div style="background-color:	#BDB76B;" class="panel panel-default margin-bottom" >
+    <div style="display: flex;margin-top: 40px;">
+        <div style="flex:60%">
+<h2 style="margin-top: 20px;margin-left: 150px;">Upload PDF File  </h2>
+</div>
+<div style="flex:50%;margin-bottom: 20px;">
+<input class="a" required name="resume" type="file" id="real-file" hidden="hidden" />
+<button  style="margin-bottom:2px;margin-top:25px;cursor: pointer;" type="button" id="custom-button">CHOOSE A FILE</button><br>
+</div>
+</div>
+<span style="margin-left: 220px;margin-bottom: 10px;"  id="custom-text"><%= jobseek.resume %></span><br>
+<script>
+    const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
 
-<h2>Resume File *</h2>
-<a style="margin-bottom: 30px;margin-left: 500px;" class="btn2 btn-primary" type="submit">Save</a>
+customBtn.addEventListener("click", function() {
+realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function() {
+if (realFileBtn.value) {
+customTxt.innerHTML = realFileBtn.value.match(
+/[\/\\]([\w\d\s\.\-\(\)]+)$/
+)[1];
+} else {
+customTxt.innerHTML = "No file chosen, yet.";
+}
+});  
+
+
+</script>
+<a  style="margin-top: 40px;margin-left: 300px;margin-bottom: 100px;" class="btn2 btn-primary" id="but" type="submit">Save</a>
+</div>
     </div>
 </div>
 <%- include("partials/footer") %>

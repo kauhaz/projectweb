@@ -45,10 +45,10 @@
                                            </figure>
                                     </li>
                                             <li>
-                                                <a  for="file"class="upImage" type="button" >
+                                                <a style="background-color: beige;" for="file"class="upImage" type="button" >
                                                  <i   class="fa fa-camera" aria-hidden="true"></i>
                                                  Choose image									</a> 
-                                                 <input name="image" type="file" id="file"  /> 
+                                                 <input name="image" type="file" id="file" /> 
                                             </li>
                                              </div>
                                         </ul>
@@ -109,42 +109,16 @@ $("#file").change(function () {
                     <input required  name="tel" type="text" class="form-control sj-form-control"  name="firstname" id="firstname" value="<%= jobload.TelephoneNo %>">
                      
                     <h6 class="margin-bottom-1"><b>Date of Birth</b><span class="text-red">* </span></h6>
-                    <input  required name="DateofBirth" type="text" class="form-control sj-form-control"  id="firstname" placeholder="dd/mm/yyyy" value="<%= jobload.DateofBirth %>">
+                    <input name="DateofBirth" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="2020-05-19" min="1900-01-01" max="2020-05-19">
                      <h6 class="margin-bottom-1"><b>Province</b><span class="text-red"> *</span></h6>
                            <input required name="Province" type="text" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.Province %>">
                            <h6 class="margin-bottom-1"><b>District</b><span class="text-red"> *</span></h6>
                 <input required type="text" name="District" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.District %>">
                 <h6 class="margin-bottom-1"><b>Sub District</b><span class="text-red"> *</span></h6>
                 <input  required type="text" name="SubDistrict" class="form-control sj-form-control"  id="weight" name="weight" value="<%= jobload.SubDistrict %>">
-                <h6 class="margin-bottom-1"><b>Resume</b><span class="text-red"> *</span><span style="font-size: 13px;color: gray;"> Please combine into one file.</span></h6>
+                
                
-                <input  required name="resume" type="file" id="real-file" hidden="hidden" />
-                <button  style="margin-bottom: 2px;" type="button" id="custom-button">CHOOSE A FILE</button><br>
-                <span  id="custom-text"><%= jobload.resume %></span>
-
                
-
-                <script>
-                    const realFileBtn = document.getElementById("real-file");
-const customBtn = document.getElementById("custom-button");
-const customTxt = document.getElementById("custom-text");
-
-customBtn.addEventListener("click", function() {
-  realFileBtn.click();
-});
-
-realFileBtn.addEventListener("change", function() {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customTxt.innerHTML = "No file chosen, yet.";
-  }
-});
-
-
-                </script>
                 </div>
                 
 

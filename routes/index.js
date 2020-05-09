@@ -1,7 +1,7 @@
 const express = require('express'),
       router = express.Router();
-      passport = require('passport')
-      middleware = require('../middleware');
+      passport = require('passport'),
+     
       
       router.get('/',function(req,res){
         res.render('index');
