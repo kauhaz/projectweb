@@ -10,18 +10,18 @@
        
     </head>
     <div style="margin-top: 20px;" class="container">
-<div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
+
     <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
         <div style="background-color:white;" class="panel panel-default margin-bottom" >
-            <p><%= showjob.CompanyName %></p>
-            <div style="background-color:white;" class="panel panel-default margin-bottom" >
+            <p style="margin-left: 80px;margin-top: 30px;font-size: 30px;margin-bottom: 30px;"><%= showjob.CompanyName %></p>
+            <div style="background-color:#F0EDE5;" class="panel panel-default margin-bottom" >
 
                 <div class="container">
                 <p style="text-align: right;margin-top: 10px;"><%= showjob.Publicdate %></p>
-                <p><%= showjob.JobPosition %></p>
-                <p>Address : <%= showjob.Address %></p>
-                <p>Salary : Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
-                <p>Degree : <%=  showjob.Degree %> </p>
+                <p style="font-weight: bold;margin-left: 30px;font-size: 30px;"><%= showjob.JobPosition %></p>
+               
+                <p><span style="font-weight: bold;">Salary : </span>Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
+                <p><span style="font-weight: bold;">Degree :</span> <%=  showjob.Degree %> </p>
                 <button style="margin-left: 980px;margin-bottom: 20px;">Applyjob </button>
 
             </div>
