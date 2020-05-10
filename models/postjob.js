@@ -14,7 +14,8 @@ const   mongoose = require('mongoose'),
             Address:String,
             Province:String,
             Publicdate : Date,
-            Enddate: Date
+            Enddate: Date,
+            CompanyName:String,
            
         });
 

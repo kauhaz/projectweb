@@ -31,6 +31,9 @@ const express = require('express'),
     router.get('/login', function(req,res){
         res.render('comlogin');
     });
+    router.get('/forgot_pass', function(req,res){
+        res.render('comforgotpass');
+    });
     
     router.get('/signup', function(req,res){
         res.render('signupCom');
@@ -63,12 +66,14 @@ const express = require('express'),
             companyName:req.body.company,
             industry:req.body.industry,
             contactPerson:req.body.contact,
-            telephoneNo:req.body.telephone}), req.body.password, function(err, user){
+            telephoneNo:req.body.telephone,image:'no-profile-picture.jpg'}), req.body.password, function(err, user){
             if(err){
                 console.log(err);
-                return res.render('signupCom');
+                req.flash('error','Username or Email had already used');
+                return res.redirect('/company/signup');
             }
             passport.authenticate('companylocal')(req,res,function(){
+                req.flash('success','You Signup in successfully');
                 res.redirect('/');
             });
         });

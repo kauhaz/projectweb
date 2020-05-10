@@ -3,20 +3,35 @@ const express = require('express'),
       passport = require('passport'),
       jobseekersignup = require('../models/jobseeksignup'),
       multer = require('multer');
+
       var StorageOfimageprofile = multer.diskStorage(
         {
         destination:function(req,file,cb){
           cb(null,"./public/images/img-profile/");
         },
         filename:function(req,file,cb){
-          //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
+         
+
+          cb(null,file.originalname);
+        }
+
+      }); 
+      var upload_profile = multer({storage : StorageOfimageprofile});
+
+      var StorageOfresume = multer.diskStorage(
+        {
+        destination:function(req,file,cb){
+          cb(null,"./public/resumefile");
+        },
+        filename:function(req,file,cb){
+          
 
           cb(null,file.originalname);
         }
 
       });
-      var upload_profile = multer({storage : StorageOfimageprofile});
-    
+      var upload_resume = multer({storage : StorageOfresume});
+
       router.get('/login', function(req,res){
        
         res.render('joblogin');
@@ -43,8 +58,47 @@ const express = require('express'),
             }
         })
     });
+
+    router.post('/resume', upload_resume.single('resume'),function(req,res){
+if(req.file){
+        let resume = req.file.filename;
+        jobseekersignup.updateOne({_id:req.user._id},{resume:resume},(err,ok)=>{
+            
+            if(err){
+                console.log(err);
+            } else {
+                console.log(ok)
+                res.redirect('/jobseeker/profile/new')
+                }
+        })
+    }
+    if(!req.file){
+        res.redirect('/jobseeker/profile/new')
+        }
+    });
+
+
     router.get('/signup', function(req,res){
         res.render('signupJob');
+    });
+    router.get('/forgot_pass', function(req,res){
+        res.render('jobforgotpass')
+    });
+    // router.post('/forgot_pass', function(req,res){
+    //     jobseekersignup.find({email:req.body.email},function(error, upload){
+    //         if(error){
+    //             console.log("Error!");
+              
+    //         } else {
+    //             if(upload == null){
+    //                 re
+    //             }
+                
+    //         }
+    //     })
+    // });
+    router.get('/newpass', function(req,res){
+        res.render('jobforgotpass')
     });
     router.get('/findjob', function(req,res){
         res.render('findjob');
@@ -73,7 +127,7 @@ const express = require('express'),
         jobseekersignup.register(new jobseekersignup({username:req.body.username,email:req.body.email,image:'no-profile-picture.jpg'}), req.body.password, function(err, user){
             if(err){
                 console.log(err);
-                req.flash('error','Username had already used');
+                req.flash('error','Username or Email had already used');
                 return res.redirect('/jobseeker/signup')
             }
             passport.authenticate('joblocal')(req,res,function(){
