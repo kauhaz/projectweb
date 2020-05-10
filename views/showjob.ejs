@@ -9,15 +9,49 @@
         <link rel="stylesheet" href="/profileJob.css">
        
     </head>
+    <div style="margin-top: 20px;" class="container">
 <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
-            
     <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-        <div style="background-color:gainsboro;" class="panel panel-default margin-bottom" >
+        <div style="background-color:white;" class="panel panel-default margin-bottom" >
             <p><%= showjob.CompanyName %></p>
+            <div style="background-color:white;" class="panel panel-default margin-bottom" >
 
+                <div class="container">
+                <p style="text-align: right;margin-top: 10px;"><%= showjob.Publicdate %></p>
+                <p><%= showjob.JobPosition %></p>
+                <p>Address : <%= showjob.Address %></p>
+                <p>Salary : Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
+                <p>Degree : <%=  showjob.Degree %> </p>
+                <button style="margin-left: 980px;margin-bottom: 20px;">Applyjob </button>
+
+            </div>
+            </div>
+
+            <div style="display: flex;margin-bottom: 50px;">
+                <div style="flex:50%;margin-left: 60px;margin-top: 20px;">
+            <p style="margin-left: 10px;margin-top: 20px;font-weight: bold;">JobDescription  </p>
+                <p style="margin-bottom: 20px;"><%- showjob.JobDescription %> </p>
+                <p style="margin-left: 10px;margin-top: 50px;font-weight: bold;">Qualifications of jobapplicants
+                </p>
+                <p><%- showjob.Qualificationsofjobapplicants %> </p>
+                <p style="margin-left: 10px;margin-top: 40px;font-weight: bold;">How To Go Company  </p>
+                <p><%- showjob.Howtogocompany %> </p>
+                </div>
+                <div style="flex:50%;margin-left: 90px;margin-top: 20px;margin-right: 50px;">
+                    <p style="margin-left: 10px;margin-top: 20px;font-weight: bold;">Welfare </p>
+                    <p><%- showjob.Welfare %> </p>
+                    <p style="margin-left: 10px;margin-top: 40px;font-weight: bold;">Contact
+
+                    </p>
+                    <p><%= showjob.Contact %> </p>
+                    <p style="margin-left: 10px;margin-top: 40px;font-weight: bold;">Address  </p>
+                    <p><%= showjob.Address %> </p>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-
-
+</div>
+</div>
 <%- include("partials/footer") %>

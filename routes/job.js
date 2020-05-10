@@ -39,7 +39,8 @@ router.post('/:id', function(req,res){
             Job.create({JobCategories:req.body.JobCategories,JobPosition:req.body.JobPosition,MinimumSalary:req.body.MinimumSalary
             ,MaximumSalary:req.body.MaximumSalary,Degree:req.body.Degree,JobDescription:req.body.JobDescription
         ,Welfare:req.body.Welfare,Contact :req.body.Contact,Howtogocompany:req.body.Howtogocompany
-    ,Address:req.body.Address,Province:req.body.Province,Publicdate:req.body.Publicdate,Enddate:req.body.Enddate,CompanyName:req.user.CompanyName}, function(err,addjob){
+    ,Address:req.body.Address,Province:req.body.Province,Publicdate:req.body.Publicdate,Enddate:req.body.Enddate,CompanyName:req.body.CompanyName
+    ,Qualificationsofjobapplicants:req.body.Qualificationsofjobapplicants}, function(err,addjob){
                 if(err){
                     console.log(err);
                 } else {

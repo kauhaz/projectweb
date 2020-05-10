@@ -16,6 +16,7 @@ const   mongoose = require('mongoose'),
             Publicdate : Date,
             Enddate: Date,
             CompanyName:String,
+            Qualificationsofjobapplicants: String
            
         });
 
