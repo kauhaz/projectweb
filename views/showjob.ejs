@@ -16,15 +16,26 @@
             <p style="margin-left: 80px;margin-top: 30px;font-size: 30px;margin-bottom: 30px;"><%= showjob.CompanyName %></p>
             <div style="background-color:#F0EDE5;" class="panel panel-default margin-bottom" >
 
+                <% if(currentUser.industry==null) { %>
                 <div class="container">
                 <p style="text-align: right;margin-top: 10px;"><%= showjob.Publicdate %></p>
                 <p style="font-weight: bold;margin-left: 30px;font-size: 30px;"><%= showjob.JobPosition %></p>
-               
                 <p><span style="font-weight: bold;">Salary : </span>Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
-                <p><span style="font-weight: bold;">Degree :</span> <%=  showjob.Degree %> </p>
+                <p><span style="font-weight: bold;">Degree :</span> <%=  showjob.Degree %> </p> 
                 <button style="margin-left: 980px;margin-bottom: 20px;">Applyjob </button>
-
             </div>
+            <%   }  %>
+            <% if(currentUser.industry!=null) { %>
+                <div class="container" style="margin-bottom: 40px;margin-left: 50px;">
+                <p style="text-align: right;margin-top: 10px;margin-right: 60px;"><%= moment(showjob.Publicdate).format('DD/MM/YYYY') %></p>
+                <p style="font-weight: bold;margin-left: 0px;font-size: 30px;"><%= showjob.JobPosition %></p>
+                <p><span style="font-weight: bold;">Province :</span> <%=  showjob.Province %> </p> 
+                <p><span style="font-weight: bold;">Salary : </span>Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
+                <p><span style="font-weight: bold;">Degree :</span> <%=  showjob.Degree %> </p> 
+                
+            </div>
+            <%   }  %>
+
             </div>
 
             <div style="display: flex;margin-bottom: 50px;">
@@ -54,4 +65,5 @@
     </div>
 </div>
 </div>
+
 <%- include("partials/footer") %>

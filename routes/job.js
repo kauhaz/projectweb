@@ -3,14 +3,16 @@ const express = require('express'),
       passport = require('passport'),
       companysignup = require('../models/companysignup'),
       Job = require('../models/postjob'),
-      multer = require('multer');
+      multer = require('multer')
+    
+
 
 router.get('/new', function(req,res){
     companysignup.findById({_id:req.user._id},function(error, upload){
         if(error){
             console.log("Error!");
         } else {
-            
+           
             res.render('postjob',{Comload:upload});
         }
     })
