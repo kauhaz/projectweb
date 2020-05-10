@@ -1,60 +1,48 @@
 <%- include("partials/headerafter") %>
 
-
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
 <style>
     .table-content {
-        width: 700px;
+        width: 1000px;
         margin: 50px auto;
-        text-align: center;
+        text-align: center; 
+        border-collapse: collapse;
+     
+ 
     }
 
     td {
+        border: 1px solid #ddd;
+        border-collapse: collapse;
         width:500px;
+      
     }
 </style>
-
-<div class="table-content">
-    <table class="table table-borded table-responsive table-striped " id="table-list">
+<h1 style="text-transform: uppercase;text-align: center;margin-top: 40px;font-family: 'Kanit', sans-serif;font-size: 60px;"><i style="margin-right: 50px;color:#280000  ;" class="fas fa-history"></i>History Post Job</h1>
+<div style="font-family: 'Kanit', sans-serif;" class="table-content">
+    <table  class="table table-borded table-responsive table-striped " id="table-list">
         <thead class="table-dark">
-            <tr>
+            <tr  style="background-color:#615550;">
                 <td>Job Position</td>
                 <td>Public date</td>
                 <td>End date</td>
                 <td>Manage</td>
             </tr>
         </thead>
+       
         <tbody>
+            <% job.postjobs.forEach(function(jobshow){ %>
             <tr>
-                <td>James</td>
-                <td>Male</td>
-                <td>jhsdfgh@hotmail.com</td>
+                <td><%= jobshow.JobPosition %></td>
+                <td><%= moment(jobshow.Publicdate).format('DD/MM/YYYY') %></td>
+                <td><%= moment(jobshow.Enddate).format('DD/MM/YYYY') %></td>
+                <td><a  href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color: #615550 ;" class="fas fa-eye"></i></a>
+                    <a href="/job/<%= jobshow._id %>/edit"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;" class="fas fa-edit"></i></a>
+                    <a href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;" class="fas fa-trash-alt"></i></a></td>
             </tr>
-            <tr>
-                <td>Sams</td>
-                <td>Male</td>
-                <td>hhfdfg@hotmail.com</td>
-            </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Female</td>
-                <td>vccch@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Ashly</td>
-                <td>Female</td>
-                <td>asss@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Eden</td>
-                <td>Male</td>
-                <td>edd@hotmail.com</td>
-            </tr>
-            <tr>
-                <td>Daisy</td>
-                <td>Female</td>
-                <td>hhdf@gmail.com</td>
-            </tr>
+            <% }) %>
         </tbody>
+      
     </table>
    
 </div>

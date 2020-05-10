@@ -11,26 +11,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
           
         <link rel="stylesheet" href="/profileJob.css">
-       
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
        
     </head>
-  
-
-   
-   
-      
-     
-    
-              
-
-
-
 <form action="/jobseeker/profile/new" method="POST" enctype="multipart/form-data">
-<div style="display:flex;margin-top: 50px;" class="container" >
+<div style="display:flex;margin-top: 50px;font-family: 'Kanit', sans-serif;" class="container" >
     <div style="flex:20%;"  >
-        <div class="sj-border-grey sj-none overflow-hidden margin-bottom">
-            <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-                <div style="background-color: #C0AB8E;" class="panel panel-default margin-bottom" >
+        <div style="box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;" class="sj-border-grey sj-none overflow-hidden margin-bottom">
+            <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                <div style="background-color: #F0EDE5;" class="panel panel-default margin-bottom" >
                      <figure class="col-md-12 col-sm-12 col-xs-12">
                          <div class="row">
                                 <div class="pic-company pic-company-cc" style="margin: auto;">
@@ -41,11 +30,11 @@
                                             <div class="rwz_memPic" id="memPic_img">
                                         <li>
                                             <figure class="resume-pic">
-                                                <img src='/images/img-profile/<%= jobload.image %>' alt="your image" class="target" />
+                                                <img style="margin-top: 30px;" src='/images/img-profile/<%= jobload.image %>' alt="your image" class="target" />
                                            </figure>
                                     </li>
                                             <li>
-                                                <a style="background-color: beige;" for="file"class="upImage" type="button" >
+                                                <a id="pic2"  for="file"class="upImage" type="button" >
                                                  <i   class="fa fa-camera" aria-hidden="true"></i>
                                                  Choose image									</a> 
                                                  <input name="image" type="file" id="file" /> 

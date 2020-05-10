@@ -309,18 +309,7 @@ ul.menu-dashboard li a img{ max-width: 25px; width: 15%; margin-right: 10px;}
 @media (max-width:991px){
 	.sj-pack-user h3{ font-size: 1.8rem; font-size: 18px;}
 }
-#custom-button {
-  padding: 2px 10px 2px 10px;
-  color: white;
-  background-color: blueviolet;
-  border: 1px solid #000;
-  border-radius: 10px;
-  cursor: pointer;
-}
 
-#custom-button:hover {
-  background-color: #00b28f;
-}
 
 #custom-text {
  

@@ -11,15 +11,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
           
         <link rel="stylesheet" href="/profileJob.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
        
        
     </head>
 
     <form action="/company/profile/new" method="Post" enctype="multipart/form-data">
-        <div style="display:flex;margin:50px"  >
+        <div style="display:flex;margin:50px;font-family: 'Kanit', sans-serif;"  >
             <div style="flex:20%;"  >
-                <div class="sj-border-grey sj-none overflow-hidden margin-bottom">
-                    <div style="background-color: #C0AB8E;" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+                <div style="box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;margin-left:50px;margin-right: 10px;" class="sj-border-grey sj-none overflow-hidden margin-bottom">
+                    <div style="background-color: #F0EDE5;" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default margin-bottom" >
                              <figure class="col-md-12 col-sm-12 col-xs-12">
                                  <div class="row">
@@ -29,11 +30,11 @@
                                                     <div class="rwz_memPic" id="memPic_img">
                                                 <li>
                                                     <figure class="resume-pic">
-                                                     <img src="/images/img-Comprofile/<%= Comload.image %>" alt="your image" class="target">
+                                                     <img style="margin-top: 30px;" src="/images/img-Comprofile/<%= Comload.image %>" alt="your image" class="target">
                                                    </figure>
                                             </li>
                                                     <li>
-                                                        <a style="background-color: beige;" class="upImage" for="file">
+                                                        <a  class="upImage" for="file">
                                                          <i  class="fa fa-camera" aria-hidden="true"></i>
                                                          Choose image										</a> 
                                                          <input name="image" type="file" id="file" /> 
@@ -80,7 +81,7 @@
                                 <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                                 
                                     
-                                    <div style="background-color:ghostwhite" class="panel panel-default margin-bottom" id="step1">
+                                    <div  class="panel panel-default margin-bottom" id="step1">
                                         <h1 style="text-align: center;margin-top: 20px;">Company Profile</h1>
                             <div class = "row" style="display:flex;">
         
