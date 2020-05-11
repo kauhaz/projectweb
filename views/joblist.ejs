@@ -32,14 +32,18 @@
        
         <tbody>
             <% job.postjobs.forEach(function(jobshow){ %>
+                <form method="POST" action="/job/<% jobshow._id %>/remove ">
             <tr>
+               
                 <td><%= jobshow.JobPosition %></td>
                 <td><%= moment(jobshow.Publicdate).format('DD/MM/YYYY') %></td>
                 <td><%= moment(jobshow.Enddate).format('DD/MM/YYYY') %></td>
                 <td><a  href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color: #615550 ;" class="fas fa-eye"></i></a>
                     <a href="/job/<%= jobshow._id %>/edit"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;" class="fas fa-edit"></i></a>
-                    <a href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;" class="fas fa-trash-alt"></i></a></td>
+                    <button style="border:none;padding:0px 0px 0px 0px;" type="submit"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;" class="fas fa-trash-alt"></i></button></td>
+                
             </tr>
+        </form>
             <% }) %>
         </tbody>
       

@@ -61,18 +61,14 @@ const express = require('express'),
         })
     });
     router.post('/signup', function(req,res){
-        companysignup.register(new companysignup({username:req.body.username,
-            email:req.body.email, 
-            companyName:req.body.company,
-            industry:req.body.industry,
-            contactPerson:req.body.contact,
-            telephoneNo:req.body.telephone,image:'no-profile-picture.jpg'}), req.body.password, function(err, user){
+        companysignup.register(new companysignup({username:req.body.username,email:req.body.email,CompanyName:req.body.CompanyName,image:'no-profile-picture.jpg'}), req.body.password, function(err, user){
             if(err){
                 console.log(err);
                 req.flash('error','Username or Email had already used');
                 return res.redirect('/company/signup');
             }
             passport.authenticate('companylocal')(req,res,function(){
+                console.log(user)
                 req.flash('success','You Signup in successfully');
                 res.redirect('/');
             });
@@ -108,7 +104,7 @@ const express = require('express'),
         }
         if(!req.file){
             let Contactname = req.body.Contactname;
-             let  CompanyName = req.body.CompanyName;
+            let  CompanyName = req.body.CompanyName;
             let BusinessTypes  = req.body.BusinessTypes;
             let ContactSurname  = req.body.ContactSurname;
             let ContactTelephoneNo = req.body.ContactTelephoneNo;
