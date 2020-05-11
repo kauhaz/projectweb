@@ -23,6 +23,7 @@
     <table  class="table table-borded table-responsive table-striped " id="table-list">
         <thead class="table-dark">
             <tr  style="background-color:#615550;">
+                
                 <td>Job Position</td>
                 <td>Public date</td>
                 <td>End date</td>
@@ -32,18 +33,19 @@
        
         <tbody>
             <% job.postjobs.forEach(function(jobshow){ %>
-                <form method="POST" action="/job/<% jobshow._id %>/remove ">
-            <tr>
-               
+                 <tr>
+                   
                 <td><%= jobshow.JobPosition %></td>
                 <td><%= moment(jobshow.Publicdate).format('DD/MM/YYYY') %></td>
                 <td><%= moment(jobshow.Enddate).format('DD/MM/YYYY') %></td>
-                <td><a  href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color: #615550 ;" class="fas fa-eye"></i></a>
-                    <a href="/job/<%= jobshow._id %>/edit"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;" class="fas fa-edit"></i></a>
-                    <button style="border:none;padding:0px 0px 0px 0px;" type="submit"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;" class="fas fa-trash-alt"></i></button></td>
+                <td><a  href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color: #615550 ;display: inline;" class="fas fa-eye"></i></a>
+                    
+                    <a href="/job/<%= jobshow._id %>/edit"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;display: inline;" class="fas fa-edit"></i></a>
+                    <form style="display: inline;" action="/job/<%= jobshow._id %>/remove" method="get"> <button style="border:none;padding:0px 0px 0px 0px;margin-right: 10px;display: inline;" type="submit"><i style="font-size: 25px;margin-left: px;color:#615550  ;" class="fas fa-trash-alt"></i></button></form>
+                </td>
                 
             </tr>
-        </form>
+        
             <% }) %>
         </tbody>
       

@@ -5,7 +5,30 @@ const express = require('express'),
       Job = require('../models/postjob'),
       multer = require('multer')
     
+      router.get('/findjob', function(req,res){
+        res.render('findjob');
+    });
 
+    router.post('/findjob', function(req,res){
+        Job.find({
+            $or:[
+                {JobCategories:  req.body.JobCategories},
+                {CompanyName :  req.body.JobTilesOrCompanyname},
+                {JobPosition:  req.body.JobTilesOrCompanyname},
+                {MinimumSalary:req.body.MinimumSalary} ,
+                {MaximumSalary: req.body.MaximumSalary} ,
+                {Degree :  req.body.Degree},
+                {Province: req.body.Province}
+            ]
+        },function(error,jobshow){
+            if(error){
+                console.log("Error!");
+            } else {
+                console.log(jobshow)
+                res.render('findjob',{jobshow:jobshow});
+            }
+        })
+    });
 
 router.get('/new', function(req,res){
     companysignup.findById({_id:req.user._id},function(error, upload){
@@ -19,19 +42,19 @@ router.get('/new', function(req,res){
     
 });
 
-router.post('/:id/remove', function(req,res){
-
-    Job.findById({_id:req.params.id},(err,result)=>{
+router.get('/:id/remove', function(req,res){
+    
+    Job.remove({_id:req.params.id},(err,result)=>{
         if(err)
         console.log(err)
         else 
         {
             console.log(result)
-            result.remove();
+            res.redirect("/job/joblist")
+            
         }
     })
      
- 
  });
 
 router.get('/joblist', function(req,res){
