@@ -25,7 +25,7 @@ const express = require('express'),
                 console.log("Error!");
             } else {
                 console.log(jobshow)
-                res.render('findjob',{jobshow:jobshow});
+                res.render('findjobafter',{jobshow:jobshow});
             }
         })
     });
