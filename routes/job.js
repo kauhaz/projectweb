@@ -3,12 +3,15 @@ const express = require('express'),
       passport = require('passport'),
       companysignup = require('../models/companysignup'),
       Job = require('../models/postjob'),
+      jobseekersignup = require('../models/jobseeksignup'),
       multer = require('multer')
     
       router.get('/findjob', function(req,res){
         res.render('findjob');
     });
-
+    router.get('/jobapplications', function(req,res){
+        res.render('historyresume');
+    });
     router.post('/findjob', function(req,res){
         Job.find({
             $or:[
@@ -120,6 +123,38 @@ router.get('/:id/edit', function(req,res){
             
     
 });
+router.post('/apply/:id',(req,res)=>{
+    jobseekersignup.findById({_id:req.user._id},(err,user)=>{
+        if(err)
+        console.log(err)
+        else{
+            Job.findById({_id:req.params.id},(err,job)=>{
+                if(err)
+                console.log(err)
+                else{
+                    job.jobseekapply.push(user)
+                    job.save((err,data)=>{
+                        if(err)
+                        console.log(err)
+                        else{
+                            console.log(data)
+                        }
+                    })
+                    user.jobapply.push(job)
+                    user.save((err,data)=>{
+                        if(err)
+                        console.log(err)
+                        else{
+                        console.log(data)
+                        res.redirect('/')
+                        }
+                    });
+                }
+            })
+        }
+    })
+})
+
 
 
 router.get('/:id', function(req,res){

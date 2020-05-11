@@ -29,7 +29,13 @@ let JobseekerSignup = new mongoose.Schema({
     Country:String,
     ZipCode:String,
     image:String,
-    resume : String
+    resume : String,
+    jobapply : [
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Postjob"
+        }
+    ]
 });
 
 

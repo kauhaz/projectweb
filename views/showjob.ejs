@@ -22,9 +22,20 @@
                 <p style="font-weight: bold;margin-left: 30px;font-size: 30px;"><%= showjob.JobPosition %></p>
                 <p><span style="font-weight: bold;">Salary : </span>Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
                 <p><span style="font-weight: bold;">Degree :</span> <%=  showjob.Degree %> </p> 
-             <form action="" method="POST">  
-                <button style="margin-left: 980px;margin-bottom: 20px;">Applyjob </button> 
+              <%  if(currentUser){ %>
+                <%    if(currentUser.CompanyName==null) { %>
+             <form action="/job/apply/<%= showjob._id %>" method="POST">  
+                <button type="submit" style="margin-left: 980px;margin-bottom: 20px;">Applyjob </button> 
             </form> 
+            <%   }  %>
+            <% if(currentUser.CompanyName){ %>
+
+
+            <%   } %>
+            <%   } %>
+            <%   if(!currentUser){  %>
+            <a href="/" style="margin-left: 980px;margin-bottom: 20px;">Applyjob </a> 
+            <%  } %>
             </div>
           
           

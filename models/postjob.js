@@ -17,7 +17,14 @@ const   mongoose = require('mongoose'),
             Enddate: Date,
             CompanyName:String,
             Qualificationsofjobapplicants: String,
-            image:String
+            image:String,
+            jobseekapply : [
+                {
+                    type:mongoose.Schema.Types.ObjectId,
+                    ref:"jobseekersignup"
+                }
+            ]
+
         });
 
        

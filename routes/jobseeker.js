@@ -2,6 +2,7 @@ const express = require('express'),
       router = express.Router(),
       passport = require('passport'),
       jobseekersignup = require('../models/jobseeksignup'),
+      Job = require('../models/postjob'),
       multer = require('multer');
 
       var StorageOfimageprofile = multer.diskStorage(
@@ -57,6 +58,29 @@ const express = require('express'),
                 res.render('resume',{jobseek:jobseek});
             }
         })
+    });
+    router.get('/applyjob', function(req,res){
+        jobseekersignup.findById({_id:req.user._id}).populate('jobapply').exec(function(error, job){
+            if(error){
+                console.log("Error");
+            } else {
+                res.render("historyapply",{job:job});
+            }
+        })
+           
+    });
+    router.get('/applyjob/:id/delete', function(req,res){
+        Job.remove({_id:req.params.id},(err,result)=>{
+            if(err)
+            console.log(err)
+            else 
+            {
+                console.log(result)
+                res.redirect("/jobseeker/applyjob")
+                
+            }
+        })
+           
     });
 
     router.post('/resume', upload_resume.single('resume'),function(req,res){

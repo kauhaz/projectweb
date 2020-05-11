@@ -1,0 +1,22 @@
+
+<%- include("partials/headerafter") %>
+
+<% job.jobapply.forEach((apply)=>{ %>
+    <div style="background-color:	white;color: black;padding-bottom:30px;"class="panel panel-default margin-bottom"" >
+        <div class="container" style="margin-top: 10px;">
+        <p style="text-align: right;"><%= moment(apply.Publicdate).format('DD/MM/YYYY') %></p>
+        <p ><%= apply.JobPosition %></p>
+        <p ><%= apply.CompanyName %></p>
+        <p style="display: inline;"><%= apply.Province %></p>
+        <p style="display: inline;"> <%= apply.MinimumSalary %> -</p> <p style="display: inline;"><%= apply.MaximumSalary %></p>
+        <a style="display: inline;"  href="/job/<%= apply._id %>">See more</a>
+        <form style="display: inline;" method="get" action="/jobseeker/applyjob/<%= apply._id %>/delete">
+        <button  type="submit">Delete</button>
+        </form>  
+    </div>
+    </div>
+
+
+    <% }) %>
+
+<%- include("partials/footer") %>
