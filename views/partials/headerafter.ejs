@@ -21,14 +21,14 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">SmileJob</a>
+                <a class="navbar-brand" href="/">SmileJob<i style="margin-left: 10px;" class="fas fa-user-md"></i></a>
             </div>
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <% if(!currentUser) { %>
-            <div class="collapse navbar-collapse" id="fix">
+            <div style="margin-right: 140px;" class="collapse navbar-collapse" id="fix">
               <ul class="navbar-nav ml-auto" id="fix">
                 <li class="nav-item">
                   <a  class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
@@ -44,10 +44,10 @@
      
              
                 
-           
+              
                 
-                <div class="btn-group">
-                  <button type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+                <div style="margin-left: 650px;margin-right: 100px;" class="btn-group">
+                  <button style="" type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/jobseeker/login">For JobSeekers</a>
                     <a class="dropdown-item" href="/company/login" >For Companies</a>
@@ -58,22 +58,22 @@
 
                 <% if(currentUser) { %>
                   <% if(currentUser.CompanyName) { %>
-                    <div style="margin-right:100px;">
+                    <div style="margin-right: 400px;">
                     <ul class="navbar-nav ml-auto" id="fix">
                     
                     <div class="btn-group">
                       <a   class="nav-link" data-toggle="dropdown" aria-expanded="false">PostJob</a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/job/new" >Post</a>
-                        <a class="dropdown-item" href="/job/joblist" >History Post</a>
+                        <a class="dropdown-item" href="/job/joblist" >History&nbspPost</a>
                       </div>
                     </div>
                     <li class="nav-item">
-                      <a class="nav-link" href="/job/jobseekapply" >JobApplications</a>
+                      <a class="nav-link" href="/job/jobseekapply" >Job&nbspApplication</a>
                   </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="/contactus">ContracUs</a>
+                        <a class="nav-link" href="/contactus">Contracs&nbspUs</a>
                     </li>
               
                   
@@ -86,24 +86,24 @@
                     </div>
 
                
-               
+                  </div>
                   
-                  <a style="margin-left:20px" href="/logout" type="button" class="btn btn-outline-primary" >Logout</a>
+                  <a style="margin-left: 100px;margin-right: 100px;" href="/logout" type="button" class="btn btn-outline-primary" >Logout</a>
             
-              </div>
+             
                   <% } %>
                   <% if(currentUser.CompanyName==null) { %>
-                    <div style="margin-right:100px;">
+                    <div style="margin-right:460px;">
                     <ul class="navbar-nav ml-auto" id="fix">
                    
                     <li class="nav-item">
                       <a class="nav-link" href="/job/findjob">Finding</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/jobseeker/applyjob">ApplyJob</a>
+                      <a class="nav-link" href="/jobseeker/applyjob">Apply&nbspJob</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contactus">ContracUs</a>
+                        <a class="nav-link" href="/contactus">Contrac&nbspUs</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/jobseeker/resume">Resume</a>
@@ -117,9 +117,9 @@
                     </div>
                   </div>
 
-
-                  <a style="margin-left:20px" href="/logout" type="button" class="btn btn-outline-primary" >Logout</a>
-                    </div>
+                </div>
+                  <a style="margin-right: 100px;" href="/logout" type="button" class="btn btn-outline-primary" >Logout</a>
+                   
                      <% } %>
                     <% } %>
             </ul>

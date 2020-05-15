@@ -22,6 +22,7 @@
                 <p style="font-weight: bold;margin-left: 30px;font-size: 30px;"><%= showjob.JobPosition %></p>
                 <p><span style="font-weight: bold;">Salary : </span>Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
                 <p><span style="font-weight: bold;">Degree :</span> <%=  showjob.Degree %> </p> 
+                <p><span style="font-weight: bold;">Province :</span> <%=  showjob.Province %> </p> 
               <%  if(currentUser){ %>
                 <%    if(currentUser.CompanyName==null) { %>
              <form action="/job/apply/<%= showjob._id %>" method="POST">  

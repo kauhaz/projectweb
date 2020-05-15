@@ -166,7 +166,7 @@
         <p ><%= job.CompanyName %> </p>
         <p style="display: inline;"><i style="color: red;margin-right: 10px;" class="fas fa-map-marker-alt"></i><%= job.Province %> <p style="display: inline;"><i style="color: orange;margin-left: 80px;margin-right: 10px;" class="fas fa-coins"></i> <%= job.MinimumSalary %> -</p> <p style="display: inline;"><%= job.MaximumSalary %></p> </p>
          
-        <a  style="padding: 5px;background-color: white;border: solid 1px;margin-left: 400px;" href="/job/<%= jobshow._id %>">See More</a>
+        <a  style="padding: 5px;background-color: white;border: solid 1px;margin-left: 400px;" href="/job/<%= job._id %>">See More</a>
         <% if(currentUser) { %>
             <form  style="display: inline;" method="POST" action="/job/apply/<%= job._id %>">
             <button style="background-color:  #6495ED;border-radius: 3px;color: white;padding: 2px 15px 1px 15px;" type="submit">Apply</button>
