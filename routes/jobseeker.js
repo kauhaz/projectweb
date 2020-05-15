@@ -3,6 +3,8 @@ const express = require('express'),
       passport = require('passport'),
       jobseekersignup = require('../models/jobseeksignup'),
       Job = require('../models/postjob'),
+      applyjob = require('../models/applyjob'),
+      resumejob = require('../models/resumejob'),
       multer = require('multer');
 
       var StorageOfimageprofile = multer.diskStorage(
@@ -39,7 +41,7 @@ const express = require('express'),
     });
     router.post('/login', passport.authenticate("joblocal", 
     {
-        successRedirect: "/",
+        successRedirect: "/jobseeker/profile",
         failureRedirect: "/jobseeker/login",
         successFlash: true,            
         failureFlash: true,
@@ -60,44 +62,80 @@ const express = require('express'),
         })
     });
     router.get('/applyjob', function(req,res){
-        jobseekersignup.findById({_id:req.user._id}).populate('jobapply').exec(function(error, job){
-            if(error){
-                console.log("Error");
-            } else {
-                res.render("historyapply",{job:job});
-            }
-        })
-           
-    });
-    router.get('/applyjob/:id/delete', function(req,res){
-        Job.remove({_id:req.params.id},(err,result)=>{
+       
+        jobseekersignup.findById({_id:req.user._id}).populate('jobapply').exec((err,ok)=>{
             if(err)
             console.log(err)
-            else 
-            {
-                console.log(result)
-                res.redirect("/jobseeker/applyjob")
-                
-            }
-        })
+            else{
+                res.render('historyapply',{user:ok});
+            
+            }})
+        
+    })
+    
+            
+
+//     router.get('/applyjob/:id/delete', function(req,res){
+
+//         jobseekersignup.find({jobapply:req.params.id}).populate('jobapply').exec(function(error, job){
+//         if(error){
+//             console.log("Error");
+//         } else {
+//             jobseekersignup.deleteOne({jobapply:job[0].jobapply[0]},(err,ok)=>{
+//                 if(err)
+//                 console.log(err)
+//                 else
+//                 console.log(ok)
+//             })
+//           }
+        
+//     });
+// })
            
-    });
+    
 
     router.post('/resume', upload_resume.single('resume'),function(req,res){
 if(req.file){
         let resume = req.file.filename;
-        jobseekersignup.updateOne({_id:req.user._id},{resume:resume},(err,ok)=>{
+        jobseekersignup.updateOne({_id:req.user._id},{resume:resume},(err,result)=>{
             
             if(err){
                 console.log(err);
             } else {
-                console.log(ok)
-                res.redirect('/jobseeker/profile/new')
+                jobseekersignup.findById({_id:req.user._id},(err,ok)=>{
+                    if(ok.Name && ok.Surname  === '?')
+                {
+                    req.flash('error','You must fill the profile');
+                    res.redirect('/jobseeker/profile/new')
+                }
+                else{
+                console.log(result)
+                res.redirect('/job/findjob')
+                }
+                })
+                
                 }
         })
     }
+
     if(!req.file){
-        res.redirect('/jobseeker/profile/new')
+        jobseekersignup.findById({_id:req.user._id},(err,result2)=>{
+
+            if(err)
+            console.log(err)
+            else{
+            if(result2.Name && result2.Surname === '?')
+            {
+                req.flash('error','You must fill the profile');
+                res.redirect('/jobseeker/profile/new')
+            }
+            else{
+                console.log(result2)
+            res.redirect('/job/findjob')
+            }
+        }
+            })
+
         }
     });
 
@@ -148,7 +186,11 @@ if(req.file){
         })
     });
     router.post('/signup', function(req,res){
-        jobseekersignup.register(new jobseekersignup({username:req.body.username,email:req.body.email,image:'no-profile-picture.jpg'}), req.body.password, function(err, user){
+        jobseekersignup.register(new jobseekersignup({username:req.body.username,email:req.body.email,image:'no-profile-picture.jpg'
+        ,Name:'?',Surname:'?',Address:'?',Country:'?',DateofBirth :'',District:'?',Gender:'?',Height:'?',IDCard:'?',Nationality:'?',
+        Province:'?',Religion:'?',SubDistrict:'?',TelephoneNo:'?',Weight:'?',ZipCode:'?'
+
+    }), req.body.password, function(err, user){
             if(err){
                 console.log(err);
                 req.flash('error','Username or Email had already used');

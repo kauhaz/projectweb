@@ -18,7 +18,7 @@
 
               
                 <div class="container">
-                <p style="text-align: right;margin-top: 10px;"><%= showjob.Publicdate %></p>
+                <p style="text-align: right;margin-top: 10px;"><%= moment(showjob.Publicdate).format('DD/MM/YYYY') %></p>
                 <p style="font-weight: bold;margin-left: 30px;font-size: 30px;"><%= showjob.JobPosition %></p>
                 <p><span style="font-weight: bold;">Salary : </span>Minimum <%= showjob.MinimumSalary %> Maximum <%= showjob.MaximumSalary %> </p>
                 <p><span style="font-weight: bold;">Degree :</span> <%=  showjob.Degree %> </p> 

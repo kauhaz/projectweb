@@ -18,7 +18,7 @@ const   mongoose = require('mongoose'),
             CompanyName:String,
             Qualificationsofjobapplicants: String,
             image:String,
-            jobseekapply : [
+            jobresume : [
                 {
                     type:mongoose.Schema.Types.ObjectId,
                     ref:"jobseekersignup"
