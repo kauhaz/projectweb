@@ -19,8 +19,20 @@ const express = require('express'),
           })
      
     });
-    router.get('/jobseekapply', function(req,res){
-        res.render('historyresume');
+    router.get('/jobapplication', function(req,res){
+        companysignup({_id:req.user._id},(err,result)=>{
+            if(err)
+            console.log(err)
+            else{
+                Job.find({CompanyName:result.CompanyName}).populate('jobresume').exec((err,ok)=>{
+                    if(err)
+                    console.log(err)
+                    else{
+                        res.render('historyresume',{job:ok})
+                    }
+                })
+            }
+        })
     });
     router.get('/findjob/search', function(req,res){
         Job.find({

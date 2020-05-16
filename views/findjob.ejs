@@ -7,7 +7,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/profileJob.css">
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
-       
+        <style>
+
+            div#a::-webkit-scrollbar {
+                width: 5px;
+            }
+            div#a::-webkit-scrollbar-thumb {
+              background-color: darkgrey;
+              outline: 2px solid slategrey;
+            }
+            </style>
     </head>
     <body>
         <form action="/job/findjob/search" method="GET">
@@ -15,7 +24,7 @@
             <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
             
                 <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-                    <div style="background-color:gainsboro;" class="panel panel-default margin-bottom" >
+                    <div  style="background-color:gainsboro;" class="panel panel-default margin-bottom" >
                        
                         <div style="display: flex; margin-left: 20px;"class="col-sm-6 col-lg-12"  >
                         <div style="flex:10%;margin-top: 20px;margin-bottom: 20px;margin-right: 20px;"  >
@@ -137,12 +146,12 @@
         
         
             <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-                <div style="background-color:white;border-radius: 0px;" class="panel panel-default margin-bottom" >
+                <div  id="a"style="background-color:white;border-radius: 0px;height:1200px;overflow: auto;" class="panel panel-default margin-bottom" >
 
 
                     <div style="background-color:	black;padding-bottom: 10px;color: white;border-radius: 0px;" class="panel panel-default margin-bottom">
                         <div class="container" style="margin-top: 10px;">
-                        <p  style="display: inline;margin-right: 530px;">Recommended for you </p>
+                        <p  style="display: inline;margin-right: 510px;">Recommended for you </p>
                         <p style="display: inline;text-indent: 10px;"> Total <%= job.length %> Jobs</p>
                     </div>
                     </div>
