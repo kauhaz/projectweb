@@ -15,13 +15,15 @@ const   mongoose = require('mongoose'),
             Province:String,
             Publicdate : Date,
             Enddate: Date,
+            Editdate: Date,
             CompanyName:String,
             Qualificationsofjobapplicants: String,
             image:String,
             jobresume : [
                 {
                     type:mongoose.Schema.Types.ObjectId,
-                    ref:"jobseekersignup"
+                    ref:"jobseekersignup",
+                    
                 }
             ]
 

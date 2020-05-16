@@ -14,12 +14,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
        
     </head>
-<form action="/jobseeker/profile/new" method="POST" enctype="multipart/form-data">
+<form action="/jobseeker/profile/<%= jobload._id %>/edit" method="POST" enctype="multipart/form-data">
 <div style="display:flex;margin-top: 50px;font-family: 'Kanit', sans-serif;" class="container" >
     <div style="flex:20%;"  >
         <div style="box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;" class="sj-border-grey sj-none overflow-hidden margin-bottom">
             <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-                <div style="background-color: #F0EDE5;" class="panel panel-default margin-bottom" >
+                <div style="background-color: #F0EDE5;border-radius: 0px;" class="panel panel-default margin-bottom" >
                      <figure class="col-md-12 col-sm-12 col-xs-12">
                          <div class="row">
                                 <div class="pic-company pic-company-cc" style="margin: auto;">

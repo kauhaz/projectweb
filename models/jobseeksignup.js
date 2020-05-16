@@ -33,7 +33,8 @@ let JobseekerSignup = new mongoose.Schema({
     jobapply : [
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"Postjob"
+            ref:"Postjob",
+           
         }
     ]
 });

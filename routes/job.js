@@ -9,11 +9,11 @@ const express = require('express'),
       multer = require('multer')
     
       router.get('/findjob', function(req,res){
+        
           Job.find({},(err,job)=>{
               if(err)
               console.log(err)
-              else{
-                  
+              else{                 
                 res.render('findjob',{job:job});
               }
           })
@@ -22,16 +22,16 @@ const express = require('express'),
     router.get('/jobseekapply', function(req,res){
         res.render('historyresume');
     });
-    router.post('/findjob', function(req,res){
+    router.get('/findjob/search', function(req,res){
         Job.find({
             $or:[
-                {JobCategories:  req.body.JobCategories},
-                {CompanyName :  req.body.JobTilesOrCompanyname},
-                {JobPosition:  req.body.JobTilesOrCompanyname},
-                {MinimumSalary:req.body.MinimumSalary} ,
-                {MaximumSalary: req.body.MaximumSalary} ,
-                {Degree :  req.body.Degree},
-                {Province: req.body.Province}
+                {JobCategories: {$regex: req.query.JobCategories }},
+                {CompanyName :{$regex:req.query.JobTilesOrCompanyname}},
+                {JobPosition: {$regex: req.query.JobTilesOrCompanyname}},
+                {MinimumSalary:{$regex:req.query.MinimumSalary} },
+                {MaximumSalary:{$regex: req.query.MaximumSalary}} ,
+                {Degree : {$regex: req.query.Degree}},
+                {Province:{$regex: req.query.Province}}
             ]
         },function(error,jobshow){
             if(error){
@@ -106,22 +106,11 @@ router.get('/:id/edit', function(req,res){
         } else {
             res.render('updateJob',{jobedit:jobedit,comshow:upload});
         }
-    })
-    
+    }) 
 }
     })
 })
-router.get('/:id/edit', function(req,res){
-    
-    Job.findById({_id:req.params.id},function(error, jobedit){
-        if(error){
-            console.log("Error!");
-        } else {
-            res.render('updateJob',{jobedit:jobedit});
-        }
-    })
-    
-});
+
 
  router.post('/:id/edit', function(req,res){
 
@@ -132,7 +121,7 @@ router.get('/:id/edit', function(req,res){
             let Degree = req.body.Degree;
             let Welfare = req.body.Welfare;
             let Qualificationsofjobapplicants = req.body.Qualificationsofjobapplicants;
-            let Publicdate  = req.body.Publicdate;
+           
             let Enddate = req.body.Enddate;
             let Contact = req.body.Contact; 
             let JobDescription = req.body.JobDescription;
@@ -146,8 +135,8 @@ router.get('/:id/edit', function(req,res){
                     Job.updateMany({_id:req.params.id},{$set : {JobCategories :JobCategories,JobPosition:JobPosition
                         ,MinimumSalary:MinimumSalary, MaximumSalary: MaximumSalary,Degree:Degree
                         ,Welfare:Welfare,Province:Province,Qualificationsofjobapplicants:Qualificationsofjobapplicants
-                        ,Publicdate:Publicdate,Enddate:Enddate
-                ,Contact:Contact,JobDescription:JobDescription,Howtogocompany:Howtogocompany,Address:Address,image:ok.image,CompanyName:ok.CompanyName}} ,function(error, job){
+                        ,Enddate:Enddate,Contact:Contact,JobDescription:JobDescription,Howtogocompany:Howtogocompany,Address:Address,image:ok.image,CompanyName:ok.CompanyName
+            ,Editdate:req.body.Editdate}} ,function(error, job){
                         if(error){
                             console.log(error);
                         } else {
@@ -175,25 +164,25 @@ router.post('/apply/:id',(req,res)=>{
                         req.flash('error','You must upload resume File to apply job');
                         res.redirect('/jobseeker/resume')
                     }
-                    if(user._id === undefined)
-                    {
-                        res.redirect('/jobseeker/login')
-                    }
-                    else{
-                    job.jobresume.push(user)
+                    else{  
+                    job.jobresume.addToSet(user)
                     job.save((err,data)=>{
                         if(err)
                         console.log(err)
                        
                     });
-                    user.jobapply.push(job)
+                    user.jobapply.addToSet(job)
                     user.save((err,data)=>{
                         if(err)
                         console.log(err)
                         else
+                        {  
                        res.redirect('/jobseeker/applyjob')
+                        }
+
                     });
                 }
+
                 }
             })
         }

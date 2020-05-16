@@ -25,8 +25,9 @@
             <tr  style="background-color:#615550;">
                 
                 <td>Job Position</td>
-                <td>Public date</td>
-                <td>End date</td>
+                <td>Public Date</td>
+                <td>Edit Date</td>
+                <td>End Date</td>
                 <td>Manage</td>
             </tr>
         </thead>
@@ -37,6 +38,7 @@
                    
                 <td><%= jobshow.JobPosition %></td>
                 <td><%= moment(jobshow.Publicdate).format('DD/MM/YYYY') %></td>
+                <td><%= moment(jobshow.Editdate).format('DD/MM/YYYY') %></td>
                 <td><%= moment(jobshow.Enddate).format('DD/MM/YYYY') %></td>
                 <td><a  href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color: #615550 ;display: inline;" class="fas fa-eye"></i></a>
                     

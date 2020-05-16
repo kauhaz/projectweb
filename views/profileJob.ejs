@@ -16,49 +16,38 @@
     </head>
   <body>
 
-    <div style="margin-top: 150px;margin-left: 100px;margin-right: 100px;font-family: 'Bitter', serif;">
+    <div style="margin-top: 150px;margin-left: 30px;margin-right: 30px;border-radius: 0px;font-family: 'Bitter', serif;">
         <div class=" col-lg-12 col-md-3 col-sm-12" >
             <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-                <div style="background-color:white ;height: 400px;" class="panel panel-default margin-bottom" >
+                <div style="background-color:white ;height: 800px;border-radius: 0px;" class="panel panel-default margin-bottom" >
                    
                    <div style="display: flex;"  >
                    
-<div class="col-lg-12 col-md-12 col-sm-3" style="flex:20%;background-color:#C0AB8E;background-size: 100%;height: 400px;">
+<div  style="flex:50%;background-color:#C0AB8E;background-size: 100%;height: 800px;border-radius: 0px;">
    
-    <a href="/jobseeker/<%= jobseek._id %>/edit" style="font-size: 30px;"><i class="fas fa-edit"></i></a>
-    <div style="margin-top: 10px;margin-bottom: 20px;">
+    
+    <p style="position:absolute;font-size: 60px;left:100px;color: gold;"> Jobseeker  </p><br>
+    <p style="position:absolute;font-size: 60px;top: 130px;left:100px;color: gold;"> Profile  </p>
+    <p style="position:absolute;font-size: 60px;left:350px;color: gold;border-radius: 50%;border:1px solid;top: 450px;padding: 70px;background-color: white;">  </p>
+    <div style="margin-bottom: 20px;">
         
-        
-               <div id="pic" class="pic-company pic-company-cc" style="margin-left: 100px;margin-bottom: 30px;">    
-                
-                           
-                    
-                           <span class="resume-pic">
-                            <img  src="/images/img-profile/<%= jobseek.image %>">
-                           </span>
-                  
-                          
-                      
-                      
+            <img class="img-thumbnail" style="height: 500px;width: 500px;margin-left: 70px;margin-bottom: 30px;border-radius: 50% ;object-fit: cover;object-position: 50% 0;" src="/images/img-profile/<%= jobseek.image %>">
+<div style="margin-bottom: 20px;margin-top: 40px;">
+<p style="text-align:center;text-transform: uppercase;font-size: 30px;"><%= jobseek.Name %>  &nbsp&nbsp  <%= jobseek.Surname %></p>
+</div>
+<p style="margin-left: 45px;text-transform: uppercase;font-size: 20px;"><i style="margin-right: 5px;" class="fas fa-phone-square"></i>Tel : <%= jobseek.TelephoneNo %></p>
+<p style="display: inline;margin-left: 45px;font-size: 20px;"><span style="text-transform: uppercase;"><i style="margin-right: 5px;" class="fas fa-envelope-open-text"></i>Email :</span> <%= jobseek.email %></p>
+</div>
+</div>
+
+    <div style="flex:50%;background-color:white;height: 800px;z-index: 1;border-radius: 0px;">
+        <a href="/jobseeker/profile/<%= jobseek._id %>/edit" style="font-size: 50px;margin-left: 560px;position: absolute;top: 1px;"><i class="fas fa-edit"></i></a>
           
-
-                </div>
-         
-  
-<div style="margin-bottom: 20px;">
-<p style="text-align:center;text-transform: uppercase;font-size: 20px;"><%= jobseek.Name %>  &nbsp&nbsp  <%= jobseek.Surname %></p>
-</div>
-<p style="margin-left: 45px;text-transform: uppercase;"><i style="margin-right: 5px;" class="fas fa-phone-square"></i>Tel : <%= jobseek.TelephoneNo %></p>
-<p style="display: inline;margin-left: 45px;"><span style="text-transform: uppercase;"><i style="margin-right: 5px;" class="fas fa-envelope-open-text"></i>Email :</span> <%= jobseek.email %></p>
-</div>
-</div>
-
-    <div style="flex:50%;background-color:#F0EDE5;height: 400px;">
-  
-            <h1 style="margin-bottom: 30px;margin-left: 260px;margin-top: 20px;">About me</h1>
+          <div style="background-color: white;z-index: 1;height: 430px;margin-top: 185px;margin-left: 40px;margin-right: 40px;box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;">
+            <h1 style="margin-bottom: 30px;text-align: center;margin-top: 30px;background-color: black;color: white;padding-bottom: 10px;padding-top: 10px;">About me</h1>
             <div style="display: flex;" >
-            <div style="flex:50%;margin-left: 30px;">
-                <div style="margin-right: 50px;margin-left: 40px;">
+                <div style="flex:50%;margin-left: 30px;">
+                <div style="margin-right: 50px;margin-left: 10px;">
         <p >ID Card : <span style="margin-left: 1px;"><%= jobseek.IDCard %></span></p>
         <p >Date of Birth : <span style="margin-left: 1px;"><%= moment(jobseek.DateofBirth).format('DD/MM/YYYY') %></span></p>
         <p >Gender : <span style="margin-left: 1px;"><%= jobseek.Gender %></span></p>
@@ -78,6 +67,8 @@
         <p >Zip Code : <span style="margin-left: 1px;"><%= jobseek.ZipCode %></span></p>
     </div>
     </div>
+</div>
+    <p style="border: solid 3px;position: absolute;z-index: -2;right: 100px;height: 600px;width: 470px;top: 100px;"></p>
     </div>
                      
         </div>

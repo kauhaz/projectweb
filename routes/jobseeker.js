@@ -106,7 +106,7 @@ if(req.file){
                     if(ok.Name && ok.Surname  === '?')
                 {
                     req.flash('error','You must fill the profile');
-                    res.redirect('/jobseeker/profile/new')
+                    res.redirect('/jobseeker/profile/'+ ok._id +'/edit')
                 }
                 else{
                 console.log(result)
@@ -127,7 +127,7 @@ if(req.file){
             if(result2.Name && result2.Surname === '?')
             {
                 req.flash('error','You must fill the profile');
-                res.redirect('/jobseeker/profile/new')
+                res.redirect('/jobseeker/profile/'+ result2._id +'/edit')
             }
             else{
                 console.log(result2)
@@ -176,7 +176,7 @@ if(req.file){
         })
        
     });
-    router.get('/profile/new', function(req,res){
+    router.get('/profile/:id/edit', function(req,res){
         jobseekersignup.findById({_id:req.user._id},function(error, upload){
             if(error){
                 console.log("Error!");
@@ -198,12 +198,12 @@ if(req.file){
             }
             passport.authenticate('joblocal')(req,res,function(){
                 req.flash('success','You Signup in successfully');
-               res.redirect('/')
+               res.redirect('/job/findjob')
             });
         });
     });
    
-    router.post('/profile/new',upload_profile.single('image'),function(req,res){
+    router.post('/profile/:id/edit',upload_profile.single('image'),function(req,res){
         if(!req.file){
             console.log(req.file)
         let Name = req.body.Name;

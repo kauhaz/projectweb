@@ -19,7 +19,7 @@ const express = require('express'),
       var upload_profile = multer({storage : StorageOfimageprofile});
 
     router.post('/login', passport.authenticate('companylocal',{  
-        successRedirect: "/company/profile/new",
+        successRedirect: "/company/profile",
         failureRedirect: "/company/login",
         successFlash: true,            
         failureFlash: true,
@@ -51,7 +51,7 @@ const express = require('express'),
     });
    
    
-    router.get('/profile/new', function(req,res){
+    router.get('/profile/:id/edit', function(req,res){
        companysignup.findById({_id:req.user._id},function(error, upload){
             if(error){
                 console.log("Error!");
@@ -70,11 +70,11 @@ const express = require('express'),
             passport.authenticate('companylocal')(req,res,function(){
                 console.log(user)
                 req.flash('success','You Signup in successfully');
-                res.redirect('/');
+                res.redirect('/company/profile');
             });
         });
     });
-    router.post('/profile/new',upload_profile.single('image'), function(req,res){
+    router.post('/profile/:id/edit',upload_profile.single('image'), function(req,res){
         if(req.file){
         let Contactname = req.body.Contactname;
          let  CompanyName = req.body.CompanyName;

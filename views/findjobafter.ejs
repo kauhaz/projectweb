@@ -11,7 +11,7 @@
        
     </head>
     <body>
-        <form action="/job/findjob" method="POST">
+        <form action="/job/findjob/search" method="GET">
         <div  style="margin-top: 50px;margin-left: 50px;margin-right: 50px;font-family: 'Bitter', serif;">
             <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
             
@@ -21,10 +21,10 @@
                         <div style="display: flex; margin-left: 20px;"class="col-sm-6 col-lg-12"  >
                         <div style="flex:10%;margin-top: 20px;margin-bottom: 20px;margin-right: 20px;"  >
                       
-                        <input name="JobTilesOrCompanyname" style="margin-bottom: 20px;" type="text" class="form-control sj-form-control" placeholder="Job Tiles Or Companyname" name="firstname" id="jobtile" value="">
+                        <input name="JobTilesOrCompanyname" style="margin-bottom: 20px;" type="search" class="form-control sj-form-control" placeholder="Job Tiles Or Companyname"  id="jobtile" value="">
 
                         
-                        <select class="form-control jobbkk-form-control text-form-select" id="degree" name="Degree" onChange="getOccupationSub();">
+                        <select type="search" class="form-control jobbkk-form-control text-form-select" id="degree" name="Degree" onChange="getOccupationSub();">
                             <option >Degree</option>
                             <option >None</option>
                             <option  >Bachelor's degree or higher</option>
@@ -38,7 +38,7 @@
                     </div>
                     <div style="flex:10%;margin-top: 20px;margin-right: 20px;"  >
                         
-                                    <select name="JobCategories" style="margin-bottom: 20px;" class="form-control jobbkk-form-control text-form-select" id="JobCategories" name="occupation" onChange="getOccupationSub();">
+                                    <select type="search" name="JobCategories" style="margin-bottom: 20px;" class="form-control jobbkk-form-control text-form-select" id="JobCategories"  onChange="getOccupationSub();">
                                         <option >Job Categories</option>
                                         <option  >E-commerce</option>
                                         <option  >Part-time</option>
@@ -62,7 +62,7 @@
                                         <option  >Geology and forestry</option>
                                                             </select>
                                                             
-                                                                                                                                                                                                <select  class="form-control jobbkk-form-control text-form-select" id="Province" name="Province" onChange="getOccupationSub();">
+                                                                                                                                                                                                <select type="search" class="form-control jobbkk-form-control text-form-select" id="Province" name="Province" onChange="getOccupationSub();">
                                                                                                                                                                                                     <option >Province</option>
                                                                                                                                                                                                     <option  >Bangkok</option>
                                                                                                                                                                                                     <option  >Nakhon Pathom </option>
@@ -83,7 +83,7 @@
 
 
     <div style="flex: 10%;margin-top: 20px;margin-left: 10px;">
-                        <select class="form-control jobbkk-form-control text-form-select" id="MinimumSalary" name="MinimumSalary" onChange="getOccupationSub();">
+                        <select type="search" class="form-control jobbkk-form-control text-form-select" id="MinimumSalary" name="MinimumSalary" onChange="getOccupationSub();">
                             <option >MinimumSalary</option>
                             <option  >5,000</option>
                             <option  >10,000</option>
@@ -102,7 +102,7 @@
                                       
                                             
 
-                                                <select style="margin-top: 20px;" class="form-control jobbkk-form-control text-form-select" id="MaximumSalary" name="MaximumSalary" onChange="getOccupationSub();">
+                                                <select type="search" style="margin-top: 20px;" class="form-control jobbkk-form-control text-form-select" id="MaximumSalary" name="MaximumSalary" onChange="getOccupationSub();">
                                                     <option >MaximumSalary</option>
                                                     <option  >5,000</option>
                                                     <option  >10,000</option>
@@ -152,7 +152,7 @@
 <% jobshow.forEach((job)=>{ %>
     <div style="background-color:	white;color: black;padding-bottom:15px;border-radius: 0px;"class="panel panel-default margin-bottom"" >
         <div class="container" style="margin-top: 10px;">
-            <p style="text-align: right;font-size: 20px;" ><%= moment(job.Publicdate).format('DD/MM/YYYY') %></p>
+            <p style="text-align: right;font-size: 20px;" ><%= moment(job.Editdate).format('DD/MM/YYYY') %></p>
        <div style="display: flex;">
         <div style="flex:30%;">
           
