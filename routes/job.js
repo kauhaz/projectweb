@@ -20,7 +20,7 @@ const express = require('express'),
      
     });
     router.get('/jobapplication', function(req,res){
-        companysignup({_id:req.user._id},(err,result)=>{
+        companysignup.findById({_id:req.user._id},(err,result)=>{
             if(err)
             console.log(err)
             else{
@@ -28,6 +28,7 @@ const express = require('express'),
                     if(err)
                     console.log(err)
                     else{
+                        console.log(ok)
                         res.render('historyresume',{job:ok})
                     }
                 })
@@ -66,6 +67,15 @@ router.get('/new', function(req,res){
     })
     
 });
+router.post('/jobapplication/:id/delete',(req,res)=>{
+    Job.findById({_id:req.params.id},(err,result)=>{
+        if(err)
+        console.log(err)
+        else{
+        result.jobresume.pull({_id:req.params.id})
+        }
+    })
+})
 router.post('/apply/:id/delete', function(req,res){
     jobseekersignup.findById({_id:req.user._id},(err,result)=>{
         if(err)
