@@ -20,8 +20,8 @@
             </style>
        
     </head>
-    <!-- <h1 style="text-transform: uppercase;text-align: center;margin-top: 40px;font-family: 'Kanit', sans-serif;font-size: 60px;"><i style="margin-right: 50px;color:#280000  ;" class="fas fa-history"></i>Jobseeker List</h1> -->
-    <div  style="margin-top: 80px;margin-left: 200px;margin-right: 200px;font-family: 'Bitter', serif;font-size: 23px;">
+    <h1 style="text-transform: uppercase;text-align: center;margin-top: 30px;font-family: 'Kanit', sans-serif;font-size: 60px;"><i class="fas fa-users" style="color:#200000;margin-right: 30px;" ></i>Jobseeker List</h1>
+    <div  style="margin-top: 20px;margin-left: 200px;margin-right: 200px;font-family: 'Bitter', serif;font-size: 23px;">
         <div style="padding: 10px 10px 10px ;border-radius: 0px;" class="bg-drtail overflow-hidden">
         
             <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
@@ -34,7 +34,7 @@
                         <p style="text-align: center;font-size: 25px;">History Jobseeker Apply</p>
                     </div>
                     </div>
-                    <div id='b' style="background-color:gainsboro;border-radius: 0px;height:800px;overflow: auto;" class="panel panel-default margin-bottom" >
+                    <div id='b' style="background-color:gainsboro;border-radius: 0px;height:705px;overflow: auto;" class="panel panel-default margin-bottom" >
                     <% job.forEach((findjob)=>{ %>
                         <% findjob.jobresume.forEach((user)=>{ %>
                         <div  style="background-color:	white;color: black;padding-bottom:15px;border-radius: 0px;"class="panel panel-default margin-bottom"" >
@@ -44,7 +44,7 @@
                             <div style="flex:30%;">
                               
                                 <figure >
-                                    <img class="img-thumbnail" style="margin-left: 20px;max-width: 100%; height: 150px; width: 150px; object-position: 50% 0; object-fit: cover;margin-top: 10px;" src="/images/img-profile/<%= user.image %>">
+                                    <img class="img-thumbnail" style="margin-left: 20px;max-width: 100%; height: 150px; width: 150px; object-position: 50% 0; object-fit: cover;margin-top: 30px;" src="/images/img-profile/<%= user.image %>">
                                     </figure>
                           
                                 </div>
@@ -53,8 +53,8 @@
                                 <p style="font-weight: bold;" >Jobseeker : <%= user.Name %>&nbsp&nbsp<%= user.Surname %> </p>                           
                             <p style="display: inline;" ><i style="margin-right: 10px;" class="fas fa-globe-asia"></i><%= user.Country %><p style="display: inline;"><i style="margin-left: 40px;margin-right: 10px;" class="fas fa-map-marker-alt"></i>asdasdasd</p></p>
                            
-                            <a style="padding: 5px 10px 5px 10px;background-color: white;border: solid 1px;margin-left: 70px;display: inline;margin-right: 100px;" href="/resumefile/<%= user.resume %>"> Download File</a>
-                       <form style="display: inline;" method="POST"> <button  style="background-color:  red;border-radius: 3px;color: white;padding: 2px 17px 1px 17px;" type="submit">Cancel</button></form>
+                            <a style="padding: 5px 10px 5px 10px;background-color: white;border: solid 1px;display: inline;margin-right: 50px;" href="/resumefile/<%= user.resume %>"> Download File</a>
+                       <form style="display: inline;" method="POST" action="/job/jobapplication/<%= findjob._id %>/jobseeker/<%= user._id %>/delete "> <button  style="background-color:  red;border-radius: 3px;color: white;padding: 2px 17px 1px 17px;" type="submit">Cancel</button></form>
                     </div>
                 </div>
             </div>

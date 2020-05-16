@@ -5,7 +5,7 @@ const express = require('express'),
       Job = require('../models/postjob'),
       jobseekersignup = require('../models/jobseeksignup'),
       applyjob = require('../models/applyjob'),
-     resumejob = require('../models/resumejob')
+      resumejob = require('../models/resumejob')
       multer = require('multer')
     
       router.get('/findjob', function(req,res){
@@ -28,7 +28,7 @@ const express = require('express'),
                     if(err)
                     console.log(err)
                     else{
-                        console.log(ok)
+                      
                         res.render('historyresume',{job:ok})
                     }
                 })
@@ -50,7 +50,7 @@ const express = require('express'),
             if(error){
                 console.log("Error!");
             } else {
-                console.log(jobshow)
+               
                 res.render('findjobafter',{jobshow:jobshow});
             }
         })
@@ -67,12 +67,20 @@ router.get('/new', function(req,res){
     })
     
 });
-router.post('/jobapplication/:id/delete',(req,res)=>{
-    Job.findById({_id:req.params.id},(err,result)=>{
+router.post('/jobapplication/:jobid/jobseeker/:jobseekid/delete',(req,res)=>{
+    Job.findById({_id:req.params.jobid},(err,result)=>{
         if(err)
         console.log(err)
         else{
-        result.jobresume.pull({_id:req.params.id})
+        result.jobresume.pull({_id:req.params.jobseekid})
+        result.save((err,ok)=>{
+            if(err)
+            console.log(err)
+            else{
+                req.flash('success','You Cancel Job Application Successful');
+                res.redirect('/job/jobapplication')
+            }
+        })
         }
     })
 })
@@ -101,6 +109,7 @@ router.get('/:id/remove', function(req,res){
         else 
         {
             console.log(result)
+            req.flash('success','You Remove Job Successful');
             res.redirect("/job/joblist")
             
         }
@@ -143,7 +152,6 @@ router.get('/:id/edit', function(req,res){
             let Degree = req.body.Degree;
             let Welfare = req.body.Welfare;
             let Qualificationsofjobapplicants = req.body.Qualificationsofjobapplicants;
-           
             let Enddate = req.body.Enddate;
             let Contact = req.body.Contact; 
             let JobDescription = req.body.JobDescription;
@@ -211,9 +219,6 @@ router.post('/apply/:id',(req,res)=>{
 
     })
     })
-
-
-
 router.get('/:id', function(req,res){
     Job.findById({_id:req.params.id},function(error,jobshow){
         if(error){
@@ -223,7 +228,6 @@ router.get('/:id', function(req,res){
         }
     })
  });
- 
  router.post('/:id', function(req,res){
     companysignup.findById({_id:req.user._id}, function(err, job){
         if(err){
@@ -233,28 +237,20 @@ router.get('/:id', function(req,res){
     ,MaximumSalary:req.body.MaximumSalary,Degree:req.body.Degree,JobDescription:req.body.JobDescription
     ,Welfare:req.body.Welfare,Contact :req.body.Contact,Howtogocompany:req.body.Howtogocompany
     ,Address:req.body.Address,Province:req.body.Province,Publicdate:req.body.Publicdate,Enddate:req.body.Enddate,CompanyName:job.CompanyName
-    ,Qualificationsofjobapplicants:req.body.Qualificationsofjobapplicants,image:job.image}, function(err,addjob){
+    ,Editdate:Date.now(),Qualificationsofjobapplicants:req.body.Qualificationsofjobapplicants,image:job.image}, function(err,addjob){
                 if(err){
                     console.log(err);
                 } else {
-                   
                     job.postjobs.push(addjob);
                     job.save((err,data)=>{
                         if(err)
                         console.log(err)
-                       
                     });
-                    
-                res.redirect('/job/'+ addjob._id);
-                   
-                    
+                res.redirect('/job/'+ addjob._id);   
                 }
             });
         }
     });
 });
-
-
-
 
 module.exports = router;
