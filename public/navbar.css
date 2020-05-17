@@ -4,6 +4,8 @@ body {
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
   color: #4C3D2A;
+  height: 100%;
+  
 }
 /* .offset:before {
   display: block;
@@ -22,7 +24,9 @@ div#fix{
     font-size: .9rem;
     letter-spacing: .1rem;
     background:black;
-  
+ 
+   
+ 
 }
 .navbar-brand a {
     color: #25376F;
@@ -157,15 +161,15 @@ div#fix{
   footer {
     background-color: #40474E;
     color: white;
-    padding: 2rem 0 2rem;
-    margin-top: 1rem;
+     height: 520px;
+    margin-top: 200px;
+    
+   
   }
-  footer img {
-    height: 3rem;
-    margin: 1.5rem 0;
-  }
+  
   footer a {
     color: white;
+    margin-top: 100px;
   }
   footer svg.svg-inline--fa {
     font-size: 1.6rem;

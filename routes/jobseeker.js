@@ -34,7 +34,6 @@ const express = require('express'),
 
       });
       var upload_resume = multer({storage : StorageOfresume});
-
       router.get('/login', function(req,res){
        
         res.render('joblogin');
@@ -138,8 +137,6 @@ if(req.file){
 
         }
     });
-
-
     router.get('/signup', function(req,res){
         res.render('signupJob');
     });
@@ -174,7 +171,6 @@ if(req.file){
                 res.render('profileJob',{jobseek:jobseek});
             }
         })
-       
     });
     router.get('/profile/:id/edit', function(req,res){
         jobseekersignup.findById({_id:req.user._id},function(error, upload){

@@ -10,7 +10,9 @@ const   express = require("express"),
         JobseekerRoutes = require('./routes/jobseeker'),
         indexRoutes = require('./routes/index'),
         CompanyRoutes = require('./routes/company'),
+        AdminRoutes = require('./routes/admin'),
         JobRoutes = require('./routes/job'),
+       
         multer = require('multer')
 
 
@@ -58,7 +60,7 @@ app.use('/',indexRoutes);
 app.use('/jobseeker',JobseekerRoutes);
 app.use('/company',CompanyRoutes);
 app.use('/job',JobRoutes);
-
+app.use('/admin', AdminRoutes);
 app.listen(3000,function(req,res){
     console.log('Server has started');
 });
