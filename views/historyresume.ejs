@@ -38,7 +38,7 @@
                     <% job.forEach((findjob)=>{ %>
                         <% findjob.jobresume.forEach((user)=>{ %>
                         <div  style="background-color:	white;color: black;padding-bottom:15px;border-radius: 0px;"class="panel panel-default margin-bottom"" >
-                            <div class="container" style="margin-top: 10px;">
+                            <div class="container" style="margin-top: 10px;">   
                                
                            <div style="display: flex;">
                             <div style="flex:30%;">
@@ -51,7 +51,7 @@
                                 <div style="flex:80%;margin-top: 20px;margin-left: 70px;">
                                     <p style="font-weight: bold;" >Job Tiles : <%= findjob.JobPosition %></p>
                                 <p style="font-weight: bold;" >Jobseeker : <%= user.Name %>&nbsp&nbsp<%= user.Surname %> </p>                           
-                            <p style="display: inline;" ><i style="margin-right: 10px;" class="fas fa-globe-asia"></i><%= user.Country %><p style="display: inline;"><i style="margin-left: 40px;margin-right: 10px;" class="fas fa-map-marker-alt"></i>asdasdasd</p></p>
+                            <p style="display: inline;" ><i style="margin-right: 10px;" class="fas fa-globe-asia"></i><%= user.Country %><p style="display: inline;"><i style="margin-left: 40px;margin-right: 10px;color: red;" class="fas fa-map-marker-alt"></i><%= user.Province %></p></p>
                            
                             <a style="padding: 5px 10px 5px 10px;background-color: white;border: solid 1px;display: inline;margin-right: 50px;" href="/resumefile/<%= user.resume %>"> Download File</a>
                        <form style="display: inline;" method="POST" action="/job/jobapplication/<%= findjob._id %>/jobseeker/<%= user._id %>/delete "> <button  style="background-color:  red;border-radius: 3px;color: white;padding: 2px 17px 1px 17px;" type="submit">Cancel</button></form>

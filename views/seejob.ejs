@@ -1,15 +1,29 @@
 
-<%- include("partials/headerafter") %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>SmileJob.com</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="/navbar.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/profileJob.css">
+        <meta name="description" content="">
+       
        
     </head>
-    <div style="margin-top: 100px;" class="container">
+    <div style="margin-top: 100px;margin-bottom: 100px;" class="container">
 
     <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
         <div style="background-color:white;" class="panel panel-default margin-bottom" >
@@ -22,7 +36,7 @@
                 <div style="display: flex;">
                     <div style="flex:30%">
 
-                        <img class="img-thumbnail" style="margin-left: 40px;max-width: 100%; height: 170px; width: 150px; object-position: 50% 0; object-fit: cover;" src="/images/img-Comprofile/<%= compic.image %>">
+                        <img class="img-thumbnail" style="margin-left: 40px;max-width: 100%; height: 170px; width: 150px; object-position: 50% 0; object-fit: cover;" src="/images/img-Comprofile/<%= showjob.image %>">
                     </div>
 
                     <div style="flex:90%">
@@ -32,20 +46,7 @@
                 <p><span style="font-weight: bold;"><i style="color: red;margin-right: 10px;font-size: 20px;" class="fas fa-map-marker-alt"></i>Province :</span> <%=  showjob.Province %> </p> 
             </div>
             </div>
-              <%  if(currentUser){ %>
-                <%    if(currentUser.CompanyName==null) { %>
-             <form action="/job/apply/<%= showjob._id %>" method="POST">  
-                <button type="submit" style="margin-left: 980px;margin-bottom: 20px;border: 1px solid;border-radius: 5px;padding: 5px 10px 5px 10px;color: white;background-color:#6495ED ;">Apply&nbspJob </button> 
-            </form> 
-            <%   }  %>
-            <% if(currentUser.CompanyName){ %>
-
-
-            <%   } %>
-            <%   } %>
-            <%   if(!currentUser){  %>
-            <a href="/jobseeker/login" style="margin-left: 980px;border: 1px solid;border-radius: 5px;padding: 5px 10px 5px 10px;color: white;background-color:#6495ED ;">Apply&nbspJob </a> 
-            <%  } %>
+              
             </div>
           
           
@@ -83,4 +84,3 @@
 </div>
 </div>
 
-<%- include("partials/footer") %>

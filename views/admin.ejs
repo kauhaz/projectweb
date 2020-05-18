@@ -28,7 +28,7 @@ div#a::-webkit-scrollbar-thumb {
     </head>
     <body style="font-family: 'Kanit', sans-serif;">
         <h1 style="border: 1px solid;text-align: center;background-color: black;color: white;padding: 20px;text-transform: uppercase;">Manage Web Site</h1>
-<div style="display:flex;">
+<div style="display:flex;margin-bottom: 90px;">
     <div style="flex: 30%;margin-top: 30px;">
 <h1 style="text-align: center;text-transform: uppercase;">Jobseeker</h1>
 <div  style="margin-top: 30px;margin-left: 10px;font-family: 'Bitter', serif;font-size: 20px;">
@@ -52,13 +52,15 @@ div#a::-webkit-scrollbar-thumb {
                                 </figure>
                             </div>
                             <div style="flex:70%;">
-                            <p style="font-weight: bold;text-transform: uppercase;font-size: 16px;margin-left: 20px;" >USERNAME  </p>   
-                            <p><%= findjob.username %></p>   
-                            <a  style="display: inline;padding: 5px;background-color: white;border: solid 1px;margin-left: 10px;font-size: 18px;" href="/jobseeker/profile/">See More</a>
+                            <p style="font-weight: bold;text-transform: uppercase;font-size: 16px;" >USERNAME  </p>   
+                            <p ><%= findjob.username %></p>   
+                           
+                            <a  style="display: inline;padding: 5px;background-color: white;border: solid 1px;margin-left: 10px;font-size: 18px;" href="/admin101631/jobseeker/<%= findjob._id %> ">See More</a>
                   
-                            <form style="display: inline;" action="/admin/jobseeker/<%= findjob._id %>/delete" method="POST"> 
+                            <form style="display: inline;" action="/admin101631/jobseeker/<%= findjob._id %>/delete" method="POST"> 
                                 <button  style="background-color:  red;border-radius: 3px;color: white;padding: 0px 15px 0px 15px;margin-left: 10px;" type="submit">Delete</button>
                             </form>
+                       
                 </div>
         
             </div>
@@ -101,10 +103,11 @@ div#a::-webkit-scrollbar-thumb {
                             <div style="flex:70%;margin-top: 20px;">
                            
                             <p><%= findjob.CompanyName %></p>    
-                    <a  style="display: inline;padding: 5px;background-color: white;border: solid 1px;margin-left: 10px;font-size: 18px;" href="/jobseeker/profile/">See More</a>
-                  
-                   <form style="display: inline;" action="/admin/company/<%= findjob._id %>/delete" method="POST"> 
+                            <div style="margin-bottom:10px">
+                    <a  style="display: inline;padding: 5px;background-color: white;border: solid 1px;margin-left: 10px;font-size: 18px;" href="/admin101631/company/<%= findjob._id %>">See More</a>
+                   <form style="display: inline;" action="/admin101631/company/<%= findjob._id %>/delete" method="POST"> 
                     <button  style="background-color:  red;border-radius: 3px;color: white;padding: 0px 15px 0px 15px;margin-left: 10px;" type="submit">Delete</button></form>
+                </div>
                 </div>
         
             </div>
@@ -148,9 +151,9 @@ div#a::-webkit-scrollbar-thumb {
                                
                                 <p style="font-size: 15px;font-weight: bold;"><%= findjob.CompanyName %></p>       
                                 <p style="font-size: 15px;"><%= findjob.JobPosition %></p>     
-                            <a  style="display: inline;padding: 5px;background-color: white;border: solid 1px;margin-left: 1px;font-size: 18px;" href="/jobseeker/profile/">See More</a>
+                            <a  style="display: inline;padding: 5px;background-color: white;border: solid 1px;margin-left: 1px;font-size: 18px;" href="/admin101631/job/<%= findjob._id %>">See More</a>
                   
-                            <form style="display: inline;" action="/admin/job/<%= findjob._id %>/delete" method="POST">
+                            <form style="display: inline;" action="/admin101631/job/<%= findjob._id %>/delete" method="POST">
                                  <button  style="background-color:  red;border-radius: 3px;color: white;padding: 0px 15px 0px 15px;margin-left: 10px;" type="submit">Delete</button></form>
                 </div>
         

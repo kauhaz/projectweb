@@ -1,22 +1,30 @@
-<%- include("partials/headerafter") %>
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>SmileJob.com</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="/navbar.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/profileJob.css">
+        <meta name="description" content="">
        
        
     </head>
   <body>
 
-    <div style="margin-top: 80px;margin-left: 30px;margin-right: 30px;border-radius: 0px;font-family: 'Bitter', serif;">
+    <div style="margin-top: 80px;margin-left: 30px;margin-right: 30px;border-radius: 0px;font-family: 'Bitter', serif;margin-bottom: 100px;">
         <div class=" col-lg-12 col-md-3 col-sm-12" >
             <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                 <div style="background-color:white ;height: 800px;" class="panel panel-default margin-bottom" >
@@ -40,7 +48,7 @@
 </div>
 
     <div style="flex:50%;background-color:white;height: 800px;z-index: 1;border-radius: 0px;">
-        <a href="/company/profile/<%= Company._id %>/edit" style="font-size: 50px;margin-left: 560px;position: absolute;top: 1px;"><i class="fas fa-edit"></i></a>
+
           <div style="background-color: white;z-index: 1;height: 430px;margin-top: 185px;margin-left: 40px;margin-right: 40px;box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;">
             <h1 style="margin-bottom: 30px;text-align: center;margin-top: 30px;background-color: black;color: white;padding-bottom: 10px;padding-top: 10px;">About Company</h1>
             <div style="display: flex;font-size: 15 px;" >
@@ -77,6 +85,3 @@
             </div>
         </div>
     </div>
-
-  </body>
-<%- include("partials/footer") %>

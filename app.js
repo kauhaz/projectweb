@@ -60,7 +60,7 @@ app.use('/',indexRoutes);
 app.use('/jobseeker',JobseekerRoutes);
 app.use('/company',CompanyRoutes);
 app.use('/job',JobRoutes);
-app.use('/admin', AdminRoutes);
+app.use('/admin101631', AdminRoutes);
 app.listen(3000,function(req,res){
     console.log('Server has started');
 });

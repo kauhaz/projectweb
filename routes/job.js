@@ -166,7 +166,7 @@ router.get('/:id/edit', function(req,res){
                         ,MinimumSalary:MinimumSalary, MaximumSalary: MaximumSalary,Degree:Degree
                         ,Welfare:Welfare,Province:Province,Qualificationsofjobapplicants:Qualificationsofjobapplicants
                         ,Enddate:Enddate,Contact:Contact,JobDescription:JobDescription,Howtogocompany:Howtogocompany,Address:Address,image:ok.image,CompanyName:ok.CompanyName
-            ,Editdate:req.body.Editdate}} ,function(error, job){
+            ,Editdate:Date.now()}} ,function(error, job){
                         if(error){
                             console.log(error);
                         } else {
@@ -224,7 +224,14 @@ router.get('/:id', function(req,res){
         if(error){
             console.log("Error!");
         } else {
-            res.render('showjob',{showjob:jobshow});
+            companysignup.findOne({CompanyName:jobshow.CompanyName},(err,ok)=>{
+                if(err)
+                console.log(err)
+                else{
+                    res.render('showjob',{showjob:jobshow,compic:ok});
+                }
+            })
+          
         }
     })
  });

@@ -155,11 +155,11 @@
                         <p style="display: inline;text-indent: 10px;"> Total <%= job.length %> Jobs</p>
                     </div>
                     </div>
-                    <div  id="a"style="background-color:white;border-radius: 0px;height:1200px;overflow: auto;" class="panel panel-default margin-bottom" >
+                    <div  id="a"style="background-color:white;border-radius: 0px;height: 970px;overflow: auto;" class="panel panel-default margin-bottom" >
                     <% job.forEach((findjob)=>{ %>
                         <div style="background-color:	white;color: black;padding-bottom:15px;border-radius: 0px;"class="panel panel-default margin-bottom"" >
                             <div class="container" style="margin-top: 10px;">
-                                <p style="text-align: right;font-size: 20px;" ><%= moment(findjob.Publicdate).format('DD/MM/YYYY') %></p>
+                                <p style="text-align: right;font-size: 20px;" ><%= moment(findjob.Editdate).format('DD/MM/YYYY') %></p>
                            <div style="display: flex;">
                             <div style="flex:30%;">
                               
@@ -171,7 +171,8 @@
                                 <div style="flex:80%;">
                                 <p style="font-weight: bold;text-transform: uppercase;font-size: 21px;text-transform: uppercase;font-size: 21px;" ><%= findjob.JobPosition %></p>
                             <p ><%= findjob.CompanyName %> </p>
-                            <p style="display: inline;"><i style="color: red;margin-right: 10px;" class="fas fa-map-marker-alt"></i><%= findjob.Province %> <p style="display: inline;"><i style="color: orange;margin-left: 80px;margin-right: 10px;" class="fas fa-coins"></i> <%= findjob.MinimumSalary %> -</p> <p style="display: inline;"><%= findjob.MaximumSalary %></p> </p>
+                            <p style="display: inline;"><i style="color: red;margin-right: 10px;" class="fas fa-map-marker-alt"></i><%= findjob.Province %> 
+                                <p style="display: inline;"><i style="color: orange;margin-left: 80px;margin-right: 10px;" class="fas fa-coins"></i> <%= findjob.MinimumSalary %> -</p> <p style="display: inline;"><%= findjob.MaximumSalary %></p> </p>
                              
                             <a  style="padding: 5px;background-color: white;border: solid 1px;margin-left: 400px;" href="/job/<%= findjob._id %>">See More</a>
                             <% if(currentUser) { %>

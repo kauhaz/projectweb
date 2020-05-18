@@ -26,14 +26,14 @@
 <div  style="flex:50%;background-color:#C0AB8E;background-size: 100%;height: 800px;border-radius: 0px;">
    
     
-    <p style="position:absolute;font-size: 60px;left:100px;color: #615550 ;top: 120px;"> Jobseeker  </p><br>
-    <p style="position:absolute;font-size: 60px;top: 220px;left:100px;color: #615550 ;"> Profile  </p>
-    <p style="position:absolute;font-size: 60px;left:370px;color: gold;border-radius: 50%;border:1px solid;top: 530px;padding: 70px;background-color: white;">  </p>
+    <p style="position:absolute;font-size: 60px;left:100px;color: #331a00 ;top: 120px;"> Jobseeker  </p><br>
+    <p style="position:absolute;font-size: 60px;top: 220px;left:100px;color: #331a00 ;"> Profile  </p>
+    <p style="position:absolute;font-size: 60px;left:370px;border-radius: 50%;top: 530px;padding: 70px;background-color: #797B3A;">  </p>
     <div style="margin-bottom: 20px;">
         
             <img class="img-thumbnail" style="height: 450px;width: 450px;margin-left: 90px;border-radius: 50% ;object-fit: cover;object-position: 50% 0;margin-top: 150px;" src="/images/img-profile/<%= jobseek.image %>">
 <div style="margin-bottom: 20px;margin-top: 70px;">
-<p style="text-align:center;text-transform: uppercase;font-size: 30px;"><%= jobseek.Name %>  &nbsp&nbsp  <%= jobseek.Surname %></p>
+<p style="text-align:center;text-transform: uppercase;font-size: 35px;color: #331a00 ;"><%= jobseek.Name %>  &nbsp&nbsp  <%= jobseek.Surname %></p>
 </div>
 
 </div>
@@ -42,11 +42,11 @@
     <div style="flex:50%;background-color:white;height: 800px;z-index: 1;border-radius: 0px;">
         <a href="/jobseeker/profile/<%= jobseek._id %>/edit" style="font-size: 50px;margin-left: 560px;position: absolute;top: 1px;"><i class="fas fa-edit"></i></a>
           
-          <div style="background-color: white;z-index: 1;height: 430px;margin-top: 185px;margin-left: 40px;margin-right: 40px;box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;">
+          <div style="background-color: white;z-index: 1;height: 450px;margin-top: 175px;margin-left: 40px;margin-right: 40px;box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;">
             <h1 style="margin-bottom: 30px;text-align: center;margin-top: 30px;background-color: black;color: white;padding-bottom: 10px;padding-top: 10px;">About me</h1>
             <div style="display: flex;font-size: 14px;" >
                 <div style="flex:50%;margin-left: 30px;">
-                <div style="margin-right: 50px;margin-left: 40px;">
+                <div style="margin-right: 50px;margin-left: 25px;">
                     <p style="margin-left: 1px;">Tel : <%= jobseek.TelephoneNo %></p>
 <p style="margin-left: 1px;"><span style="text-transform: uppercase;">Email :</span> <%= jobseek.email %></p>
         <p >ID Card : <span style="margin-left: 1px;"><%= jobseek.IDCard %></span></p>
@@ -57,8 +57,8 @@
         
     </div>
     </div>
-    <div style="flex: 50%;margin-left: 30px;">
-        <div style="margin-right: 10px;">
+    <div style="flex: 50%;margin-left: 20px;">
+        <div style="margin-right: 30px;">
             <p >Nationality : <span style="margin-left: 1px;"><%= jobseek.Nationality %></span></p>
             <p >Religion : <span style="margin-left: 1px;"><%= jobseek.Religion %></span></p>
         <p >Country : <span style="margin-left: 1px;"><%= jobseek.Country %></span></p>
