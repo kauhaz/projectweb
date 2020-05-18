@@ -12,7 +12,7 @@ const express = require('express'),
         filename:function(req,file,cb){
           //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
 
-          cb(null,Date.now() + ".jpg");
+          cb(null,file.originalname);
         }
 
       });
