@@ -50,7 +50,7 @@ const express = require('express'),
             if(error){
                 console.log("Error!");
             } else {
-               
+               console.log(jobshow)
                 res.render('findjobafter',{jobshow:jobshow});
             }
         })

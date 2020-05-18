@@ -194,7 +194,7 @@ if(req.file){
             }
             passport.authenticate('joblocal')(req,res,function(){
                 req.flash('success','You Signup in successfully');
-               res.redirect('/job/findjob')
+               res.redirect('/jobseeker/profile')
             });
         });
     });

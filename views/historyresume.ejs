@@ -54,7 +54,7 @@
                             <p style="display: inline;" ><i style="margin-right: 10px;" class="fas fa-globe-asia"></i><%= user.Country %><p style="display: inline;"><i style="margin-left: 40px;margin-right: 10px;color: red;" class="fas fa-map-marker-alt"></i><%= user.Province %></p></p>
                            
                             <a style="padding: 5px 10px 5px 10px;background-color: white;border: solid 1px;display: inline;margin-right: 50px;" href="/resumefile/<%= user.resume %>"> Download File</a>
-                       <form style="display: inline;" method="POST" action="/job/jobapplication/<%= findjob._id %>/jobseeker/<%= user._id %>/delete "> <button  style="background-color:  red;border-radius: 3px;color: white;padding: 2px 17px 1px 17px;" type="submit">Cancel</button></form>
+                       <form style="display: inline;" method="POST" action="/job/jobapplication/<%= findjob._id %>/jobseeker/<%= user._id %>/delete "> <button  style="background-color:  red;border-radius: 3px;color: white;padding: 2px 17px 1px 17px;" type="submit">Reject</button></form>
                     </div>
                 </div>
             </div>
