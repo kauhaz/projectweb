@@ -14,6 +14,7 @@
     <div class="img">
         <img src="/picture/co-working.png">
     </div>
+    <div class="all">
     <div class="login-content">
         <form id="edit"" method="POST" action="/company/signup" >
             <img src="/picture/avatar2.png">
@@ -55,7 +56,8 @@
                     <div class="invalid-feedback">
                         Please enter a company name.
                     </div>
-                </div>
+                </div> 
+                
                 
             </div>
             <div class="form-group">
@@ -74,4 +76,54 @@
         </form>
     </div>
 </div>
+</div>
+<style>
+     div.container1{
+min-height: 800px;
+    }
+    @media screen and (max-width: 1024px) {
+        div.container1{
+            display: grid;
+        grid-template-columns:100%;
+        }
+  div.login-content{
+    display: flex;
+justify-content: center;
+align-items: center;
+
+
+  }
+  div.img{
+    position: relative;
+      right:  220px;
+  } 
+  }
+            
+    
+    @media screen and (max-width: 768px) {
+        div.login-content{
+    display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 150px;
+  }
+    }
+    @media screen and (max-width: 425px) {
+        div.login-content{
+    display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 70px;
+  }
+    }
+    @media screen and (max-width: 375px) {
+     
+      
+    }
+    @media screen and (max-width: 320px) {
+      
+        
+    }
+    
+           </style>
 <%- include("partials/footer") %>

@@ -12,23 +12,24 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+       
         <meta name="description" content="">
-      
-    
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+         
             <div class="container">
                 <a class="navbar-brand" href="/">SmileJob<i style="margin-left: 10px;" class="fas fa-user-md"></i></a>
             </div>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button id="a" class="navbar-toggler" style="margin-left: auto;"
+            type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-align-justify"></i>
             </button>
+       
             <% if(!currentUser) { %>
-            <div style="margin-right: 140px;" class="collapse navbar-collapse" id="fix">
+            <div  class="collapse navbar-collapse" id="navbarNav">
+              <div id='allnavnouser' >
               <ul class="navbar-nav ml-auto" id="fix">
                 <li class="nav-item">
                   <a  class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
@@ -45,8 +46,8 @@
              
                 
               
-                
-                <div style="margin-left: 650px;margin-right: 100px;" class="btn-group">
+              </div>
+                <div id='loginnouser'  class="btn-group m-0">
                   <button  type="button" class="btn btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/jobseeker/login">For JobSeekers</a>
@@ -54,14 +55,26 @@
                   </div>
                 </div>
               </div>
+        
                 <% } %>
 
                 <% if(currentUser) { %>
                   <% if(currentUser.CompanyName) { %>
-                    <div style="margin-right: 400px;">
+                  <style>
+button#a{
+display: none;
+}
+</style>
+                    <button class="navbar-toggler" style="margin-left: auto;"
+            type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-align-justify"></i>
+            </button>
+            
+                    <div class="collapse navbar-collapse" id="navbarNav2" >
+                      <div style="margin-right: 400px;">
                     <ul class="navbar-nav ml-auto" id="fix">
                     
-                    <div class="btn-group">
+                    <div class="btn-group m-0">
                       <a   class="nav-link" data-toggle="dropdown" aria-expanded="false">PostJob</a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/job/new" >Post</a>
@@ -82,14 +95,24 @@
                   </li>
 
                
-                  </div>
-                  
+              
+                </div>
                   <a style="margin-left: 100px;margin-right: 100px;" href="/logout" type="button" class="btn btn-outline-primary" >Logout</a>
             
-             
+                </div>
                   <% } %>
                   <% if(currentUser.CompanyName==null) { %>
-                    <div style="margin-right:460px;">
+                    <style>
+                      button#a{
+                        display: none;
+                      }
+                      </style>
+                       <button class="navbar-toggler" style="margin-left: auto;"
+                       type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                         <i class="fa fa-align-justify"></i>
+                       </button>
+                    <div class="collapse navbar-collapse" id="navbarNav3">
+                      <div style="margin-right: 400px;">
                     <ul class="navbar-nav ml-auto" id="fix">
                    
                     <li class="nav-item">
@@ -109,22 +132,21 @@
                     <a class="nav-link" href="/jobseeker/profile">Profile</a>
                 </li>
 
-                </div>
+              </div>
                   <a style="margin-right: 100px;" href="/logout" type="button" class="btn btn-outline-primary" >Logout</a>
-                   
+                </div>
                      <% } %>
                     <% } %>
             </ul>
+         
+
             </nav>
 
             
                   </form>
               
                   
-                
-                </div>
-            </div>
-        </div>
+               
  
         <div class='container'>
           <% if (error && error.length > 0) { %>
@@ -138,3 +160,69 @@
             </div>
           <% } %>
         </div>
+        
+        <style>
+  div#allnavnouser{
+    margin: 0;
+  } 
+  div#loginnouser{
+    margin: 0;
+  }
+  div#navbarNav{
+    position: relative;
+  right: 780px;
+    
+  }
+  
+ 
+          @media screen and (max-width: 1024px) {
+            div#allnavnouser{
+              
+            }
+            div#loginnouser{
+              margin-left:250px;
+              margin-right: 200px;
+            }
+            div#navbarNav{
+              position: relative;
+               right: 460px;
+  }
+  
+          }
+          @media screen and (max-width: 768px) {
+            div#navbarNav{
+    position: relative;
+ right: 0px;
+    
+  }
+             
+          }
+          @media screen and (max-width: 425px) {
+            div#navbarNav{
+    position: relative;
+ right: 0px;
+    
+  }
+             
+          }
+          @media screen and (max-width: 375px) {
+            div#navbarNav{
+    position: relative;
+ right: 0px;
+    
+  }
+             
+          }
+          @media screen and (max-width: 320px) {
+              
+            div#navbarNav{
+    position: relative;
+ right: 0px;
+    
+  }
+             
+              
+          }
+          
+                 </style>
+

@@ -199,39 +199,167 @@ input[type='submit'] {
 
 
 <body class="align">
-
+  <div class="login">
     <div class="grid">
   
       <form action="/company/login" method="post" class="form login">
   
         <header class="login__header">
-          <h1 style="font-size: 20px;"  class="login__title"><i style="font-size: 30px;margin-right: 30px;" class="fas fa-building"></i>Company Login</h1>
+          <h3 id='login'  class="login__title"><i style="font-size: 30px;margin-right: 30px;" class="fas fa-building"></i>Company Login</h3>
         </header>
-  
+        <div class='content'>
         <div class="login__body">
   
           <div class="form__field">
-            <input style="margin-bottom: 30px;border-style: solid;" name="username" type="text" placeholder="Username" required>
+            <input class='username'  style="margin-bottom: 30px;border-style: solid;" name="username" type="text" placeholder="Username" required>
           </div>
   
           <div class="form__field">
-            <input style="border-style: solid 20px;margin-bottom: 10spx;" name="password" type="password" placeholder="Password" required>
+            <input class='password'  style="border-style: solid 20px;margin-bottom: 10spx;" name="password" type="password" placeholder="Password" required>
           </div>
   
         </div>
         <div class="login__footer">
-       <input style="margin-right:80px;" type="submit" value="Login">
+       <input class='login' style="margin-right:80px;" type="submit" value="Login">
 
-        <p style="margin-left:40px"><span class="icon icon--info">?</span><a href="/company/forgot_pass">Forgot Password</a></p>
+        <p class="forget" ><a href="/company/forgot_pass">Forgot&nbspPassword</a></p>
 
        
     </div>
-    <p style="margin-left:140px;margin-bottom: 100px;">Not a member?  <a href="/company/signup">Sign Up now</a></p>
-    
+    <p class='member'  >Not a member?  <a href="/company/signup">Sign&nbspUp&nbspnow</a></p>
+  </div>
       </form>
   
     </div>
-  
+  </div>
   </body>
-
+ <style>
+  div.login{
+    min-height: 550px;
+  }
+  h3#login{
+    font-size: 20px;
+  }
+ h3 span{
+    font-size: 30px;
+    margin-right: 30px;
+  }
+ p.forget{
+  margin-left:40px
+ }
+ p.member{
+  margin-left:140px;
+  margin-bottom: 100px;
+ }
+    @media screen and (max-width: 1024px) {
+    div.login{
+    min-height:650px;
+  }
+    div.grid{
+   margin-top: 200px;
+  }
+          }
+    @media screen and (max-width: 768px) {
+      div.grid{
+      width: 60%;
+  }  
+          }
+          @media screen and (max-width: 425px) {
+            input.login{
+              margin-right: 20px;
+            }
+            div.login__body{
+              width: 100%;
+            }
+            div.grid{
+             width: 80%;
+             height: 350px;
+             margin-top: 300px;
+            }  
+            h3#login{
+            font-size: 15px;
+            width: 100%;
+            }
+            h3 span{
+            font-size: 15px;
+            margin-right: 30px;
+            }
+            p.forget{
+            margin-left:20px;
+            margin-right:40px;
+            }
+            p.member{
+            margin-left:60px;
+            margin-bottom: 10px;
+            }
+            a.forget{
+              
+              font-size: 15px;
+            }
+            span#icon{
+             
+            }
+            div.content{
+     margin-top: -30px;
+   }          
+   input.username{
+     height: 15px;
+   }
+   input.password{
+     height: 15px;
+   }
+          }
+          @media screen and (max-width: 375px) {
+            h3#login{
+    font-size: 15px;
+  }
+ h3 span{
+    font-size: 15px;
+    margin-right: 30px;
+  }
+  p.forget{
+            margin-left:10px;
+            margin-right:30px;
+            }
+            p.member{
+            margin-left:40px;
+            margin-bottom: 10px;
+            }
+            div.grid{
+   margin-top: 250px;
+   height: 350px;
+  }
+   div.content{
+     margin-top: -30px;
+   }          
+   input.username{
+     height: 15px;
+   }
+   input.password{
+     height: 15px;
+   }
+  
+          }
+          @media screen and (max-width: 320px) {
+      
+            p.forget{
+            margin-left:10px;
+            margin-right:35px;
+            font-size: 13px;
+            }
+            p.member{
+            margin-left:40px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            }
+            input.login{
+    font-size: 12px;
+   }
+   div.grid{
+   margin-top: 250px;
+   height: 330px;
+  }
+          }
+          
+                 </style>
 <%- include("partials/footer") %>

@@ -8,43 +8,120 @@
         <link rel="stylesheet" href="/profileJob.css">
     </head>
     <body>
-    <div style="display: flex;margin-top: 100px;margin-left: 50px;margin-right: 50px;">
-        <div class=" col-lg-6 col-md-6 col-sm-12" >
-            <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
+ 
+    <div class='content'>
+        <section>
+            <div  class="panel-group panel-group-a" id="frame1" role="tablist" aria-multiselectable="true">
                 <div style="background-color:#fa9a85 ;" class="panel panel-default margin-bottom" >
                    
                         
-                        <p style="background-color:#5a3e36;padding-bottom: 3px;text-align: center;color: white;font-size:50px;">Smilejob.com</p>
+                        <p id='topiccon' style="background-color:#5a3e36;padding-bottom: 3px;text-align: center;color: white;">Smilejob.com</p>
 
                    
-<div style="text-align: center;margin-top: 70px;margin-bottom:65px;font-size: 25px;" class="container""  id="detail"> 
+                    <div style="text-align: center;margin-top: 70px;margin-bottom:65px;" class="container""  id="font"> 
 
-<div >
-    <p>946/1 Soi Thoet Thai 20/1,Thoet Thai Road</p>
-<p>Talat Phlu , Thonburi,Bangkok 10600</p>
+                        <div >
+                            <p>946/1 Soi Thoet Thai 20/1,Thoet Thai Road</p>
+                            <p>Talat Phlu , Thonburi,Bangkok 10600</p>
 
-</div>
-<div>
-    <p>Call : 089-660-5873 </p>
-        <p> Email : Komsark_@hotmail.co.th</p>
+                        </div>
+                        <div>
+                            <p>Call : 089-660-5873 </p>
+                            <p> Email : Komsark_@hotmail.co.th</p>
 
-</div>
-</div>
+                        </div>
+                    </div>
 
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </section>
 
-    <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
-        <div style="background-color:#c0ab8e;" class="panel panel-default margin-bottom" >
-            <div style="margin-top: 15px;" class=" col-sm-12 col-lg-6 col-md-6">
-<p><iframe style="width: 590px;height: 370px;" src="https://www.google.com/maps/d/u/0/embed?mid=1SaWbuhoax5nEk1erLUbZsCtE1bIyX4a_"   frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
-</div>
-</div>
-</div>
-
-</div>
+        <section class="panel-group panel-group-a" id="frame2" role="tablist" aria-multiselectable="true">
+            <div  style="background-color:#c0ab8e;" class="panel panel-default margin-bottom" >
+                <div>
+                    <iframe id="mapframe" src="https://www.google.com/maps/d/u/0/embed?mid=1SaWbuhoax5nEk1erLUbZsCtE1bIyX4a_"   frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+<%- include("partials/footer") %>
 </body>
+<style>
+    iframe#mapframe{
+        width: 100%;
+        height: 410px;
+        margin-bottom: -10px;
+    }
+   p#topiccon{
+    font-size:50px;
+   }
+   div#font{
+    font-size: 25px;
+   }
+   
+   .content
+   {
+        min-height: 500px;
+        margin: 50px 0px;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+   }
+   .content section
+   {
+       margin: 20px;
+   }
+
+
+
+
+
+    @media screen and (max-width: 1024px) {
+        p#topiccon{
+            font-size:30px;
+        }
+        div#font{
+            font-size: 20px;
+        }
+        div#frame2{
+            width: 100%;
+            height: auto;
+        }
+        div#frame1{
+            width: 100%;
+            height: auto;
+        }
+        iframe#mapframe{
+                width:100%;
+                height: 350px;
+            
+        }
+        .content
+        {
+                min-height: 1000px;
+                display: grid;
+                grid-template-columns: 100%;
+                padding: 5px;
+        }
+            
+    
+    }
+    @media screen and (max-width: 768px) {
+        
+       
+    }
+    @media screen and (max-width: 425px) {
+      
+    }
+    @media screen and (max-width: 375px) {
+    }
+    @media screen and (max-width: 320px) {
+        
+        
+        
+    }
+    
+    </style>
 </html>
 
 
@@ -54,4 +131,3 @@
 
 
 
-<%- include("partials/footer") %>
