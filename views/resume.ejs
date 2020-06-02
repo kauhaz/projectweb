@@ -12,19 +12,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
        
     </head>
-  
+  <div class='allcontent'>
 <div style="font-family: 'Kanit', sans-serif;" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
     
     <form method="post" action="/jobseeker/resume" enctype="multipart/form-data">
-    <div style="box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5);border-radius: 0px; ;background-color: black;margin-left: 300px; margin-right:300px;margin-top: 100px;color: antiquewhite  ;" class="panel panel-default margin-bottom" id="step1">
-<h1 style="text-align: center;margin-top: 10px;margin-bottom: 10px;">My Resume</h1>
+    <div  class="panel panel-default margin-bottom" id="step1">
+<h1 id='resume' >My Resume</h1>
 <div style="background-color:#f0EDE5;border-radius: 0px;" class="panel panel-default margin-bottom" >
-    <div style="display: flex;margin-top: 40px;">
-        <div style="flex:60%">
+    <div class='twoitem' >
+        <div class='upload' >
            
-<h2 style="margin-top: 20px;margin-left: 150px;color: black;">Upload PDF File  </h2>
+<h2 id='upload' >Upload PDF File  </h2>
 </div>
-<div style="flex:50%;margin-bottom: 20px;">
+<div class='choose'>
 <input class="a"  name="resume" type="file" id="real-file" hidden="hidden" />
 <button  style="margin-bottom:2px;margin-top:25px;cursor: pointer;" type="button" id="custom-button">CHOOSE A FILE</button><br>
 </div>
@@ -59,9 +59,180 @@ button#k{
 }
 
 </style>
-<button id="k"  style="font-size: 20px;color: white;margin-top: 15px;margin-left: 280px;margin-bottom: 100px;padding: 10px 60px 10px 60px;border-radius: 5px;"  >Save</button>
+<button id="k" >Save</button>
 </div>
     </div>
 </form>
 </div>
+</div>
+      
+</body>
+<style>
+    div.allcontent{
+        min-height: 500px;
+       }
+    div#step1{
+        box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5);
+        border-radius: 0px; 
+        background-color: black;
+        margin-left: 300px;
+         margin-right:300px;
+         margin-top: 100px;
+         
+         color: antiquewhite  ;
+    }
+    div.choose{
+        flex:50%;
+        margin-bottom: 20px;
+    }
+    div.upload{
+        flex:60%;
+        
+    }
+    div.twoitem{
+        display: flex;
+        margin-top: 40px;
+    }
+    h2#upload{
+        margin-top: 20px;
+        margin-left: 150px;
+        color: black;
+    }
+    h1{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button#k{
+        font-size: 20px;
+        color: white;
+        margin-top: 15px;
+        margin-left: 280px;
+        margin-bottom: 100px;
+        padding: 10px 60px 10px 60px;
+        border-radius: 5px;
+    }
+    @media screen and (max-width: 1024px) {
+        div.allcontent{
+        min-height: 650px;
+      
+margin-top:180px;
+
+    }
+    div#step1{
+        box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5);
+        border-radius: 0px; 
+        background-color: black;
+        margin-left: 150px;
+         margin-right:150px;
+         margin-top: 100px;
+       
+         color: antiquewhite  ;
+    }
+    }
+    @media screen and (max-width: 768px) {
+        div#step1{
+        box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5);
+        border-radius: 0px; 
+         background-color: black;  
+        margin-left: 80px;
+         margin-right:80px;
+         margin-top: 100px;
+       
+         color: antiquewhite  ;
+    }
+   div.upload{
+       flex: 100%;
+margin-left: -70px;
+   }
+   div.choose{
+    flex: 50%;
+   position: relative;
+   right: 10px;
+   }
+   button#k{
+       position: relative;
+       right: 60px;
+   }
+    }
+    @media screen and (max-width: 425px) {
+        div.twoitem{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    div.upload{
+     font-size: 10px;
+margin-left: -150px;
+   }
+   div.choose{
+    
+   position: relative;
+   left:  60px;
+   }
+   h2#upload{
+        margin-top: 20px;
+        text-align: center;
+        color: black;
+        font-size: 20px;
+    }
+    h1#resume{
+       font-size: 30px;
+     margin-top: 5px;
+    }
+    button#k{
+        font-size: 20px;
+        color: white;
+        margin-top: 15px;
+        margin-left: 0px;
+        margin-bottom: 100px;
+        padding: 10px 40px 10px 40px;
+        border-radius: 5px;
+        position: relative;
+        right: 0px;
+       left: 60px;
+       text-align: center;
+    }
+    }
+    @media screen and (max-width: 375px) {
+        div.choose{
+    
+    position: relative;
+    left:  0px;
+    text-align: center;
+    }
+    button#k{
+        font-size: 20px;
+        color: white;
+        margin-top: 15px;
+        margin-left: 0px;
+        margin-bottom: 100px;
+        padding: 6px 40px 6px 40px;
+        border-radius: 5px;
+        position: relative;
+        right: 0px;
+       left: 40px;
+       text-align: center;
+    }
+    }
+    @media screen and (max-width: 320px) {
+        h1#resume{
+       font-size: 20px;
+     margin-top: 5px;
+    }
+    button#k{
+        font-size: 20px;
+        color: white;
+        margin-top: 15px;
+        margin-left: 0px;
+        margin-bottom: 100px;
+        padding: 3px 40px 3px 40px;
+        border-radius: 5px;
+        position: relative;
+        right: 0px;
+       left: 15px;
+       text-align: center;
+    }
+    }
+    
+           </style>
 <%- include("partials/footer") %>
