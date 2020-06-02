@@ -4,7 +4,7 @@
 <style>
     .table-content {
         width: 1000px;
-        margin: 50px auto;
+        margin:auto;
         margin-top: 40px;
         text-align: center; 
         border-collapse: collapse;
@@ -15,11 +15,12 @@
     td {
         border: 1px solid #ddd;
         border-collapse: collapse;
-        width:500px;
+        width:500px
       
     }
 </style>
-<h1 style="text-transform: uppercase;text-align: center;margin-top: 40px;font-family: 'Kanit', sans-serif;font-size: 60px;"><i style="margin-right: 50px;color:#280000  ;" class="fas fa-history"></i>History Post Job</h1>
+<div class='allcontent'>
+<h1 class='topic' ><span><i class="fas fa-history"></i></span>History Post Job</h1>
 <div style="font-family: 'Kanit', sans-serif;" class="table-content">
     <table   class="table table-borded table-responsive table-striped " id="table-list">
         <thead class="table-dark">
@@ -41,10 +42,10 @@
                 <td><%= moment(jobshow.Publicdate).format('DD/MM/YYYY') %></td>
                 <td><%= moment(jobshow.Editdate).format('DD/MM/YYYY') %></td>
                 <td><%= moment(jobshow.Enddate).format('DD/MM/YYYY') %></td>
-                <td><a  href="/job/<%= jobshow._id %>"><i style="font-size: 25px;margin-right: 10px;color: #615550 ;display: inline;" class="fas fa-eye"></i></a>
+                <td><a  href="/job/<%= jobshow._id %>"><span><i class="fas fa-eye"></i></span></a>
                     
-                    <a href="/job/<%= jobshow._id %>/edit"><i style="font-size: 25px;margin-right: 10px;color:#615550  ;display: inline;" class="fas fa-edit"></i></a>
-                    <form style="display: inline;" action="/job/<%= jobshow._id %>/remove" method="get"> <button style="border:none;padding:0px 0px 0px 0px;margin-right: 10px;display: inline;" type="submit"><i style="font-size: 25px;margin-left: px;color:#615550  ;" class="fas fa-trash-alt"></i></button></form>
+                    <a href="/job/<%= jobshow._id %>/edit"><span><i  class="fas fa-edit"></i></span></a>
+                    <form  action="/job/<%= jobshow._id %>/remove" method="get"> <button type="submit"><span><i  class="fas fa-trash-alt"></span></i></button></form>
                 </td>
                 
             </tr>
@@ -55,6 +56,164 @@
     </table>
    
 </div>
-
-
+</div>
+<style>
+    div.allcontent{
+        margin-bottom: 120px;
+    }
+ a span{
+    font-size: 25px;
+    margin-right: 10px;
+    color: #615550 ;
+    display: inline;
+  }
+  button span{
+    font-size: 25px;
+    color:#615550  ;
+  }
+  button{
+    border:none;
+    padding:0px 0px 0px 0px;
+    margin-right: 10px;
+    display: inline;
+  }
+  form{
+    display: inline;
+  }
+  h1.topic{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 60px;
+  }
+  h1 span{
+    margin-right: 50px;
+    color:#280000  ;
+  }
+    @media screen and (max-width: 1024px) {
+        div.allcontent{
+            min-height: 790px;
+            margin-bottom: 100px;
+    }
+    }
+    @media screen and (max-width: 823px) {
+        
+    }
+    @media screen and (max-width: 768px) {
+        .table-content {
+        width: 720px;
+        margin: 50px auto;
+        margin-top: 40px;
+        text-align: center; 
+        border-collapse: collapse;
+    }
+    a span{
+    font-size: 20px;
+    margin-right: 10px;
+    color: #615550 ;
+    display: inline;
+  }
+  button span{
+    font-size: 20px;
+    color:#615550  ;
+  }
+  button{
+    border:none;
+    padding:0px 0px 0px 0px;
+    margin-right: 10px;
+    display: inline;
+  }
+    }
+    @media screen and (max-width: 667px) {
+        .table-content {
+        width: 550px;
+        margin: 50px auto;
+        margin-top: 40px;
+        text-align: center; 
+        border-collapse: collapse;
+    }
+    a span{
+    font-size: 13px;
+    margin-right:0px;
+    color: #615550 ;
+    display: inline;
+  }
+  button span{
+    font-size: 13px;
+    color:#615550  ;
+  }
+  button{
+    border:none;
+    padding:0px 0px 0px 0px;
+    margin-right: 0px;
+    display: inline;
+  }
+  
+  td {
+       font-size: 13px;
+       width:500px
+      
+    }
+    h1.topic{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+  }
+  h1 span{
+    margin-right: 20px;
+    color:#280000  ;
+  }
+    }
+    @media screen and (max-width: 425px) {
+        .table-content {
+        width: 300px;
+        margin: 50px auto;
+        margin-top: 40px;
+        text-align: center; 
+        border-collapse: collapse;
+    }
+    a span{
+    font-size: 10px;
+    margin-right:0px;
+    color: #615550 ;
+    display: inline;
+  }
+  button span{
+    font-size: 10px;
+    color:#615550  ;
+  }
+  button{
+    border:none;
+    padding:0px 0px 0px 0px;
+    margin-right: 0px;
+    display: inline;
+  }
+  
+  td {
+       font-size: 7px;
+       width:0px
+      
+    }
+    h1.topic{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+  }
+  h1 span{
+    margin-right: 20px;
+    color:#280000  ;
+  }
+    }
+    @media screen and (max-width: 375px) {
+      
+    }
+    @media screen and (max-width: 320px) {
+     
+    }
+  </style>
 <%- include("partials/footer") %>

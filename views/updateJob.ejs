@@ -13,15 +13,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
        
     </head>
-
+    <div class='allcontent'>
     <form action="/job/<%= jobedit._id %>/edit" method="post">
-        <div style="display:flex;margin-top: 50px;margin-left: 50px;font-family: 'Kanit', sans-serif;" >
-            <div style="flex:20%;"  >
+        <div  id='allpage'>
+            <div class='pic' >
                 <div style="box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;border-radius: 0px;" class="sj-border-grey sj-none overflow-hidden margin-bottom">
                     <div style="background-color:#F0EDE5" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                         <div style="border-radius: 0px;" class="panel panel-default margin-bottom" >
                              <figure class="col-md-12 col-sm-12 col-xs-12">
-                                <h1 style="font-size: 30px;margin-top: 10px;text-align: center;"><%= comshow.CompanyName %></h1>
+                                <h1 class='name'><%= comshow.CompanyName %></h1>
                                  <div class="row">
                                         <div class="pic-company pic-company-cc" >
                                            
@@ -29,12 +29,12 @@
                                                 <ul>
                                                     <div class="rwz_memPic" id="memPic_img">
                                                 <li>
-                                                    <figure style="margin-left: 110px;margin-top: 10px;" class="resume-pic">
-                                                     <img src="/images/img-Comprofile/<%= comshow.image %>">
+                                                    <figure  class="resume-pic">
+                                                     <img class='pic' src="/images/img-Comprofile/<%= comshow.image %>">
                                                    </figure>
                                             </li>
                                                     <li>
-                                                        <a style="margin-left: 140px;" href="/company/profile"class="upImage" for="test">
+                                                        <a id='pic'  href="/company/profile"class="upImage" for="test">
                                                          
                                                       See  Profile										</a> 
                                                     </li>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div style="flex:100%;margin-right: 50px;"  class="col-md-8 col-sm-8 col-xs-12 ">
-                <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
+                <div id="under" style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
                     <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                        
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -58,10 +58,10 @@
                                     <!-- step 1 -->
                                     
                                     <div style="background-color:#F0EDE5" class="panel panel-default margin-bottom" id="step1">
-                                        <h1 style="text-align: center;margin-top: 20px;">Edit Job</h1>
-                            <div class = "row" style="display:flex;">
+                                        <h1 class='job' style="text-align: center;margin-top: 20px;" >Edit Job</h1>
+                            <div id="grid" class = "row" >
         
-                                <div style="flex: 50%;padding-left: 30px;padding-right: 60px;padding-top: 20px;padding-bottom: 20px;"> 
+                                <div class='part1' > 
                                     
                                     <h6 class="margin-bottom-1 header-form font-size-16" for="occupation"><b>Job Categories</b><span class="text-red"> *</span></h6>
                                     <select value="<%= jobedit.JobCategories %>" class="form-control jobbkk-form-control text-form-select" id="occupation" name="JobCategories" onChange="getOccupationSub();">
@@ -152,7 +152,7 @@
                     <input name="Enddate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="" max="2100-12-31">
                             
                         </div>
-                            <div style="flex: 50%;padding-top: 20px;padding-right:40px;padding-left: 50px;padding-bottom: 20px;">
+                            <div class='part2'>
                                 
                                 <h6  class="margin-bottom-1"><b>Contact</b><span class="text-red"> *</span></h6>
                                 <textarea value="" class="form-control" rows="2" id="address" name="Contact"><%= jobedit.Contact %></textarea>
@@ -211,7 +211,7 @@
         </div>
         
         </form>
-
+    </div>
         <script>
            CKEDITOR.replace( 'JobDescription' );
            CKEDITOR.replace( 'Welfare' );
@@ -221,4 +221,255 @@
            
 
         </script>
+         <style>
+            div.pic{
+                flex:20%;
+            }
+            figure.resume-pic{
+                margin-left: 110px;margin-top: 10px;
+            }
+            a#pic{
+                margin-left: 140px;
+            }
+            h1.name{
+                font-size: 30px;
+                margin-top: 10px;
+                text-align: center;
+            }
+            div.allcontent{
+              min-height: 1700px;
+            }
+            div.content{
+              display:flex;
+            }
+            div.part1{
+                flex: 50%;
+                padding-left: 30px;
+                padding-right: 60px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            div.part2{
+                flex: 50%;
+                padding-top: 20px;
+                padding-right:40px;
+                padding-left: 50px;
+                padding-bottom: 20px;
+            }
+            div#allpage{
+                display:flex;
+                margin-top: 50px;
+                margin-left: 50px;
+                font-family: 'Kanit', sans-serif;
+            }
+            div#grid{
+                display:flex;
+            }
+              @media screen and (max-width: 1024px) {
+                  div.allcontent{
+              min-height:2800px;
+            }
+            figure.resume-pic{
+                margin-left:80px;margin-top: 10px;
+            }
+            a#pic{
+             margin-left: 110px;
+            }
+            div.part1{
+               
+                padding-left: 60px;
+                padding-right: 60px;
+                padding-top: 20px;
+                padding-bottom: 0px;
+            }
+            div.part2{
+                
+                padding-top: 0px;
+                padding-right:60px;
+                padding-left: 60px;
+                padding-bottom: 20px;
+            }
+            div#grid{
+                display:grid;
+                grid-template-columns: 100%;
+            }
+            div.pic{
+                flex:50%;
+                margin-left: 25px;
+            }
+              }
+              @media screen and (max-width: 768px) {
+                div#allpage{
+                      display:grid;
+              grid-template-columns: 100%;
+              margin-top: 70px;
+              font-family: 'Kanit', sans-serif;
+              margin-left: 100px;
+              
+            }
+            div#under{
+                width: 550px;
+            }
+            div.pic{
+                
+                width: 400px;
+                margin-bottom: 30px;
+                position: relative;
+                left: 70px;
+            }
+                  div.allcontent{
+              min-height: 3200px;
+            }
+            
+            div.part1{
+              margin-left: 30px;
+              padding-left: 30px;
+              padding-right: 70px;
+              padding-top: 20px;
+              padding-bottom: 0px;
+            }
+            div.part2{
+            margin-left: 40px;
+              padding-top: 0px;
+              padding-right: 70px;
+              padding-left: 20px;
+              padding-bottom: 20px;
+            }
+            figure.resume-pic{
+                margin-left:125px;margin-top: 10px;
+            }
+            a#pic{
+                margin-left: 150px;
+            }
+              }
+              @media screen and (max-width: 425px) {
+                div#allpage{
+                      display:grid;
+              grid-template-columns: 100%;
+              margin-top: 70px;
+              font-family: 'Kanit', sans-serif;
+              margin-left: 20px;
+              
+            }
+            figure.resume-pic{
+                margin-left:50px;margin-top: 10px;
+            }
+            a#pic{
+                margin-left: 78px;
+            }
+            div.allcontent{
+              min-height: 3600px;
+            }
+            h1.name{
+                font-size: 25px;
+            }
+            div#under{
+                width: 345px;
+            }
+            div.pic{
+                
+                width: 250px;
+                margin-bottom: 30px;
+                position: relative;
+                left: 40px;
+            }
+            div.part1{
+              margin-left: 40px;
+              padding-left: 5px;
+              padding-right: 40px;
+              padding-top: 20px;
+              padding-bottom: 0px;
+            }
+            div.part2{
+            margin-left: 40px;
+              padding-top: 0px;
+              padding-right: 40px;
+              padding-left: 5px;
+              padding-bottom: 20px;
+            }
+              }
+              @media screen and (max-width: 375px) {
+                div.allcontent{
+                    min-height: 3950px;
+            }
+            
+                  div.part1{
+              margin-left: 19px;
+              padding-left: 30px;
+              padding-right: 50px;
+              padding-top: 20px;
+              padding-bottom: 0px;
+            }
+            div.part2{
+            margin-left: 29px;
+              padding-top: 0px;
+              padding-right: 50px;
+              padding-left: 20px;
+              padding-bottom: 20px;
+            }
+            h1.name{
+                font-size: 25px;
+            }
+            div#under{
+                width: 300px;
+            }
+            div.pic{
+                
+                width: 250px;
+                margin-bottom: 30px;
+                position: relative;
+                left: 20px;
+            }
+              }
+              @media screen and (max-width: 320px) {
+                div#under{
+                width: 255px;
+            }
+            a#pic{
+                margin-left: 55px;
+            }
+            div.pic{
+                
+                width: 200px;
+                margin-bottom: 30px;
+                position: relative;
+                left: 15px;
+            }
+                div.allcontent{
+                    min-height: 4500px;
+            }
+            figure.resume-pic{
+                margin-left:40px;margin-top: 10px;
+            }
+            img.pic{
+               height: 120px;
+               width: 120px;
+            }
+            div.part1{
+              margin-left: 19px;
+              padding-left: 30px;
+              padding-right: 50px;
+              padding-top: 20px;
+              padding-bottom: 0px;
+            }
+            div.part2{
+            margin-left: 29px;
+              padding-top: 0px;
+              padding-right: 50px;
+              padding-left: 20px;
+              padding-bottom: 20px;
+            }
+            div.content{
+              display:grid;
+              grid-template-columns: 100%;
+              text-align: center;
+            }
+            h1.name{
+                font-size: 20px;
+            }
+            h1.job{
+                font-size: 30px;
+            }
+              }
+            </style>
 <%- include("partials/footer") %>

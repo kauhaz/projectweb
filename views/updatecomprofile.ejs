@@ -15,10 +15,10 @@
        
        
     </head>
-
+    <div class='allcontent'>
     <form action="/company/profile/<%= Comload._id %>/edit" method="Post" enctype="multipart/form-data">
-        <div style="display:flex;margin:50px;font-family: 'Kanit', sans-serif;"  >
-            <div style="flex:20%;"  >
+        <div id='allpage' >
+            <div class='pic' style="flex:20%;"   >
                 <div style="box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;margin-left:50px;margin-right: 10px;" class="sj-border-grey sj-none overflow-hidden margin-bottom">
                     <div style="background-color: #F0EDE5;" class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                         <div style="border-radius: 0px;" class="panel panel-default margin-bottom" >
@@ -82,10 +82,10 @@
                                 
                                     
                                     <div  class="panel panel-default margin-bottom" id="step1">
-                                        <h1 style="text-align: center;margin-top: 20px;">Company Profile</h1>
+                                        <h1 class='name' style="text-align: center;margin-top: 20px;">Company Profile</h1>
                             <div class = "row" style="display:flex;">
         
-                                <div style="flex: 50%;padding-left: 30px;padding-right: 60px;padding-top: 20px;padding-bottom: 20px;"> 
+                                <div class='part1'> 
                                     
                         <h6 class="margin-bottom-1"><b>Contact name</b><span class="text-red"> *</span></h6>
                         <input  type="text" class="form-control sj-form-control"  name="Contactname" id="firstname" value="<%= Comload.Contactname %>">
@@ -103,7 +103,7 @@
                               <h6 class="margin-bottom-1"><b>Sub District</b><span class="text-red"> *</span></h6>
                                <input type="text" class="form-control sj-form-control"  id="weight" name="SubDistrict" value="<%= Comload.SubDistrict %>">
                         </div>
-                            <div style="flex: 50%;padding-top: 20px;padding-right:40px;padding-left: 50px;padding-bottom: 20px;">
+                            <div  class='part2'>
                                 <h6  class="margin-bottom-1"><b>Company Name</b><span class="text-red"> *</span></h6>
                             <input  type="text" class="form-control sj-form-control"  name="CompanyName" id="firstname" value="<%= Comload.CompanyName %>">
                             <h6  class="margin-bottom-1"><b>Business Types</b><span class="text-red"> *</span></h6>
@@ -162,4 +162,127 @@
         </div>
         
         </form>
+    </div>
+    <style>
+        div.allcontent{
+          min-height: 750px;
+        }
+        div.content{
+          display:flex;
+        }
+        div.part1{
+          flex: 50%;
+          padding-left: 50px;
+          padding-right: 50px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        
+        }
+        div.part2{
+          flex: 50%;
+          padding-top: 20px;
+          padding-right:50px;
+          padding-left: 50px;
+          padding-bottom: 20px;
+        }
+        div#allpage{
+          display:flex;
+          margin-top: 70px;
+          font-family: 'Kanit', sans-serif;
+        }
+          @media screen and (max-width: 1024px) {
+              div.allcontent{
+          min-height: 780px;
+        }
+          }
+          @media screen and (max-width: 768px) {
+              div.allcontent{
+          min-height: 1150px;
+        }
+        div.content{
+          display:grid;
+          grid-template-columns: 100%;
+          text-align: center;
+          
+        }
+        div.part1{
+          margin-left: 30px;
+          padding-left: 30px;
+          padding-right: 70px;
+          padding-top: 20px;
+          padding-bottom: 0px;
+        }
+        div.part2{
+        margin-left: 40px;
+          padding-top: 0px;
+          padding-right: 70px;
+          padding-left: 20px;
+          padding-bottom: 20px;
+        }
+          }
+          @media screen and (max-width: 425px) {
+              div#allpage{
+                  display:grid;
+          grid-template-columns: 100%;
+          margin-top: 70px;
+          font-family: 'Kanit', sans-serif;
+        }
+        div.pic{
+            margin-bottom: 50px;
+            margin-right: 45px;
+        }
+        div.allcontent{
+          min-height: 1500px;
+        }
+        h1.name{
+            font-size: 35px;
+        }
+          }
+          @media screen and (max-width: 375px) {
+            div.allcontent{
+          min-height: 1450px;
+        }
+              div.part1{
+          margin-left: 19px;
+          padding-left: 30px;
+          padding-right: 50px;
+          padding-top: 20px;
+          padding-bottom: 0px;
+        }
+        div.part2{
+        margin-left: 29px;
+          padding-top: 0px;
+          padding-right: 50px;
+          padding-left: 20px;
+          padding-bottom: 20px;
+        }
+        h1.name{
+            font-size: 33px;
+        }
+          }
+          @media screen and (max-width: 320px) {
+              div.part1{
+          margin-left: 0px;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 20px;
+          padding-bottom: 0px;
+        }
+        div.part2{
+        margin-left: 0px;
+          padding-top: 0px;
+          padding-right: 20px;
+          padding-left: 20px;
+          padding-bottom: 20px;
+        }
+        div.content{
+          display:grid;
+          grid-template-columns: 100%;
+          text-align: center;
+        }
+        h1.name{
+            font-size: 28px;
+        }
+          }
+        </style>
 <%- include("partials/footer") %>

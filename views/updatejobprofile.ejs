@@ -14,9 +14,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mitr:wght@300&display=swap" rel="stylesheet">
        
     </head>
+    <div class='allcontent'>
 <form action="/jobseeker/profile/<%= jobload._id %>/edit" method="POST" enctype="multipart/form-data">
-<div style="display:flex;margin-top: 70px;font-family: 'Kanit', sans-serif;" class="container" >
-    <div style="flex:20%;"  >
+<div id='allpage' class="container" >
+    <div class='pic' style="flex:20%;"  >
         <div style="box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) ;" class="sj-border-grey sj-none overflow-hidden margin-bottom">
             <div  class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                 <div style="background-color: #F0EDE5;border-radius: 0px;" class="panel panel-default margin-bottom" >
@@ -73,7 +74,7 @@ $("#file").change(function () {
 });
 });
     </script>
-    <div style="flex:100%;"  class="col-md-8 col-sm-8 col-xs-12 ">
+    <div  style="flex:100%;"  class="col-md-8 col-sm-8 col-xs-12 ">
         <div style="padding: 10px 10px 10px " class="bg-drtail overflow-hidden">
             <div class="panel-group panel-group-a" id="accordion" role="tablist" aria-multiselectable="true">
                
@@ -83,9 +84,9 @@ $("#file").change(function () {
                             
                             <div class="panel panel-default margin-bottom" id="step1">
                                 <h1 style="text-align: center;margin-top: 20px;font-family: sans-serif;">JobSeeker Profile</h1>
-                    <div class = "row" style="display:flex;">
+                    <div id='content' class = "row">
 
-                        <div style="flex: 50%;padding-left: 30px;padding-right: 60px;padding-top: 20px;padding-bottom: 20px;"> 
+                        <div class='part1'> 
                             
                 <h6 class="margin-bottom-1"><b>Name</b><span class="text-red"> *</span></h6>
                 <input required name="Name" type="text" class="form-control sj-form-control"  name="firstname" id="firstname" value="<%= jobload.Name %>">
@@ -111,7 +112,7 @@ $("#file").change(function () {
                 </div>
                 
 
-                    <div style="flex: 50%;padding-top: 20px;padding-right:40px;padding-left: 50px;padding-bottom: 20px;">
+                    <div class='part2'>
 
                    
                    
@@ -441,4 +442,113 @@ $("#file").change(function () {
 </div>
 
 </form>
+</div>
+<style>
+  div.allcontent{
+    min-height: 900px;
+  }
+  div#content{
+    display:flex;
+  }
+  div.part1{
+    flex: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  div.part2{
+    flex: 50%;
+    padding-top: 20px;
+    padding-right:50px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+  }
+  div#allpage{
+    display:flex;
+    margin-top: 70px;
+    font-family: 'Kanit', sans-serif;
+  }
+    @media screen and (max-width: 1024px) {
+        div.allcontent{
+    min-height: 850px;
+  }
+    }
+    @media screen and (max-width: 768px) {
+        div.allcontent{
+    min-height: 1400px;
+  }
+  div.content{
+    display:grid;
+    grid-template-columns: 100%;
+    text-align: center;
+    
+  }
+  div.part1{
+    margin-left: 30px;
+    padding-left: 30px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+  div.part2{
+  margin-left: 40px;
+    padding-top: 0px;
+    padding-right: 70px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+    }
+    @media screen and (max-width: 425px) {
+        div#allpage{
+            display:grid;
+    grid-template-columns: 100%;
+    margin-top: 70px;
+    font-family: 'Kanit', sans-serif;
+  }
+  div.pic{
+      margin-bottom: 50px;
+  }
+  div.allcontent{
+    min-height: 1750px;
+  }
+    }
+    @media screen and (max-width: 375px) {
+        div.part1{
+    margin-left: 20px;
+    padding-left: 30px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+  div.part2{
+  margin-left: 30px;
+    padding-top: 0px;
+    padding-right: 50px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+    }
+    @media screen and (max-width: 320px) {
+        div.part1{
+    margin-left: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+  div.part2{
+  margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+  div#content{
+    display:grid;
+    grid-template-columns: 100%;
+    text-align: center;
+  }
+    }
+  </style>
 <%- include("partials/footer") %>
