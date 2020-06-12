@@ -148,10 +148,22 @@
                             <textarea class="form-control" rows="2" id="address" name="Welfare"></textarea>
                             <h6 class="margin-bottom-1"><b>Qualifications of job applicants</b><span class="text-red"> *</span></h6>
                             <textarea class="form-control" rows="2" id="address" name="Qualificationsofjobapplicants"></textarea>
-                            <h6 class="margin-bottom-1"><b>Public date</b><span class="text-red">* </span></h6>
-                    <input name="Publicdate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
-                    <h6 class="margin-bottom-1"><b>End date</b><span class="text-red">* </span></h6>
-                    <input name="Enddate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
+                            <h6 class="margin-bottom-1"style='margin-top:10px'><b>Province</b></h6>
+                    <select name="Province" class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                        <option >Province</option>
+                        <option  >Bangkok</option>
+                        <option  >Nakhon Pathom </option>
+                        <option  >Nakhon Sawan</option>
+                        <option  >Nonthaburi </option>
+                        <option >Chonburi </option>
+                        <option  >Rayong </option>
+                        <option  >Phetchaburi </option>
+                        <option >Ratchaburi</option>
+                        <option  >Krabi</option>
+                        <option  >Phuket </option>
+                        <option  >Ranong</option>
+                        <option  >Songkhla</option>
+                                            </select>                
                             
                         </div>
                             <div class='part2'>
@@ -165,26 +177,14 @@
                              <h6 class="margin-bottom-1"><b>Address</b><span class="text-red"> *</span></h6>
                                <textarea class="form-control" rows="3" id="address" name="Address"></textarea>
                         
-                               <h6 class="margin-bottom-1"><b>Province</b></h6>
-                                                                                                                                                                                                <select name="Province" class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
-                                                                                                                                                                                                    <option >Province</option>
-                                                                                                                                                                                                    <option  >Bangkok</option>
-                                                                                                                                                                                                    <option  >Nakhon Pathom </option>
-                                                                                                                                                                                                    <option  >Nakhon Sawan</option>
-                                                                                                                                                                                                    <option  >Nonthaburi </option>
-                                                                                                                                                                                                    <option >Chonburi </option>
-                                                                                                                                                                                                    <option  >Rayong </option>
-                                                                                                                                                                                                    <option  >Phetchaburi </option>
-                                                                                                                                                                                                    <option >Ratchaburi</option>
-                                                                                                                                                                                                    <option  >Krabi</option>
-                                                                                                                                                                                                    <option  >Phuket </option>
-                                                                                                                                                                                                    <option  >Ranong</option>
-                                                                                                                                                                                                    <option  >Songkhla</option>
-                                                                                                                                                                                                                        </select>                                       
-                               <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1494.9552590138494!2d100.6004820889737!3d13.631329862369775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x133e221e4499d09c!2zNy1FbGV2ZW4g4LiB4Lil4Liy4LiH4LiL4Lit4Lii4Lio4Lij4Li14Lia4Li44LiN4LmA4Lij4Li34Lit4LiH4oCLIDExNTM0!5e0!3m2!1sth!2sth!4v1587109329390!5m2!1sth!2sth" style="margin-top: 20px;" width="315px" height="200px" frameborder="0" style="border:0;" aria-hidden="false" tabindex="0"></iframe></p>
+                              
+                                                                                                                                                                                                                     
+                              
                             
-
-                                                                                                                                                                                                
+                                                                                                                                                                                                                        <h6 class="margin-bottom-1"><b>Public date</b><span class="text-red">* </span></h6>
+                                                                                                                                                                                                                        <input name="Publicdate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
+                                                                                                                                                                                                                        <h6 class="margin-bottom-1"><b>End date</b><span class="text-red">* </span></h6>
+                                                                                                                                                                                                                        <input name="Enddate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
                                                                                                                                                                                     
                                                                                                                                                                                                
         
@@ -199,7 +199,7 @@
             <ul>
                 
                
-                <li><button style="background-color:#00BFFF;padding-left: 10px;text-align: center;padding-right: 80px;margin-bottom: 20px;text-indent: 70px;" class="btn2 btn-primary" id="butcom" type="submit" name="save_btn" value="save">Save</button></li>
+                <li><button  class="btn2 btn-primary" id="butcom" type="submit" name="save_btn" value="save">Save</button></li>
             </ul>
         </div>
         </div>
@@ -227,6 +227,14 @@
             div.pic{
                 flex:20%;
             }
+            button#butcom{
+                background-color:#00BFFF;
+                padding-left: 10px;
+                text-align: center;
+                padding-right: 80px;
+                margin-bottom: 20px;
+                text-indent: 70px;
+            }
             figure.resume-pic{
                 margin-left: 110px;margin-top: 10px;
             }
@@ -239,7 +247,7 @@
                 text-align: center;
             }
             div.allcontent{
-              min-height: 1700px;
+              min-height: 1500px;
             }
             div.content{
               display:flex;
@@ -269,7 +277,7 @@
             }
               @media screen and (max-width: 1024px) {
                   div.allcontent{
-              min-height:2800px;
+              min-height:2550px;
             }
             figure.resume-pic{
                 margin-left:80px;margin-top: 10px;
@@ -320,7 +328,7 @@
                 left: 70px;
             }
                   div.allcontent{
-              min-height: 3200px;
+              min-height: 2900px;
             }
             
             div.part1{
@@ -360,7 +368,7 @@
                 margin-left: 78px;
             }
             div.allcontent{
-              min-height: 3600px;
+              min-height: 3500px;
             }
             h1.name{
                 font-size: 25px;
@@ -392,7 +400,7 @@
               }
               @media screen and (max-width: 375px) {
                 div.allcontent{
-                    min-height: 3950px;
+                    min-height: 3700px;
             }
             
                   div.part1{
@@ -438,7 +446,7 @@
                 left: 15px;
             }
                 div.allcontent{
-                    min-height: 4500px;
+                    min-height: 4250px;
             }
             figure.resume-pic{
                 margin-left:40px;margin-top: 10px;
@@ -471,6 +479,15 @@
             }
             h1.job{
                 font-size: 30px;
+            }
+            button#butcom{
+                background-color:#00BFFF;
+             
+                text-align: center;
+               position: relative;
+               right: 5px;
+                margin-bottom: 20px;
+                text-indent: 70px;
             }
               }
             </style>
