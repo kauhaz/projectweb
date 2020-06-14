@@ -13,7 +13,7 @@ const   express = require("express"),
         AdminRoutes = require('./routes/admin'),
         JobRoutes = require('./routes/job'),
         multer = require('multer')
-        port = process.env.PORT || 3000
+        
 
 const  app = express();
 
