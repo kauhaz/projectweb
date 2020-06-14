@@ -13,7 +13,7 @@ const   express = require("express"),
         AdminRoutes = require('./routes/admin'),
         JobRoutes = require('./routes/job'),
         multer = require('multer')
-        
+        port = process.env.PORT || 3000
 
 const  app = express();
 
@@ -60,6 +60,6 @@ app.use('/jobseeker',JobseekerRoutes);
 app.use('/company',CompanyRoutes);
 app.use('/job',JobRoutes);
 app.use('/admin101631', AdminRoutes);
-app.listen(3000,function(req,res){
+app.listen(port,function(req,res){
     console.log('Server has started');
 });
