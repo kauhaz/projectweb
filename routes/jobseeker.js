@@ -12,7 +12,7 @@ var StorageOfimageprofile = multer.diskStorage({
     cb(null, "./public/images/img-profile/");
   },
   filename: function (req, file, cb) {
-    cb(null, file.image + '-' + Date.now());
+    cb(null, file.originalname);
   },
 });
 var upload_profile = multer({ storage: StorageOfimageprofile });

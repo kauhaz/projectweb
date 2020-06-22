@@ -11,7 +11,7 @@ var StorageOfimageprofile = multer.diskStorage({
   filename: function (req, file, cb) {
     //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
 
-    cb(null, file.image + '-' + Date.now());
+    cb(null, file.originalname);
   },
 });
 var upload_profile = multer({ storage: StorageOfimageprofile });
