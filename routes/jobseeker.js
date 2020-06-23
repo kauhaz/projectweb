@@ -17,17 +17,23 @@ const express = require("express"),
 
 var storage = new  CloudinaryStorage({ 
     cloudinary: cloudinary,
-    folder: 'smilejob',
-    format: 'jpeg',
-    version : 'v1592891078',
-    filename: function (req, file, cb) {
-      //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
-  
-      cb(null, file.originalname);
-    },
+    params: {
+      format: async (req, file) => 'jpeg',
+      public_id: (req, file) => file.originalname,
+      path : (req, file) =>  `https://res.cloudinary.com/smilejob/image/upload/v159290293/${file.originalname}`,
+    }
   })
   const parser = multer({ storage: storage });
  
+  var storage2 = new  CloudinaryStorage({ 
+    cloudinary: cloudinary,
+    params: {
+      format: async (req, file) => 'pdf', // supports promises as well
+      public_id: (req, file) => file.originalname,
+      path : (req, file) =>  `https://res.cloudinary.com/smilejob/image/upload/v159290293/${file.originalname}`
+    }
+  })
+  const parser2 = multer({ storage: storage2 });
 
 
 // var StorageOfimageprofile = multer.diskStorage({
@@ -49,8 +55,6 @@ var StorageOfresume = multer.diskStorage({
   },
 });
 var upload_resume = multer({ storage: StorageOfresume });
-
-
 router.get("/login", function (req, res) {
   res.render("joblogin");
 });
@@ -89,6 +93,7 @@ router.get("/applyjob", function (req, res) {
 
 router.post("/resume", upload_resume.single("resume"), function (req, res) {
   if (req.file) {
+    console.log(req.file)
     let resume = req.file.filename;
     jobseekersignup.updateOne(
       { _id: req.user._id },

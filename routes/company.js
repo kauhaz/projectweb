@@ -3,18 +3,35 @@ const express = require("express"),
   passport = require("passport"),
   companysignup = require("../models/companysignup"),
   multer = require("multer");
+  cloudinary = require('cloudinary').v2,
+ { CloudinaryStorage } = require('multer-storage-cloudinary');
 
-var StorageOfimageprofile = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/images/img-Comprofile/");
-  },
-  filename: function (req, file, cb) {
-    //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
-
-    cb(null, file.originalname);
-  },
+ cloudinary.config({ 
+  cloud_name: 'smilejob', 
+  api_key: '679157124947351', 
+  api_secret: 'XVbYKJ7_xwyIMw_IOvqKqbT5Sqo' 
 });
-var upload_profile = multer({ storage: StorageOfimageprofile });
+var storage = new  CloudinaryStorage({ 
+  cloudinary: cloudinary,
+  params: {
+    format: async (req, file) => 'jpeg',
+    public_id: (req, file) => file.originalname,
+    path : (req, file) =>  `https://res.cloudinary.com/smilejob/image/upload/v159290293/smilejob/${file.originalname}`,
+  }
+})
+
+const parser = multer({ storage: storage });
+// var StorageOfimageprofile = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./public/images/img-Comprofile/");
+//   },
+//   filename: function (req, file, cb) {
+//     //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
+
+//     cb(null, file.originalname);
+//   },
+// });
+// var upload_profile = multer({ storage: StorageOfimageprofile });
 
 router.post(
   "/login",
@@ -79,7 +96,7 @@ router.post("/signup", function (req, res) {
     }
   );
 });
-router.post("/profile/:id/edit", upload_profile.single("image"), function (
+router.post("/profile/:id/edit", parser.single("image"), function (
   req,
   res
 ) {
