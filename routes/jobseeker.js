@@ -5,17 +5,40 @@ const express = require("express"),
   Job = require("../models/postjob"),
   applyjob = require("../models/applyjob"),
   resumejob = require("../models/resumejob"),
-  multer = require("multer");
+  multer = require("multer"),
+   cloudinary = require('cloudinary').v2,
+ { CloudinaryStorage } = require('multer-storage-cloudinary');
 
-var StorageOfimageprofile = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/images/img-profile/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
+ cloudinary.config({ 
+  cloud_name: 'smilejob', 
+  api_key: '679157124947351', 
+  api_secret: 'XVbYKJ7_xwyIMw_IOvqKqbT5Sqo' 
 });
-var upload_profile = multer({ storage: StorageOfimageprofile });
+
+var storage = new  CloudinaryStorage({ 
+    cloudinary: cloudinary,
+    folder: 'smilejob',
+    format: 'jpeg',
+    version : 'v1592891078',
+    filename: function (req, file, cb) {
+      //เก็บชื่อรูปต้นฉบับลงโฟลเดอร์
+  
+      cb(null, file.originalname);
+    },
+  })
+  const parser = multer({ storage: storage });
+ 
+
+
+// var StorageOfimageprofile = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./public/images/img-profile/");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname);
+//   },
+// });
+// var upload_profile = multer({ storage: StorageOfimageprofile });
 
 var StorageOfresume = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -26,6 +49,8 @@ var StorageOfresume = multer.diskStorage({
   },
 });
 var upload_resume = multer({ storage: StorageOfresume });
+
+
 router.get("/login", function (req, res) {
   res.render("joblogin");
 });
@@ -182,7 +207,7 @@ router.post("/signup", function (req, res) {
   );
 });
 
-router.post("/profile/:id/edit", upload_profile.single("image"), function (
+router.post("/profile/:id/edit", parser.single("image"), function (
   req,
   res
 ) {
@@ -237,6 +262,7 @@ router.post("/profile/:id/edit", upload_profile.single("image"), function (
     );
   }
   if (req.file) {
+    console.log(req.file)
     let Name = req.body.Name;
     let Surname = req.body.Surname;
     let IDCard = req.body.IDCard;
