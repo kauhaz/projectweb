@@ -65,7 +65,7 @@
                                 <div class='part1' > 
                                     
                                     <h6 class="margin-bottom-1 header-form font-size-16" for="occupation"><b>Job Categories</b><span class="text-red"> *</span></h6>
-                                    <select class="form-control jobbkk-form-control text-form-select" id="occupation" name="JobCategories" onChange="getOccupationSub();">
+                                    <select required class="form-control jobbkk-form-control text-form-select" id="occupation" name="JobCategories" onChange="getOccupationSub();">
                                         <option>Job Categories</option>
                                         <option  >E-commerce</option>
                                         <option  >Part-time</option>
@@ -89,14 +89,14 @@
                                         <option  >Geology and forestry</option>
                                                             </select>
                         <h6  class="margin-bottom-1"><b>Job Tiles</b><span class="text-red"> *</span></h6>
-                        <input  type="text" class="form-control sj-form-control" name="JobPosition" id="firstname" value="">
+                        <input required type="text" class="form-control sj-form-control" name="JobPosition" id="firstname" value="">
                            
                         
                         <h6 class="margin-bottom-1 header-form font-size-16" for="occupation"><b>Salary</b><span class="text-red"> *</span></h6>
 
 <div style="display: flex;">
     <div style="flex: 50%">
-                        <select  class="form-control jobbkk-form-control text-form-select" id="occupation" name="MinimumSalary" onChange="getOccupationSub();">
+                        <select required  class="form-control jobbkk-form-control text-form-select" id="occupation" name="MinimumSalary" onChange="getOccupationSub();">
                             <option  >MinimumSalary</option>
                             <option  >5,000</option>
                             <option  >10,000</option>
@@ -115,7 +115,7 @@
                                             </div>
                                             <div style="flex: 50%">
 
-                                                <select class="form-control jobbkk-form-control text-form-select" id="occupation" name="MaximumSalary" onChange="getOccupationSub();">
+                                                <select required class="form-control jobbkk-form-control text-form-select" id="occupation" name="MaximumSalary" onChange="getOccupationSub();">
                                                     <option>MaximumSalary</option>
                                                     <option  >5,000</option>
                                                     <option  >10,000</option>
@@ -133,7 +133,7 @@
                                                                     </div>
                                                                 </div>
                             <h6 class="margin-bottom-1 header-form font-size-16" for="occupation"><b>Degree</b><span class="text-red"> *</span></h6>
-                            <select value="" class="form-control jobbkk-form-control text-form-select" id="occupation" name="Degree" onChange="getOccupationSub();">
+                            <select required value="" class="form-control jobbkk-form-control text-form-select" id="occupation" name="Degree" onChange="getOccupationSub();">
                                 <option >None</option>
                                 <option  >Bachelor's degree or higher</option>
                                 <option  >Master's Degree or higher</option>
@@ -145,11 +145,11 @@
                            
                            
                             <h6 class="margin-bottom-1"><b>Welfare</b><span class="text-red"> *</span></h6>
-                            <textarea class="form-control" rows="2" id="address" name="Welfare"></textarea>
+                            <textarea required class="form-control" rows="2" id="address" name="Welfare"></textarea>
                             <h6 class="margin-bottom-1"><b>Qualifications of job applicants</b><span class="text-red"> *</span></h6>
-                            <textarea class="form-control" rows="2" id="address" name="Qualificationsofjobapplicants"></textarea>
+                            <textarea required class="form-control" rows="2" id="address" name="Qualificationsofjobapplicants"></textarea>
                             <h6 class="margin-bottom-1"style='margin-top:10px'><b>Province</b></h6>
-                    <select name="Province" class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
+                    <select required name="Province" class="form-control jobbkk-form-control text-form-select" id="occupation" name="occupation" onChange="getOccupationSub();">
                         <option >Province</option>
                         <option  >Bangkok</option>
                         <option  >Nakhon Pathom </option>
@@ -169,22 +169,22 @@
                             <div class='part2'>
                                 
                                 <h6  class="margin-bottom-1"><b>Contact</b><span class="text-red"> *</span></h6>
-                                <textarea value="" class="form-control" rows="2" id="address" name="Contact"></textarea>
+                                <textarea required value="" class="form-control" rows="2" id="address" name="Contact"></textarea>
                                 <h6 class="margin-bottom-1"><b>Job Description</b><span class="text-red"> *</span><span style="font-size: 12px;color: grey;">Ex. Job duties or Working day</span></h6>
-                                <textarea style="margin-bottom: 200px;" class="form-control" rows="3" id="address" name="JobDescription"></textarea>
+                                <textarea required style="margin-bottom: 200px;" class="form-control" rows="3" id="address" name="JobDescription"></textarea>
                             <h6  class="margin-bottom-1"><b>How to go company</b><span class="text-red"> *</span></h6>
-                            <textarea class="form-control" rows="2" id="address" name="Howtogocompany"></textarea>
+                            <textarea required class="form-control" rows="2" id="address" name="Howtogocompany"></textarea>
                              <h6 class="margin-bottom-1"><b>Address</b><span class="text-red"> *</span></h6>
-                               <textarea class="form-control" rows="3" id="address" name="Address"></textarea>
+                               <textarea required class="form-control" rows="3" id="address" name="Address"></textarea>
                         
                               
                                                                                                                                                                                                                      
                               
                             
                                                                                                                                                                                                                         <h6 class="margin-bottom-1"><b>Public date</b><span class="text-red">* </span></h6>
-                                                                                                                                                                                                                        <input name="Publicdate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
+                                                                                                                                                                                                                        <input required name="Publicdate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
                                                                                                                                                                                                                         <h6 class="margin-bottom-1"><b>End date</b><span class="text-red">* </span></h6>
-                                                                                                                                                                                                                        <input name="Enddate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
+                                                                                                                                                                                                                        <input required name="Enddate" class="day" type="date" data-date="" data-date-format="DD MMMM YYYY" value="" min="2020-05-06" max="2100-12-31">
                                                                                                                                                                                     
                                                                                                                                                                                                
         
