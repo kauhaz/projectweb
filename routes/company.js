@@ -96,11 +96,12 @@ router.post("/signup", function (req, res) {
     }
   );
 });
-router.post("/profile/:id/edit", parser.single("image"), function (
+router.post("/profile/:id/edit",parser.single("image"), function (
   req,
   res
 ) {
   if (req.file) {
+    
     let Contactname = req.body.Contactname;
     let CompanyName = req.body.CompanyName;
     let BusinessTypes = req.body.BusinessTypes;

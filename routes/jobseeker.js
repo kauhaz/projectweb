@@ -25,15 +25,7 @@ var storage = new  CloudinaryStorage({
   })
   const parser = multer({ storage: storage });
  
-  var storage2 = new  CloudinaryStorage({ 
-    cloudinary: cloudinary,
-    params: {
-      format: async (req, file) => 'pdf', // supports promises as well
-      public_id: (req, file) => file.originalname,
-      path : (req, file) =>  `https://res.cloudinary.com/smilejob/image/upload/v159290293/${file.originalname}`
-    }
-  })
-  const parser2 = multer({ storage: storage2 });
+ 
 
 
 // var StorageOfimageprofile = multer.diskStorage({
@@ -212,12 +204,12 @@ router.post("/signup", function (req, res) {
   );
 });
 
-router.post("/profile/:id/edit", parser.single("image"), function (
+router.post("/profile/:id/edit",parser.single("image"), function (
   req,
   res
 ) {
   if (!req.file) {
-    console.log(req.file);
+   
     let Name = req.body.Name;
     let Surname = req.body.Surname;
     let IDCard = req.body.IDCard;
