@@ -12,9 +12,10 @@ router.get("/findjob", function (req, res) {
   Job.find({}, (err, job) => {
     if (err) console.log(err);
     else {
-      res.render("findjob", { job: job });
+          res.render("findjob", { job: job, });
+      };
     }
-  });
+  );
 });
 router.get("/jobapplication", function (req, res) {
   companysignup.findById({ _id: req.user._id }, (err, result) => {
