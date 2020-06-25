@@ -36,13 +36,13 @@ router.get("/findjob/search", function (req, res) {
   Job.find(
     {
       $or: [
-        { JobCategories: { $regex: req.query.JobCategories } },
-        { CompanyName: { $regex: req.query.JobTilesOrCompanyname } },
-        { JobPosition: { $regex: req.query.JobTilesOrCompanyname } },
-        { MinimumSalary: { $regex: req.query.MinimumSalary } },
-        { MaximumSalary: { $regex: req.query.MaximumSalary } },
-        { Degree: { $regex: req.query.Degree } },
-        { Province: { $regex: req.query.Province } },
+        { JobCategories: req.query.JobCategories} ,
+        { CompanyName: req.query.JobTilesOrCompanyname } ,
+        { JobPosition:  req.query.JobTilesOrCompanyname } ,
+        { MinimumSalary: req.query.MinimumSalary },
+        { MaximumSalary:  req.query.MaximumSalary } ,
+        { Degree:  req.query.Degree  },
+        { Province:  req.query.Province } ,
       ],
     },
     function (error, jobshow) {
