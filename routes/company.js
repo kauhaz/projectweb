@@ -43,7 +43,8 @@ router.post(
     successFlash: "You log in successfully",
     failureFlash: "Invalid username or password.",
   }),
-  function (req, res) {}
+  function (req, res) {
+  }
 );
 
 router.get("/login", function (req, res) {
